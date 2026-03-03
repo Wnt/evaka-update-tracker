@@ -228,27 +228,27 @@ main {
 
 .pr-item:last-child { border-bottom: none; }
 
-.pr-number {
-  font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
-  color: var(--color-staging);
-  text-decoration: none;
-  flex-shrink: 0;
-  width: 3.5rem;
-  text-align: right;
-}
-.pr-number:hover { text-decoration: underline; }
-
-.pr-title {
+.pr-title-group {
   flex: 1;
   min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  overflow: hidden;
+}
+
+.pr-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: var(--color-text);
+  text-decoration: none;
 }
+.pr-title:hover { text-decoration: underline; }
 
 .pr-author {
   color: var(--color-text-muted);
-  flex-shrink: 0;
+  white-space: nowrap;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -291,7 +291,7 @@ main {
   color: var(--color-text-muted);
   flex-shrink: 0;
   width: 4rem;
-  text-align: center;
+  text-align: left;
 }
 
 /* Collapsible section styling */
@@ -336,7 +336,7 @@ main {
   display: inline-block;
   width: 5.5rem;
   flex-shrink: 0;
-  text-align: left;
+  text-align: right;
 }
 
 /* PR label badges */
@@ -353,6 +353,13 @@ main {
 .label-enhancement { background: #f0fdf4; color: #16a34a; }
 .label-tech { background: #f3f4f6; color: #4b5563; }
 .label-breaking { background: #fef2f2; color: #991b1b; font-weight: 600; }
+.label-dependencies { background: #eff6ff; color: #2563eb; }
+.label-frontend { background: #fdf4ff; color: #a21caf; }
+.label-java { background: #fff7ed; color: #c2410c; }
+.label-javascript { background: #fefce8; color: #a16207; }
+.label-service { background: #f0f9ff; color: #0369a1; }
+.label-submodules { background: #f5f3ff; color: #7c3aed; }
+.label-apigw { background: #ecfdf5; color: #047857; }
 
 /* Bot PR styling */
 .pr-item.bot {

@@ -8,6 +8,13 @@ const LABEL_MAP = {
   enhancement: { text: 'Parannus', cssClass: 'label-enhancement' },
   tech: { text: 'Tekninen', cssClass: 'label-tech' },
   breaking: { text: 'Päivitystoimia', cssClass: 'label-breaking' },
+  dependencies: { text: 'Riippuvuus', cssClass: 'label-dependencies' },
+  frontend: { text: 'Käyttöliittymä', cssClass: 'label-frontend' },
+  java: { text: 'Java', cssClass: 'label-java' },
+  javascript: { text: 'JavaScript', cssClass: 'label-javascript' },
+  service: { text: 'Palvelu', cssClass: 'label-service' },
+  submodules: { text: 'Alimoduuli', cssClass: 'label-submodules' },
+  apigw: { text: 'API-yhdyskäytävä', cssClass: 'label-apigw' },
 };
 
 function renderLabelBadges(labels) {
@@ -42,15 +49,18 @@ export function renderPRList(prs, { showBots = false, showStatus = false, showRe
     const statusBadge = showStatus ? renderDeployBadge(pr._status) : '';
     const date = formatDate(pr.mergedAt);
 
+    const author = pr.author ? `<span class="pr-author">- ${escapeHtml(pr.author)}</span>` : '';
+
     return `
       <li class="pr-item${botClass}">
-        <a class="pr-number" href="${pr.url}" target="_blank" rel="noopener">#${pr.number}</a>
         ${repoLabel}
-        <span class="pr-labels-col">${renderLabelBadges(pr.labels)}</span>
-        <span class="pr-title">${escapeHtml(pr.title)}</span>
+        <span class="pr-title-group">
+          <a class="pr-title" href="${pr.url}" target="_blank" rel="noopener">${escapeHtml(pr.title)}</a>
+          ${author}
+        </span>
         ${botLabel}
         ${statusBadge}
-        <span class="pr-author">${escapeHtml(pr.author)}</span>
+        <span class="pr-labels-col">${renderLabelBadges(pr.labels)}</span>
         <span class="pr-date">${date}</span>
       </li>
     `;
