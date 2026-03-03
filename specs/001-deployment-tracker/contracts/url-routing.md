@@ -15,7 +15,7 @@ Hash-based routing scheme for the static dashboard. All routes use `window.locat
 | ID                | City Group       |
 | ----------------- | ---------------- |
 | `espoo`           | Espoo            |
-| `tampere-region`  | Tampere region   |
+| `tampere-region`  | Tampereen seutu   |
 | `oulu`            | Oulu             |
 | `turku`           | Turku            |
 

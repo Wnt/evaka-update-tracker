@@ -74,7 +74,7 @@ Refer to `specs/006-finnish-translation/data-model.md` for the Slack translation
 
 ## Phase 5: User Story 2 - Finnish README and screenshot (Priority: P2)
 
-**Goal**: README.md fully translated to Finnish with "Kuntaimplementaatio" terminology. Screenshot of Tampere region view embedded in README.
+**Goal**: README.md fully translated to Finnish with "Kuntaimplementaatio" terminology. Screenshot of Tampereen seutu view embedded in README.
 
 **Independent Test**: Read README.md and verify all prose is in Finnish with technical terms preserved. View screenshot renders correctly.
 
@@ -82,7 +82,7 @@ Refer to `specs/006-finnish-translation/data-model.md` for the Slack translation
 
 - [x] T014 [P] [US2] Create screenshot script in scripts/screenshot.ts using Playwright: accept `--path` (hash route, default `#/city/tampere-region`), `--width` (default 750), `--height` (default 1300), and `--output` (default `site/images/screenshot.png`) as CLI parameters. Reuse E2E test infrastructure (test data generation, local server) to serve the dashboard with realistic data.
 - [x] T015 [P] [US2] Add `screenshot` npm script to package.json that runs `ts-node --esm scripts/screenshot.ts` and passes through CLI arguments
-- [x] T016 [US2] Run `npm run screenshot` to capture the Tampere region screenshot at 750x1300 and save to site/images/screenshot.png
+- [x] T016 [US2] Run `npm run screenshot` to capture the Tampereen seutu screenshot at 750x1300 and save to site/images/screenshot.png
 - [x] T017 [US2] Translate README.md to Finnish: translate all prose, headings, and descriptions. Use "Kuntaimplementaatio" for wrapper repository references and "ydin" for core. Preserve all code blocks, commands, file paths, URLs, environment variable names, and repository names in English. Embed the screenshot image with a Finnish caption.
 - [x] T018 [US2] Run `npm test && npm run lint` to verify no regressions
 

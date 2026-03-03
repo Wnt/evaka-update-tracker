@@ -5,7 +5,7 @@
 
 ## Summary
 
-Translate all user-facing text in the eVaka Deployment Tracker from English to Finnish. This is a direct in-place string replacement across the dashboard UI (~43 strings in 8 files), Slack notification messages (~6 strings + dynamic repoType mapping in 1 file), and README.md. Additionally, create a parameterized npm screenshot script using Playwright, and include a screenshot of the Tampere region view in the README. The term "Kuntaimplementaatio" replaces "wrapper" and "ydin" replaces "core" throughout. Date locales change from `en-GB` to `fi`. No i18n framework — strings are changed directly in source files.
+Translate all user-facing text in the eVaka Deployment Tracker from English to Finnish. This is a direct in-place string replacement across the dashboard UI (~43 strings in 8 files), Slack notification messages (~6 strings + dynamic repoType mapping in 1 file), and README.md. Additionally, create a parameterized npm screenshot script using Playwright, and include a screenshot of the Tampereen seutu view in the README. The term "Kuntaimplementaatio" replaces "wrapper" and "ydin" replaces "core" throughout. Date locales change from `en-GB` to `fi`. No i18n framework — strings are changed directly in source files.
 
 ## Technical Context
 
@@ -90,7 +90,7 @@ Translate all hardcoded English strings directly in each frontend JS component a
 |---------|---------|
 | Production | Tuotanto |
 | Staging | Testaus |
-| Staging / Test | Testaus / Testi |
+| Staging / Test | Staging / Testi |
 | Overview | Yleiskatsaus |
 | Deployment History | Käyttöönottohistoria |
 | wrapper / Wrapper | Kuntaimplementaatio |
@@ -104,7 +104,7 @@ Translate static strings in `src/api/slack.ts`. For dynamic `repoType` display, 
 
 ### Phase 3: README Translation
 
-Rewrite all prose content in README.md to Finnish. Preserve code blocks, commands, file paths, URLs, environment variable names, and repository names verbatim. Use "Kuntaimplementaatio" for wrapper repository references. Include a screenshot image of the Tampere region view.
+Rewrite all prose content in README.md to Finnish. Preserve code blocks, commands, file paths, URLs, environment variable names, and repository names verbatim. Use "Kuntaimplementaatio" for wrapper repository references. Include a screenshot image of the Tampereen seutu view.
 
 ### Phase 4: Screenshot Script
 

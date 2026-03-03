@@ -5,7 +5,7 @@
 
 ## Summary
 
-A GitHub Pages dashboard that tracks which PRs are deployed across 12 eVaka instances in 4 city groups (Espoo, Tampere region, Oulu, Turku). A scheduled GitHub Action (every 5 minutes) fetches deployed versions from each instance's `/api/citizen/auth/status` endpoint, resolves commit and PR metadata via the GitHub API (including submodule resolution for wrapper repos), detects version changes, sends Slack notifications, and generates static JSON data files. A zero-dependency vanilla JS frontend renders the dashboard with city tabs, PR lists (separated by wrapper/core tracks), deployment history, and deep-bookmarkable hash-based URLs.
+A GitHub Pages dashboard that tracks which PRs are deployed across 12 eVaka instances in 4 city groups (Espoo, Tampereen seutu, Oulu, Turku). A scheduled GitHub Action (every 5 minutes) fetches deployed versions from each instance's `/api/citizen/auth/status` endpoint, resolves commit and PR metadata via the GitHub API (including submodule resolution for wrapper repos), detects version changes, sends Slack notifications, and generates static JSON data files. A zero-dependency vanilla JS frontend renders the dashboard with city tabs, PR lists (separated by wrapper/core tracks), deployment history, and deep-bookmarkable hash-based URLs.
 
 ## Technical Context
 

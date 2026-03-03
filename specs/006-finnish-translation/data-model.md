@@ -46,7 +46,7 @@ This feature does not introduce new data entities. Instead, it defines a complet
 | Location | English | Finnish |
 |----------|---------|---------|
 | Env label | `Production` | `Tuotanto` |
-| Env label | `Staging / Test` | `Testaus / Testi` |
+| Env label | `Staging / Test` | `Staging / Testi` |
 | Warning | `Version mismatch detected` | `Versioero havaittu` |
 | Button | `Show dependency updates` | `Näytä riippuvuuspäivitykset` |
 | Section | `Recent Production Commits` | `Viimeisimmät tuotantocommitit` |

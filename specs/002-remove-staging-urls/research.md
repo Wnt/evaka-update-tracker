@@ -4,7 +4,7 @@
 
 **Decision**: JSON array in a single `STAGING_INSTANCES` environment variable
 
-**Rationale**: The staging instance data is inherently nested — each city group can have one or more staging environments, each with one or more instances (e.g., Tampere region has 9 test instances in one environment). JSON handles this naturally. CSV would require awkward delimiters and couldn't express the nesting without a custom parser.
+**Rationale**: The staging instance data is inherently nested — each city group can have one or more staging environments, each with one or more instances (e.g., Tampereen seutu has 9 test instances in one environment). JSON handles this naturally. CSV would require awkward delimiters and couldn't express the nesting without a custom parser.
 
 **Alternatives considered**:
 - **CSV** (`cityGroupId,envId,name,domain` per line): Cannot express the grouping of multiple instances into one environment without additional convention. Also makes the `authEnvPrefix` field awkward.

@@ -101,7 +101,7 @@
     },
     {
       "id": "tampere-region",
-      "name": "Tampere region",
+      "name": "Tampereen seutu",
       "environments": [
         {
           "id": "tampere-prod",

@@ -32,4 +32,4 @@
 ## Notes
 
 - All items passed on first validation iteration.
-- No [NEEDS CLARIFICATION] markers were needed — the feature description was clear about the routing requirements (per-city-group channels, Tampere region as one group, backward compatibility with single channel).
+- No [NEEDS CLARIFICATION] markers were needed — the feature description was clear about the routing requirements (per-city-group channels, Tampereen seutu as one group, backward compatibility with single channel).

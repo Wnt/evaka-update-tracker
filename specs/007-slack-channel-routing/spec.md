@@ -3,7 +3,7 @@
 **Feature Branch**: `007-slack-channel-routing`
 **Created**: 2026-03-03
 **Status**: Draft
-**Input**: User description: "I need the different city's instances slack notifications to go to different channels in slack. Tampere region to one combined channel and same for the remaining cities. The current webhook system only sends to one channel. Ideally configure channel destinations via environment or code, but multiple webhooks in Slack app integration is also acceptable if more streamlined."
+**Input**: User description: "I need the different city's instances slack notifications to go to different channels in slack. Tampereen seutu to one combined channel and same for the remaining cities. The current webhook system only sends to one channel. Ideally configure channel destinations via environment or code, but multiple webhooks in Slack app integration is also acceptable if more streamlined."
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -11,7 +11,7 @@
 
 As the system administrator, I want each city group's deployment notifications to be delivered to a dedicated Slack channel so that the teams responsible for each city only see the updates relevant to them instead of all cities' notifications mixed into one channel.
 
-Currently, all four city groups (Espoo, Tampere region, Oulu, Turku) send their deployment notifications to the same single Slack channel. After this feature, each city group's notifications go to the channel designated for that city group.
+Currently, all four city groups (Espoo, Tampereen seutu, Oulu, Turku) send their deployment notifications to the same single Slack channel. After this feature, each city group's notifications go to the channel designated for that city group.
 
 **Why this priority**: This is the core purpose of the feature — without per-city routing, notifications remain in a single noisy channel and teams cannot filter by relevance.
 
@@ -19,7 +19,7 @@ Currently, all four city groups (Espoo, Tampere region, Oulu, Turku) send their 
 
 **Acceptance Scenarios**:
 
-1. **Given** deployment notifications are configured with separate channel destinations for each city group, **When** a version change is detected for Tampere region, **Then** the notification is delivered only to the Tampere region's designated channel.
+1. **Given** deployment notifications are configured with separate channel destinations for each city group, **When** a version change is detected for Tampereen seutu, **Then** the notification is delivered only to the Tampereen seutu's designated channel.
 2. **Given** deployment notifications are configured with separate channel destinations for each city group, **When** a version change is detected for Espoo, **Then** the notification is delivered only to Espoo's designated channel.
 3. **Given** deployment notifications are configured with separate channel destinations for each city group, **When** version changes are detected simultaneously for multiple city groups, **Then** each notification goes to its respective city group's channel.
 
@@ -64,7 +64,7 @@ As the system administrator, I want staging environment notifications to follow 
 
 ### Functional Requirements
 
-- **FR-001**: System MUST support assigning a separate notification destination for each city group (Espoo, Tampere region, Oulu, Turku).
+- **FR-001**: System MUST support assigning a separate notification destination for each city group (Espoo, Tampereen seutu, Oulu, Turku).
 - **FR-002**: System MUST deliver deployment notifications for a city group only to that city group's designated channel destination.
 - **FR-003**: System MUST support a default notification destination that is used when a city group has no specific destination configured.
 - **FR-004**: System MUST continue to deliver notifications correctly when only a default destination is configured (no per-city routing) — backward compatibility with the current single-channel setup.
@@ -74,7 +74,7 @@ As the system administrator, I want staging environment notifications to follow 
 
 ### Key Entities
 
-- **City Group**: A tracked municipality or region (Espoo, Tampere region, Oulu, Turku). Each city group may have one or more environments (production, staging). This is the routing key for notifications.
+- **City Group**: A tracked municipality or region (Espoo, Tampereen seutu, Oulu, Turku). Each city group may have one or more environments (production, staging). This is the routing key for notifications.
 - **Notification Destination**: The target channel where a city group's deployment notifications are delivered. Each city group maps to at most one destination; a default destination serves as the fallback.
 - **Deployment Event**: A detected version change (wrapper or core) in a city group's environment. Each event triggers a notification to the city group's designated destination.
 
@@ -89,7 +89,7 @@ As the system administrator, I want staging environment notifications to follow 
 
 ## Assumptions
 
-- The Tampere region (comprising Tampere, Hämeenkyrö, Kangasala, Lempäälä, Nokia, Orivesi, Pirkkala, Vesilahti, and Ylöjärvi) is treated as a single city group for notification routing purposes — all nine municipalities share one destination.
-- The four current production city groups are: Espoo, Tampere region, Oulu, and Turku.
+- The Tampereen seutu (comprising Tampere, Hämeenkyrö, Kangasala, Lempäälä, Nokia, Orivesi, Pirkkala, Vesilahti, and Ylöjärvi) is treated as a single city group for notification routing purposes — all nine municipalities share one destination.
+- The four current production city groups are: Espoo, Tampereen seutu, Oulu, and Turku.
 - The notification message format and content remain unchanged — only the destination channel changes.
 - The system runs as an automated scheduled job; there is no interactive user interface for configuring destinations. Configuration is done via environment settings.

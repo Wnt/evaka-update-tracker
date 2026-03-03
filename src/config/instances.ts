@@ -24,7 +24,7 @@ const PRODUCTION_CITY_GROUPS: CityGroup[] = [
   },
   {
     id: 'tampere-region',
-    name: 'Tampere region',
+    name: 'Tampereen seutu',
     repositories: [
       {
         owner: 'Tampere',

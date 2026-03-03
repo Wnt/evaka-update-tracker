@@ -5,7 +5,7 @@
 
 ## Summary
 
-Route Slack deployment notifications to per-city-group channels using per-city webhook URLs configured via environment variables, with the existing `SLACK_WEBHOOK_URL` serving as the fallback default. Each city group (Espoo, Tampere region, Oulu, Turku) can have its own Slack Incoming Webhook pointing to a dedicated channel. The approach uses multiple Slack webhooks (one per channel) rather than a single bot token with channel routing, since Slack Incoming Webhooks are inherently channel-bound and this avoids adding OAuth/bot token complexity.
+Route Slack deployment notifications to per-city-group channels using per-city webhook URLs configured via environment variables, with the existing `SLACK_WEBHOOK_URL` serving as the fallback default. Each city group (Espoo, Tampereen seutu, Oulu, Turku) can have its own Slack Incoming Webhook pointing to a dedicated channel. The approach uses multiple Slack webhooks (one per channel) rather than a single bot token with channel routing, since Slack Incoming Webhooks are inherently channel-bound and this avoids adding OAuth/bot token complexity.
 
 ## Technical Context
 

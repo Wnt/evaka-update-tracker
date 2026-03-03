@@ -29,7 +29,7 @@ describe('version-resolver', () => {
   describe('resolveEnvironment', () => {
     const wrapperCityGroup: CityGroup = {
       id: 'tampere-region',
-      name: 'Tampere region',
+      name: 'Tampereen seutu',
       repositories: [
         {
           owner: 'Tampere',

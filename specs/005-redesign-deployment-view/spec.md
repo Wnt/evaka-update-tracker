@@ -9,7 +9,7 @@
 
 ### User Story 1 - View Recent Production Commits (Priority: P1)
 
-A developer opens a city page (e.g., "Tampere region") and immediately sees the most recent meaningful commits deployed to production. The page displays the last 5 non-bot commits from the core repository and the last 5 non-bot commits from the wrapper repository. Each commit is shown as a PR with its number, title, author, and merge date. This gives a quick overview of what's currently running in production.
+A developer opens a city page (e.g., "Tampereen seutu") and immediately sees the most recent meaningful commits deployed to production. The page displays the last 5 non-bot commits from the core repository and the last 5 non-bot commits from the wrapper repository. Each commit is shown as a PR with its number, title, author, and merge date. This gives a quick overview of what's currently running in production.
 
 **Why this priority**: This is the primary information users need — understanding what's currently deployed in production is the most frequent use case.
 

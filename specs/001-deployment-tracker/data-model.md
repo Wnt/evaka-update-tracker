@@ -11,7 +11,7 @@ Logical grouping of eVaka instances for display and filtering.
 | Field          | Type              | Description                                                |
 | -------------- | ----------------- | ---------------------------------------------------------- |
 | id             | string            | URL-safe identifier (e.g., "espoo", "tampere-region")      |
-| name           | string            | Display name (e.g., "Espoo", "Tampere region")             |
+| name           | string            | Display name (e.g., "Espoo", "Tampereen seutu")             |
 | repositories   | Repository[]      | Associated repos (1 for Espoo, 1 wrapper + 1 core for others) |
 | environments   | Environment[]     | Production and staging/test environments                   |
 
@@ -209,7 +209,7 @@ Instance check
 ## Relationships
 
 - CityGroup 1:N Environment
-- Environment 1:N Instance (Tampere region has multiple per env)
+- Environment 1:N Instance (Tampereen seutu has multiple per env)
 - CityGroup 1:N Repository (wrapper + core, or just core for Espoo)
 - DeploymentEvent N:1 Environment
 - DeploymentEvent N:M PullRequest (PRs included in a deployment)

@@ -9,7 +9,7 @@
 
 ### User Story 1 - View Current Deployment Status (Priority: P1)
 
-A developer opens the tracker dashboard and immediately sees the current deployment status for all monitored eVaka cities. For each city group (Espoo, Tampere region, Oulu, Turku), they can see what version is running in production and staging/test, along with the most recent human-made pull requests included in each environment. This gives the developer a clear at-a-glance understanding of where each city stands.
+A developer opens the tracker dashboard and immediately sees the current deployment status for all monitored eVaka cities. For each city group (Espoo, Tampereen seutu, Oulu, Turku), they can see what version is running in production and staging/test, along with the most recent human-made pull requests included in each environment. This gives the developer a clear at-a-glance understanding of where each city stands.
 
 **Why this priority**: This is the core value proposition of the tool. Without knowing what's currently deployed, the team cannot make informed deployment decisions.
 
@@ -17,7 +17,7 @@ A developer opens the tracker dashboard and immediately sees the current deploym
 
 **Acceptance Scenarios**:
 
-1. **Given** the tracker dashboard is loaded, **When** a developer views the page, **Then** they see all four city groups (Espoo, Tampere region, Oulu, Turku) with their production and staging/test versions displayed.
+1. **Given** the tracker dashboard is loaded, **When** a developer views the page, **Then** they see all four city groups (Espoo, Tampereen seutu, Oulu, Turku) with their production and staging/test versions displayed.
 2. **Given** a city group has both production and staging environments, **When** viewing that city's section, **Then** the developer sees the deployed version for each environment and can compare them.
 3. **Given** the deployed version is known, **When** viewing a city's section, **Then** the last 5 human-made pull requests per repository track (wrapper and core shown separately for wrapper cities) are listed with their title, author, and merge date.
 4. **Given** pull requests have been merged but not yet deployed to any environment, **When** viewing a city's section, **Then** those PRs are shown separately with their current status (e.g., "merged, not yet deployed" or "in staging, not yet in production").
@@ -34,7 +34,7 @@ A developer wants to focus on a specific city's deployment status. They use tabs
 
 **Acceptance Scenarios**:
 
-1. **Given** the dashboard is loaded, **When** a developer selects the "Tampere region" tab/filter, **Then** only Tampere region deployment data is shown.
+1. **Given** the dashboard is loaded, **When** a developer selects the "Tampereen seutu" tab/filter, **Then** only Tampereen seutu deployment data is shown.
 2. **Given** a city filter is active, **When** the developer selects a different city, **Then** the view updates to show only that city's data.
 3. **Given** no filter is selected, **When** the dashboard loads, **Then** all city groups are visible (overview mode).
 
@@ -110,7 +110,7 @@ A developer occasionally needs to see automated dependency update PRs (from Depe
 - What happens when an instance's public endpoint is unreachable or returns an error? The tracker should display "unavailable" status for that instance and continue monitoring other instances normally.
 - What happens when the Oulu staging instance requires HTTP basic authentication and the credentials are invalid or expired? The tracker should indicate an authentication failure for that specific instance.
 - What happens when a wrapper repository's submodule reference cannot be resolved? The tracker should display the wrapper version but flag that the core eVaka version could not be determined.
-- What happens when a city group (e.g., Tampere region) has instances on different versions (rare but possible)? The tracker should display the version mismatch and highlight the discrepancy.
+- What happens when a city group (e.g., Tampereen seutu) has instances on different versions (rare but possible)? The tracker should display the version mismatch and highlight the discrepancy.
 - What happens when there are no human-made PRs to display (e.g., only dependency updates have been merged recently)? The tracker should show an appropriate empty state message.
 - What happens when the GitHub API rate limit is reached? The tracker should use cached data and indicate that the data may be stale, along with when the next refresh will be available.
 - What happens when the data refreshes while a user is viewing the page? The static page should reflect the latest data upon page load or manual refresh.
@@ -125,8 +125,8 @@ A developer occasionally needs to see automated dependency update PRs (from Depe
 - **FR-004**: System MUST display pull requests that have been merged to the main branch but are not yet deployed to any environment, showing their current deployment status.
 - **FR-005**: System MUST filter out Dependabot and Renovate automated dependency update PRs from the default listing.
 - **FR-006**: System MUST provide a toggle or filter to optionally include automated dependency update PRs in the listing.
-- **FR-007**: System MUST provide filtering or tabs to view deployment data per city group (Espoo, Tampere region, Oulu, Turku).
-- **FR-008**: System MUST group all Tampere region instances (Tampere, Hameenkyro, Kangasala, Lempaala, Nokia, Orivesi, Pirkkala, Vesilahti, Ylojarvi) as a single city group since they share the same wrapper repository and are typically updated together.
+- **FR-007**: System MUST provide filtering or tabs to view deployment data per city group (Espoo, Tampereen seutu, Oulu, Turku).
+- **FR-008**: System MUST group all Tampereen seutu instances (Tampere, Hameenkyro, Kangasala, Lempaala, Nokia, Orivesi, Pirkkala, Vesilahti, Ylojarvi) as a single city group since they share the same wrapper repository and are typically updated together.
 - **FR-009**: System MUST send a Slack notification when a version change is detected in any monitored environment, including the city name, environment type, and a summary of changes.
 - **FR-010**: System MUST support authenticated access for instances that require HTTP basic authentication (e.g., Oulu staging).
 - **FR-011**: System MUST track PRs from both wrapper repositories and the core eVaka repository, clearly indicating which repository each PR belongs to.
@@ -138,7 +138,7 @@ A developer occasionally needs to see automated dependency update PRs (from Depe
 
 ### Key Entities
 
-- **City Group**: A logical grouping of eVaka instances for a city or region (Espoo, Tampere region, Oulu, Turku). Each has a name, associated repositories, and one or more environments.
+- **City Group**: A logical grouping of eVaka instances for a city or region (Espoo, Tampereen seutu, Oulu, Turku). Each has a name, associated repositories, and one or more environments.
 - **Environment**: A deployment target within a city group (production or staging/test). Each has a URL, environment type, and optionally authentication requirements.
 - **Instance**: A specific running eVaka deployment at a URL. Has a currently deployed version, last checked timestamp, and availability status.
 - **Pull Request**: A code change merged into a repository. Has a title, author, merge date, repository source (wrapper or core), type (human-made or automated dependency update), and deployment status across environments.
@@ -152,7 +152,7 @@ A developer occasionally needs to see automated dependency update PRs (from Depe
 - **Production**: espoonvarhaiskasvatus.fi
 - **Staging**: configured via `STAGING_INSTANCES` environment variable
 
-### Tampere Region (grouped)
+### Tampereen seutu (grouped)
 - **Repository**: Tampere/trevaka (wrapper), core eVaka as submodule 'evaka'
 - **Production**: varhaiskasvatus.tampere.fi + 8 region municipalities
 - **Test**: configured via `STAGING_INSTANCES` environment variable
@@ -172,7 +172,7 @@ A developer occasionally needs to see automated dependency update PRs (from Depe
 - Each instance exposes a `/api/citizen/auth/status` endpoint that returns a JSON response with an `apiVersion` field containing the deployed **git commit SHA** (e.g., `{ "apiVersion": "a1b2c3d..." }`). This commit SHA is used to correlate deployed versions with repository commits.
 - All monitored repositories (espoon-voltti/evaka, Tampere/trevaka, Oulunkaupunki/evakaoulu, City-of-Turku/evakaturku) are public GitHub repositories accessible via the GitHub API.
 - For wrapper repositories, the core eVaka version is resolved by reading the git submodule named `evaka` at the deployed commit SHA.
-- All 12 instances (including each Tampere region municipality) are checked individually to detect rare version mismatches. Results are grouped by city for display, with mismatches flagged when detected.
+- All 12 instances (including each Tampereen seutu municipality) are checked individually to detect rare version mismatches. Results are grouped by city for display, with mismatches flagged when detected.
 - Automated dependency update PRs are identified by commit message patterns (e.g., "Update dependency...", "Bump evaka from...") as well as by PR author (Dependabot, Renovate bot accounts).
 - PR titles for merge commits are resolved by extracting the PR number from the merge commit message pattern (`Merge pull request #NNN from ...`) and looking up the PR title via the GitHub API.
 

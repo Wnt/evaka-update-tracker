@@ -342,7 +342,7 @@ main {
 }
 .city-detail .nav-link:hover { text-decoration: underline; }
 
-/* Instance list (Tampere region) */
+/* Instance list (Tampereen seutu) */
 .instance-list {
   display: flex;
   flex-wrap: wrap;

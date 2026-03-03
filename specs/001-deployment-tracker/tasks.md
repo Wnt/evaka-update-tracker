@@ -33,7 +33,7 @@
 **CRITICAL**: No user story work can begin until this phase is complete
 
 - [x] T007 Define all TypeScript interfaces and types in src/types.ts — CityGroup, Repository, Environment, Instance, BasicAuth, VersionSnapshot, CommitInfo, PullRequest, DeploymentStatus, DeploymentEvent, CurrentData, HistoryData, PreviousData (per data-model.md entity definitions and contracts/data-files.md schemas)
-- [x] T008 [P] Create instance configuration in src/config/instances.ts — define all 4 city groups (Espoo, Tampere region, Oulu, Turku), their repositories (core vs wrapper with submodulePath), and all 12 instances with domains and auth requirements (per spec.md Monitored Instances section)
+- [x] T008 [P] Create instance configuration in src/config/instances.ts — define all 4 city groups (Espoo, Tampereen seutu, Oulu, Turku), their repositories (core vs wrapper with submodulePath), and all 12 instances with domains and auth requirements (per spec.md Monitored Instances section)
 - [x] T009 [P] Implement retry utility with exponential backoff in src/utils/retry.ts — configurable max retries, base delay, used by all API clients
 - [x] T010 [P] Implement PR classifier in src/utils/pr-classifier.ts — detect bot PRs by commit message patterns ("Update dependency", "Bump evaka from") and author names (dependabot, renovate) per spec.md confirmed technical details
 - [x] T011 Implement GitHub API client in src/api/github.ts — functions: getCommit(owner, repo, sha), getSubmoduleRef(owner, repo, path, ref) per research R7, compareShas(owner, repo, base, head) per research R1, getPullRequest(owner, repo, number), extractPRNumberFromCommitMessage(message) — use axios with GH_TOKEN auth header, ETag caching per research R2
@@ -90,8 +90,8 @@
 
 ### Implementation for User Story 2
 
-- [x] T031 [P] [US2] Create city tabs navigation component in site/js/components/city-tabs.js — render tab for each city group (Espoo, Tampere region, Oulu, Turku) plus "Overview" tab; highlight active tab based on current route; navigate to `#/city/{id}` on click; navigate to `#/` for overview
-- [x] T032 [US2] Create city detail view component in site/js/components/city-detail.js — render single city group: environment versions (via status-badge), wrapper PR track and core PR track shown separately (via pr-list), instance list for Tampere region (show all municipalities), version mismatch details if detected
+- [x] T031 [P] [US2] Create city tabs navigation component in site/js/components/city-tabs.js — render tab for each city group (Espoo, Tampereen seutu, Oulu, Turku) plus "Overview" tab; highlight active tab based on current route; navigate to `#/city/{id}` on click; navigate to `#/` for overview
+- [x] T032 [US2] Create city detail view component in site/js/components/city-detail.js — render single city group: environment versions (via status-badge), wrapper PR track and core PR track shown separately (via pr-list), instance list for Tampereen seutu (show all municipalities), version mismatch details if detected
 - [x] T033 [US2] Integrate city tabs and detail view with router in site/js/app.js — add route handler for `#/city/{id}`, render city-tabs in nav area on all views, render city-detail when city route is active, preserve tab state during navigation
 
 **Checkpoint**: City filtering works. Tabs navigate between overview and individual city views with correct URLs.
@@ -168,7 +168,7 @@
 **Purpose**: CI/CD pipeline, edge case handling, and final validation
 
 - [x] T047 Create GitHub Actions workflow in .github/workflows/monitor.yml — schedule: `cron: '*/5 * * * *'`, workflow_dispatch for manual trigger; jobs: checkout, setup Node 20, install deps, run `npx ts-node src/index.ts`, commit data/ changes (if any), deploy to GitHub Pages via actions/upload-pages-artifact@v3 + actions/deploy-pages@v4; permissions: contents write, pages write, id-token write; secrets: GH_TOKEN, SLACK_WEBHOOK_URL, OULU_STAGING_USER, OULU_STAGING_PASS
-- [x] T048 [P] Add edge case handling across codebase — unreachable instance → "unavailable" status badge + continue monitoring others; auth failure → "auth-error" for that instance; submodule resolution failure → show wrapper version + flag core as unknown; version mismatch within Tampere region → highlight discrepancy in city detail; empty PR list → appropriate empty state message; GitHub rate limit → use cached data + stale indicator with next refresh time
+- [x] T048 [P] Add edge case handling across codebase — unreachable instance → "unavailable" status badge + continue monitoring others; auth failure → "auth-error" for that instance; submodule resolution failure → show wrapper version + flag core as unknown; version mismatch within Tampereen seutu → highlight discrepancy in city detail; empty PR list → appropriate empty state message; GitHub rate limit → use cached data + stale indicator with next refresh time
 - [x] T049 [P] Create test fixtures in tests/fixtures/ — sample API responses: GitHub compare response, GitHub PR response, GitHub submodule contents response, instance /api/citizen/auth/status response, Slack webhook response; sample data files: current.json, history.json, previous.json with realistic data for all 4 city groups
 - [x] T050 Run full validation per quickstart.md — verify: `npm install` succeeds, `DRY_RUN=true npx ts-node src/index.ts` runs without errors, `npx serve site` serves dashboard, `npm test` passes all tests, `npm run lint` passes
 

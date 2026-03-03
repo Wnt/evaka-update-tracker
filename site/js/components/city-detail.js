@@ -63,12 +63,12 @@ function getRecentProductionPRs(events, city) {
 export function renderCityDetail(city, { showBots = false } = {}, historyEvents = []) {
   // Environment status badges
   const envSections = city.environments.map((env) => {
-    const label = env.type === 'production' ? 'Tuotanto' : 'Testaus / Testi';
+    const label = env.type === 'production' ? 'Tuotanto' : 'Staging / Testi';
     const commitSha = env.version?.coreCommit?.sha || env.version?.wrapperCommit?.sha;
     const detectedAt = findDetectedAt(historyEvents, env.id, commitSha);
     const badge = renderStatusBadge(env.version, { detectedAt });
 
-    // Instance list for multi-instance environments (Tampere region)
+    // Instance list for multi-instance environments (Tampereen seutu)
     let instanceList = '';
     if (env.versionMismatch && env.mismatchDetails && env.mismatchDetails.length > 0) {
       const chips = env.mismatchDetails.map((v) => {

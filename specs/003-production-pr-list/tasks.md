@@ -69,7 +69,7 @@
 
 ### E2E Tests for User Story 2
 
-- [x] T011 [US2] Create E2E test file `tests/e2e/overview.spec.ts` with the following test cases: (1) Navigate to overview page (`#/`), verify all 4 city cards are rendered (Espoo, Tampere region, Oulu, Turku). (2) For each city card, assert "Core — In Production" header is visible and production PR items are listed. (3) For Tampere card, also assert "Wrapper — In Production" header and wrapper PRs. (4) Click on a city card (e.g., Espoo), verify navigation to city detail page (`#/city/espoo`). (5) Verify empty state: if a city has no production PRs, the section handles it gracefully (no crash, shows "No recent PRs" or is hidden).
+- [x] T011 [US2] Create E2E test file `tests/e2e/overview.spec.ts` with the following test cases: (1) Navigate to overview page (`#/`), verify all 4 city cards are rendered (Espoo, Tampereen seutu, Oulu, Turku). (2) For each city card, assert "Core — In Production" header is visible and production PR items are listed. (3) For Tampere card, also assert "Wrapper — In Production" header and wrapper PRs. (4) Click on a city card (e.g., Espoo), verify navigation to city detail page (`#/city/espoo`). (5) Verify empty state: if a city has no production PRs, the section handles it gracefully (no crash, shows "No recent PRs" or is hidden).
 
 ### Implementation for User Story 2
 

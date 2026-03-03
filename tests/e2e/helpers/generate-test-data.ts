@@ -54,7 +54,7 @@ function setupStatusMocks() {
     .get('/api/citizen/auth/status')
     .reply(200, statusResponse(ESPOO_STAGING_SHA));
 
-  // Tampere region production (9 instances, all return same SHA)
+  // Tampereen seutu production (9 instances, all return same SHA)
   const tampereInstances = [
     'varhaiskasvatus.tampere.fi',
     'evaka.hameenkyro.fi',
