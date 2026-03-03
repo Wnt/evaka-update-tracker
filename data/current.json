@@ -53,7 +53,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8632"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8632",
+              "labels": [
+                "bug"
+              ]
             },
             {
               "number": 8630,
@@ -63,7 +66,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8630"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8630",
+              "labels": [
+                "tech"
+              ]
             },
             {
               "number": 8629,
@@ -73,7 +79,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8629"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8629",
+              "labels": [
+                "dependencies"
+              ]
             },
             {
               "number": 8594,
@@ -83,7 +92,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8594"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8594",
+              "labels": [
+                "tech"
+              ]
             },
             {
               "number": 8602,
@@ -93,7 +105,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8602"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8602",
+              "labels": [
+                "enhancement"
+              ]
             }
           ]
         }
@@ -167,7 +182,8 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2023"
+              "url": "https://github.com/Tampere/trevaka/pull/2023",
+              "labels": []
             }
           ],
           "pendingDeployment": [
@@ -179,7 +195,8 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2034"
+              "url": "https://github.com/Tampere/trevaka/pull/2034",
+              "labels": []
             },
             {
               "number": 2032,
@@ -189,7 +206,8 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2032"
+              "url": "https://github.com/Tampere/trevaka/pull/2032",
+              "labels": []
             },
             {
               "number": 2031,
@@ -199,7 +217,8 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2031"
+              "url": "https://github.com/Tampere/trevaka/pull/2031",
+              "labels": []
             }
           ]
         },
@@ -215,7 +234,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8629"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8629",
+              "labels": [
+                "dependencies"
+              ]
             },
             {
               "number": 8594,
@@ -225,7 +247,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8594"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8594",
+              "labels": [
+                "tech"
+              ]
             },
             {
               "number": 8602,
@@ -235,7 +260,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8602"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8602",
+              "labels": [
+                "enhancement"
+              ]
             },
             {
               "number": 8601,
@@ -245,7 +273,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8601"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8601",
+              "labels": [
+                "bug"
+              ]
             },
             {
               "number": 8599,
@@ -255,7 +286,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8599"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8599",
+              "labels": [
+                "enhancement"
+              ]
             }
           ],
           "pendingDeployment": [
@@ -267,7 +301,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8632"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8632",
+              "labels": [
+                "bug"
+              ]
             },
             {
               "number": 8630,
@@ -277,7 +314,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8630"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8630",
+              "labels": [
+                "tech"
+              ]
             }
           ]
         }
@@ -358,7 +398,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8632"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8632",
+              "labels": [
+                "bug"
+              ]
             },
             {
               "number": 8630,
@@ -368,7 +411,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8630"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8630",
+              "labels": [
+                "tech"
+              ]
             }
           ]
         }
@@ -448,7 +494,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8629"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8629",
+              "labels": [
+                "dependencies"
+              ]
             },
             {
               "number": 8594,
@@ -458,7 +507,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8594"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8594",
+              "labels": [
+                "tech"
+              ]
             },
             {
               "number": 8602,
@@ -468,7 +520,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8602"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8602",
+              "labels": [
+                "enhancement"
+              ]
             }
           ],
           "pendingDeployment": [
@@ -480,7 +535,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8632"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8632",
+              "labels": [
+                "bug"
+              ]
             },
             {
               "number": 8630,
@@ -490,7 +548,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8630"
+              "url": "https://github.com/espoon-voltti/evaka/pull/8630",
+              "labels": [
+                "tech"
+              ]
             }
           ]
         }

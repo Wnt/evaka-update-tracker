@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/ tests/",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
-    "screenshot": "npx tsx scripts/screenshot.ts"
+    "screenshot": "npx tsx scripts/screenshot.ts",
+    "backfill-labels": "npx tsx scripts/backfill-labels.ts"
   },
   "engines": {
     "node": ">=20.0.0"

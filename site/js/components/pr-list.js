@@ -3,6 +3,22 @@
  * Filters out bot PRs by default (showBots=false).
  */
 
+const LABEL_MAP = {
+  bug: { text: 'Korjaus', cssClass: 'label-bug' },
+  enhancement: { text: 'Parannus', cssClass: 'label-enhancement' },
+  tech: { text: 'Tekninen', cssClass: 'label-tech' },
+  breaking: { text: 'Päivitystoimia', cssClass: 'label-breaking' },
+};
+
+function renderLabelBadges(labels) {
+  if (!labels || labels.length === 0) return '';
+  return labels
+    .map((name) => LABEL_MAP[name])
+    .filter(Boolean)
+    .map((l) => `<span class="pr-label ${l.cssClass}">${l.text}</span>`)
+    .join('');
+}
+
 export function renderPRList(prs, { showBots = false, showStatus = false, showRepoLabel = false, limit = 0 } = {}) {
   if (!prs || prs.length === 0) {
     return '<div class="empty-state">Ei viimeaikaisia PR:iä</div>';
@@ -30,6 +46,7 @@ export function renderPRList(prs, { showBots = false, showStatus = false, showRe
       <li class="pr-item${botClass}">
         <a class="pr-number" href="${pr.url}" target="_blank" rel="noopener">#${pr.number}</a>
         ${repoLabel}
+        <span class="pr-labels-col">${renderLabelBadges(pr.labels)}</span>
         <span class="pr-title">${escapeHtml(pr.title)}</span>
         ${botLabel}
         ${statusBadge}

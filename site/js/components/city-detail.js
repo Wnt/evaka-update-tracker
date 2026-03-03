@@ -60,13 +60,50 @@ function getRecentProductionPRs(events, city) {
   return result;
 }
 
+/**
+ * Find the title of the latest non-bot PR for a given environment type.
+ */
+function findLatestNonBotPRFromEvents(historyEvents, city, envType) {
+  const envIds = city.environments
+    .filter((e) => e.type === envType)
+    .map((e) => e.id);
+  const events = historyEvents
+    .filter((e) => e.cityGroupId === city.id && envIds.includes(e.environmentId))
+    .sort((a, b) => new Date(b.detectedAt) - new Date(a.detectedAt));
+  // Prefer core PRs
+  for (const event of events) {
+    const corePR = (event.includedPRs || []).find((pr) => !pr.isBot && pr.repoType === 'core');
+    if (corePR) return corePR.title;
+  }
+  for (const event of events) {
+    const anyPR = (event.includedPRs || []).find((pr) => !pr.isBot);
+    if (anyPR) return anyPR.title;
+  }
+  return null;
+}
+
+function findLatestPRTitle(city, envType, historyEvents) {
+  if (envType === 'production') {
+    const { core, wrapper } = getRecentProductionPRs(historyEvents, city);
+    const firstCore = core.find((pr) => !pr.isBot);
+    const firstWrapper = wrapper.find((pr) => !pr.isBot);
+    return (firstCore || firstWrapper)?.title || null;
+  }
+  // Staging: try inStaging track data first, fall back to history events
+  const coreInStaging = (city.prTracks?.core?.inStaging || []).find((pr) => !pr.isBot);
+  const wrapperInStaging = (city.prTracks?.wrapper?.inStaging || []).find((pr) => !pr.isBot);
+  return (coreInStaging || wrapperInStaging)?.title
+    || findLatestNonBotPRFromEvents(historyEvents, city, 'staging');
+}
+
 export function renderCityDetail(city, { showBots = false } = {}, historyEvents = []) {
   // Environment status badges
   const envSections = city.environments.map((env) => {
     const label = env.type === 'production' ? 'Tuotanto' : 'Staging / Testi';
     const commitSha = env.version?.coreCommit?.sha || env.version?.wrapperCommit?.sha;
     const detectedAt = findDetectedAt(historyEvents, env.id, commitSha);
-    const badge = renderStatusBadge(env.version, { detectedAt });
+    const latestPRTitle = findLatestPRTitle(city, env.type, historyEvents);
+    const badge = renderStatusBadge(env.version, { detectedAt, latestPRTitle });
 
     // Instance list for multi-instance environments (Tampereen seutu)
     let instanceList = '';
@@ -109,9 +146,11 @@ export function renderCityDetail(city, { showBots = false } = {}, historyEvents 
   if (wrapperProdList || coreProdList) {
     productionSection = `
       <div class="production-section">
-        <h4>Viimeisimmät muutokset tuotantoympäristössä</h4>
-        ${wrapperProdList}
-        ${coreProdList}
+        <details>
+          <summary>Viimeisimmät muutokset tuotantoympäristössä</summary>
+          ${wrapperProdList}
+          ${coreProdList}
+        </details>
       </div>
     `;
   }
@@ -124,8 +163,10 @@ export function renderCityDetail(city, { showBots = false } = {}, historyEvents 
   if (mergedStaging.length > 0) {
     stagingSection = `
       <div class="staging-section">
-        <h4>Muutokset testauksessa</h4>
-        ${renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })}
+        <details open>
+          <summary>Muutokset testauksessa</summary>
+          ${renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })}
+        </details>
       </div>
     `;
   }
@@ -138,8 +179,10 @@ export function renderCityDetail(city, { showBots = false } = {}, historyEvents 
   if (mergedPending.length > 0) {
     pendingSection = `
       <div class="pending-section">
-        <h4>Odottaa julkaisua</h4>
-        ${renderPRList(mergedPending, { showBots: true, showRepoLabel: true })}
+        <details open>
+          <summary>Odottaa julkaisua</summary>
+          ${renderPRList(mergedPending, { showBots: true, showRepoLabel: true })}
+        </details>
       </div>
     `;
   }

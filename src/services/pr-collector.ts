@@ -43,6 +43,7 @@ async function extractPRsFromCommits(
         repoType: repo.type,
         isBot: isBotPR(ghPR.user.login, ghPR.title),
         url: ghPR.html_url,
+        labels: (ghPR.labels || []).map((l) => l.name),
       });
     } catch {
       // Skip PRs that can't be fetched

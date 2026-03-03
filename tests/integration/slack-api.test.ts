@@ -64,6 +64,7 @@ const mockEvent: DeploymentEvent = {
       repoType: 'core',
       isBot: false,
       url: 'https://github.com/espoon-voltti/evaka/pull/123',
+      labels: [],
     },
   ],
   repoType: 'core',

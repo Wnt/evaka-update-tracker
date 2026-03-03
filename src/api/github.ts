@@ -110,6 +110,7 @@ interface GitHubPR {
   user: { login: string };
   merged_at: string | null;
   html_url: string;
+  labels: Array<{ name: string }>;
 }
 
 export async function getPullRequest(

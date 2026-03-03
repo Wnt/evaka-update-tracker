@@ -16,6 +16,7 @@ Auto-generated from all feature plans. Last updated: 2026-03-02
 - TypeScript 5.x on Node.js 20+ + axios (HTTP), dotenv (env loading), nock (test HTTP mocking) (007-slack-channel-routing)
 - JSON files (`data/current.json`, `data/history.json`, `data/previous.json`) — no changes needed (007-slack-channel-routing)
 - GitHub Actions YAML; TypeScript 5.x on Node.js 20 (existing) + GitHub Actions (`actions/checkout@v4`, `actions/setup-node@v4`); Playwright (existing dev dependency) (008-ci-cd-pipeline)
+- TypeScript 5.x on Node.js 20+ (data pipeline & scripts); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test mocking), Playwright (E2E) (009-streamline-city-view)
 
 - TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend) + axios (HTTP client), @octokit/rest or direct fetch (GitHub API) — minimal dependency se (001-deployment-tracker)
 
@@ -36,9 +37,9 @@ npm test && npm run lint
 TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend): Follow standard conventions
 
 ## Recent Changes
+- 009-streamline-city-view: Added TypeScript 5.x on Node.js 20+ (data pipeline & scripts); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test mocking), Playwright (E2E)
 - 008-ci-cd-pipeline: Added GitHub Actions YAML; TypeScript 5.x on Node.js 20 (existing) + GitHub Actions (`actions/checkout@v4`, `actions/setup-node@v4`); Playwright (existing dev dependency)
 - 007-slack-channel-routing: Added TypeScript 5.x on Node.js 20+ + axios (HTTP), dotenv (env loading), nock (test HTTP mocking)
-- 006-finnish-translation: Added Vanilla JavaScript ES modules (frontend); TypeScript 5.x on Node.js 20+ (backend/scripts) + Playwright (existing dev dependency, for screenshot script)
 
 
 <!-- MANUAL ADDITIONS START -->
