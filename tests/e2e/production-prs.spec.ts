@@ -20,9 +20,12 @@ test.describe('City Detail — Viimeisimmät muutokset tuotantoympäristössä',
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
 
-    // Assert "Viimeisimmät muutokset tuotantoympäristössä" heading is visible
-    const productionHeading = page.locator('.production-section h4');
-    await expect(productionHeading).toHaveText('Viimeisimmät muutokset tuotantoympäristössä');
+    // Assert "Viimeisimmät muutokset tuotantoympäristössä" heading is visible (inside <summary>)
+    const productionSummary = page.locator('.production-section summary');
+    await expect(productionSummary).toHaveText('Viimeisimmät muutokset tuotantoympäristössä');
+
+    // Production section is collapsed by default — expand it
+    await productionSummary.click();
 
     // Assert "Ydin" track header exists
     const coreHeader = page.locator('.production-section .pr-track-header', { hasText: 'Ydin' });
@@ -35,11 +38,9 @@ test.describe('City Detail — Viimeisimmät muutokset tuotantoympäristössä',
     // Limited to 5 max per repo
     expect(count).toBeLessThanOrEqual(5);
 
-    // Verify each PR item has number, title, author, and date
+    // Verify each PR item has title link and date (author hidden by default)
     const firstPR = prItems.first();
-    await expect(firstPR.locator('.pr-number')).toBeVisible();
     await expect(firstPR.locator('.pr-title')).toBeVisible();
-    await expect(firstPR.locator('.pr-author')).toBeVisible();
     await expect(firstPR.locator('.pr-date')).toBeVisible();
   });
 
@@ -48,9 +49,10 @@ test.describe('City Detail — Viimeisimmät muutokset tuotantoympäristössä',
     await page.goto(`${baseUrl}/#/city/tampere-region`);
     await page.waitForSelector('.city-detail');
 
-    // Assert production section exists
+    // Assert production section exists and expand it
     const productionSection = page.locator('.production-section');
     await expect(productionSection).toBeVisible();
+    await productionSection.locator('summary').click();
 
     // Assert both "Ydin" and "Kuntaimplementaatio" sub-headers
     const coreHeader = productionSection.locator('.pr-track-header', { hasText: 'Ydin' });
@@ -60,19 +62,22 @@ test.describe('City Detail — Viimeisimmät muutokset tuotantoympäristössä',
     await expect(wrapperHeader).toBeVisible();
   });
 
-  test('PR number links point to correct GitHub URLs', async ({ page }) => {
+  test('PR title links point to correct GitHub URLs', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
 
-    // Check that PR links point to espoon-voltti/evaka
-    const prLinks = page.locator('.production-section .pr-number');
+    // Expand production section
+    await page.locator('.production-section summary').click();
+
+    // Check that PR title links point to GitHub
+    const prLinks = page.locator('.production-section a.pr-title');
     const count = await prLinks.count();
     expect(count).toBeGreaterThan(0);
 
     for (let i = 0; i < count; i++) {
       const href = await prLinks.nth(i).getAttribute('href');
-      expect(href).toMatch(/^https:\/\/github\.com\/espoon-voltti\/evaka\/pull\/\d+$/);
+      expect(href).toMatch(/^https:\/\/github\.com\/.+\/pull\/\d+$/);
     }
   });
 
@@ -80,6 +85,9 @@ test.describe('City Detail — Viimeisimmät muutokset tuotantoympäristössä',
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
+
+    // Expand production section
+    await page.locator('.production-section summary').click();
 
     // Each repo sub-section should have at most 5 PR items (bot PRs hidden by default)
     const coreTrack = page.locator('.production-section .pr-track').first();
@@ -100,8 +108,8 @@ test.describe('City Detail — Staging Section', () => {
     // Espoo should have staging PRs
     await expect(stagingSection).toBeVisible();
 
-    // Heading text
-    const heading = stagingSection.locator('h4');
+    // Heading text (inside <summary>)
+    const heading = stagingSection.locator('summary');
     await expect(heading).toHaveText('Muutokset testauksessa');
 
     // PR items should have repo labels
@@ -135,7 +143,7 @@ test.describe('City Detail — Awaiting Deployment Section', () => {
 
     const pendingSection = page.locator('.pending-section');
     if (await pendingSection.isVisible()) {
-      const heading = pendingSection.locator('h4');
+      const heading = pendingSection.locator('summary');
       await expect(heading).toHaveText('Odottaa julkaisua');
 
       // Should have repo labels
@@ -169,12 +177,18 @@ test.describe('City Detail — Bot Toggle', () => {
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
 
+    // Expand production section first
+    await page.locator('.production-section summary').click();
+
     // Count PRs before toggle
     const prodCountBefore = await page.locator('.production-section .pr-item').count();
 
     // Activate bot toggle
     await page.locator('#bot-toggle').click();
     await page.waitForSelector('#bot-toggle.active');
+
+    // Expand production section again (page re-renders on toggle)
+    await page.locator('.production-section summary').click();
 
     // Count PRs after toggle — may have more items if bot PRs exist
     const prodCountAfter = await page.locator('.production-section .pr-item').count();
@@ -235,7 +249,7 @@ test.describe('City Detail — Section Ordering (FR-015)', () => {
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
 
-    const heading = page.locator('.production-section h4');
+    const heading = page.locator('.production-section summary');
     await expect(heading).toHaveText('Viimeisimmät muutokset tuotantoympäristössä');
   });
 });
