@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-03T08:37:52.333Z",
+  "generatedAt": "2026-03-03T10:42:27.853Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-03T08:36:28.809Z",
+            "checkedAt": "2026-03-03T10:40:57.184Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,16 +29,10 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-03T08:36:29.367Z",
-            "status": "ok",
+            "checkedAt": "2026-03-03T10:40:58.178Z",
+            "status": "auth-error",
             "wrapperCommit": null,
-            "coreCommit": {
-              "sha": "5ff94c8cd104a2c4bd164c9f64f3c4455ac39370",
-              "shortSha": "5ff94c8",
-              "message": "Merge pull request #8629 from espoon-voltti/fix-minimatch-vulnerability",
-              "date": "2026-03-02T13:41:42Z",
-              "author": "terolaakso-reaktor"
-            }
+            "coreCommit": null
           },
           "versionMismatch": false,
           "mismatchDetails": []
@@ -49,7 +43,18 @@
         "core": {
           "repository": "espoon-voltti/evaka",
           "deployed": [],
-          "inStaging": [
+          "inStaging": [],
+          "pendingDeployment": [
+            {
+              "number": 8630,
+              "title": "Tekninen: Poista käyttämätön @types/webpack-riippuvuus",
+              "author": "terolaakso-reaktor",
+              "mergedAt": "2026-03-03T06:47:56Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8630"
+            },
             {
               "number": 8629,
               "title": "Tekninen: minimatch-kirjaston haavoittuvuuspäivitys",
@@ -80,18 +85,6 @@
               "isBot": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8602"
             }
-          ],
-          "pendingDeployment": [
-            {
-              "number": 8630,
-              "title": "Tekninen: Poista käyttämätön @types/webpack-riippuvuus",
-              "author": "terolaakso-reaktor",
-              "mergedAt": "2026-03-03T06:47:56Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8630"
-            }
           ]
         }
       }
@@ -105,7 +98,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-03T08:36:34.378Z",
+            "checkedAt": "2026-03-03T10:41:08.924Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
@@ -130,7 +123,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-03T08:36:42.831Z",
+            "checkedAt": "2026-03-03T10:41:21.270Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "81af22d7eefc454b3479a7bcd9aba8552fabb954",
@@ -168,6 +161,16 @@
             }
           ],
           "pendingDeployment": [
+            {
+              "number": 2034,
+              "title": "Ramp up Pirkkala archival daily limit to 1000",
+              "author": "ohinkinen",
+              "mergedAt": "2026-03-03T08:53:57Z",
+              "repository": "Tampere/trevaka",
+              "repoType": "wrapper",
+              "isBot": false,
+              "url": "https://github.com/Tampere/trevaka/pull/2034"
+            },
             {
               "number": 2032,
               "title": "Ramp up Kangasala archival daily limit to 100",
@@ -269,7 +272,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-03T08:37:26.204Z",
+            "checkedAt": "2026-03-03T10:42:01.877Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3debd92969dc34c8475f0f7065c0498751f2a2d9",
@@ -294,7 +297,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-03T08:37:27.324Z",
+            "checkedAt": "2026-03-03T10:42:03.442Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7c491d106e5425c94061ac81c79f55e9d14cdf75",
@@ -381,7 +384,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-03T08:37:39.215Z",
+            "checkedAt": "2026-03-03T10:42:14.811Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "0f30d2917bdf553d4f30aaeb1b0ce6168e1c385a",
@@ -406,7 +409,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-03T08:37:40.271Z",
+            "checkedAt": "2026-03-03T10:42:16.325Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "4acb427527b3425ea287ff03649b4f64bf6018e1",
