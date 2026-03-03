@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-03T10:50:35.290Z",
+  "generatedAt": "2026-03-03T11:03:14.068Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-03T10:49:32.673Z",
+            "checkedAt": "2026-03-03T11:01:57.791Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-03T10:49:33.268Z",
+            "checkedAt": "2026-03-03T11:01:58.592Z",
             "status": "auth-error",
             "wrapperCommit": null,
             "coreCommit": null
@@ -98,7 +98,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-03T10:49:42.567Z",
+            "checkedAt": "2026-03-03T11:02:08.413Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
@@ -123,7 +123,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-03T10:49:49.482Z",
+            "checkedAt": "2026-03-03T11:02:17.364Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "81af22d7eefc454b3479a7bcd9aba8552fabb954",
@@ -272,21 +272,21 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-03T10:50:18.047Z",
+            "checkedAt": "2026-03-03T11:02:48.484Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "3debd92969dc34c8475f0f7065c0498751f2a2d9",
-              "shortSha": "3debd92",
-              "message": "ifx build",
-              "date": "2026-03-02T07:29:10Z",
-              "author": "tomuli"
+              "sha": "7c491d106e5425c94061ac81c79f55e9d14cdf75",
+              "shortSha": "7c491d1",
+              "message": "Merge pull request #290 from Oulunkaupunki/dependabot/submodules/evaka-5ff94c8",
+              "date": "2026-03-03T02:15:10Z",
+              "author": "github-actions[bot]"
             },
             "coreCommit": {
-              "sha": "745a747b08dc63d584ba841c04198dd597530721",
-              "shortSha": "745a747",
-              "message": "Update dependency uv to v0.10.5 (#8625)",
-              "date": "2026-03-01T08:10:16Z",
-              "author": "renovate[bot]"
+              "sha": "5ff94c8cd104a2c4bd164c9f64f3c4455ac39370",
+              "shortSha": "5ff94c8",
+              "message": "Merge pull request #8629 from espoon-voltti/fix-minimatch-vulnerability",
+              "date": "2026-03-02T13:41:42Z",
+              "author": "terolaakso-reaktor"
             }
           },
           "versionMismatch": false,
@@ -297,7 +297,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-03T10:50:18.798Z",
+            "checkedAt": "2026-03-03T11:02:55.999Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7c491d106e5425c94061ac81c79f55e9d14cdf75",
@@ -327,8 +327,7 @@
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 8629,
               "title": "Tekninen: minimatch-kirjaston haavoittuvuuspäivitys",
@@ -360,6 +359,7 @@
               "url": "https://github.com/espoon-voltti/evaka/pull/8602"
             }
           ],
+          "inStaging": [],
           "pendingDeployment": [
             {
               "number": 8630,
@@ -384,7 +384,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-03T10:50:26.856Z",
+            "checkedAt": "2026-03-03T11:03:04.406Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "0f30d2917bdf553d4f30aaeb1b0ce6168e1c385a",
@@ -409,7 +409,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-03T10:50:27.840Z",
+            "checkedAt": "2026-03-03T11:03:05.624Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "4acb427527b3425ea287ff03649b4f64bf6018e1",
