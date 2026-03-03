@@ -6,10 +6,67 @@ import { renderStatusBadge } from './status-badge.js';
 import { renderPRList } from './pr-list.js';
 import { navigate, getQueryParam, setQueryParam } from '../router.js';
 
-export function renderCityDetail(city, { showBots = false } = {}) {
+/**
+ * Merge PRs from core and wrapper repos into a single chronological list.
+ * Filters bots if showBots is false. Sorts by mergedAt descending (newest first).
+ */
+function mergeAndSortPRs(corePRs, wrapperPRs, { showBots = false } = {}) {
+  const merged = [...corePRs, ...wrapperPRs];
+  const filtered = showBots ? merged : merged.filter((pr) => !pr.isBot);
+  return filtered.sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt));
+}
+
+/**
+ * Find the detection timestamp for a specific commit in a given environment.
+ * Returns the detectedAt ISO string if found, null otherwise.
+ */
+function findDetectedAt(events, environmentId, commitSha) {
+  if (!events || !commitSha) return null;
+  const event = events.find(
+    (e) => e.environmentId === environmentId && e.newCommit?.sha === commitSha
+  );
+  return event ? event.detectedAt : null;
+}
+
+/**
+ * Collect recent production PRs from history events for a given city.
+ * Returns { core: PR[], wrapper: PR[] } from the most recent production deployment events.
+ */
+function getRecentProductionPRs(events, city) {
+  if (!events || events.length === 0) return { core: [], wrapper: [] };
+
+  const prodEnvIds = city.environments
+    .filter((e) => e.type === 'production')
+    .map((e) => e.id);
+
+  const prodEvents = events
+    .filter((e) => e.cityGroupId === city.id && prodEnvIds.includes(e.environmentId))
+    .sort((a, b) => new Date(b.detectedAt) - new Date(a.detectedAt));
+
+  const result = { core: [], wrapper: [] };
+  const seen = { core: new Set(), wrapper: new Set() };
+
+  for (const event of prodEvents) {
+    const type = event.repoType;
+    if (!type || !result[type]) continue;
+    for (const pr of (event.includedPRs || [])) {
+      if (!seen[type].has(pr.number)) {
+        seen[type].add(pr.number);
+        result[type].push(pr);
+      }
+    }
+  }
+
+  return result;
+}
+
+export function renderCityDetail(city, { showBots = false } = {}, historyEvents = []) {
+  // Environment status badges
   const envSections = city.environments.map((env) => {
     const label = env.type === 'production' ? 'Production' : 'Staging / Test';
-    const badge = renderStatusBadge(env.version);
+    const commitSha = env.version?.coreCommit?.sha || env.version?.wrapperCommit?.sha;
+    const detectedAt = findDetectedAt(historyEvents, env.id, commitSha);
+    const badge = renderStatusBadge(env.version, { detectedAt });
 
     // Instance list for multi-instance environments (Tampere region)
     let instanceList = '';
@@ -36,77 +93,58 @@ export function renderCityDetail(city, { showBots = false } = {}) {
     `;
   });
 
-  // Pending deployment section
-  const pendingCore = city.prTracks?.core?.pendingDeployment || [];
-  const pendingWrapper = city.prTracks?.wrapper?.pendingDeployment || [];
-  let pendingSection = '';
-  if (pendingCore.length > 0 || pendingWrapper.length > 0) {
-    const corePending = pendingCore.length > 0
-      ? `<div class="pr-track"><div class="pr-track-header">Core</div>${renderPRList(pendingCore, { showBots })}</div>`
-      : '';
-    const wrapperPending = pendingWrapper.length > 0
-      ? `<div class="pr-track"><div class="pr-track-header">Wrapper</div>${renderPRList(pendingWrapper, { showBots })}</div>`
-      : '';
-    pendingSection = `
-      <div class="pending-section">
-        <h4>Awaiting deployment</h4>
-        ${wrapperPending}
-        ${corePending}
-      </div>
-    `;
-  }
-
-  // PR tracks: wrapper (if exists) then core
-  const wrapperTrack = city.prTracks?.wrapper;
-  const coreTrack = city.prTracks?.core;
-
-  // Staging sections
-  let wrapperStagingSection = '';
-  let coreStagingSection = '';
-  if (wrapperTrack) {
-    const inStaging = wrapperTrack.inStaging || [];
-    wrapperStagingSection = inStaging.length > 0
-      ? `<div class="pr-track"><div class="pr-track-header">Wrapper — In Staging</div>${renderPRList(inStaging, { showBots })}</div>`
-      : '';
-  }
-  if (coreTrack) {
-    const inStaging = coreTrack.inStaging || [];
-    coreStagingSection = inStaging.length > 0
-      ? `<div class="pr-track"><div class="pr-track-header">Core — In Staging</div>${renderPRList(inStaging, { showBots })}</div>`
-      : '';
-  }
-
-  // Production (deployed) sections
-  let wrapperProductionContent = '';
-  let coreProductionContent = '';
-  if (wrapperTrack) {
-    const deployed = wrapperTrack.deployed || [];
-    wrapperProductionContent = deployed.length > 0
-      ? `<div class="pr-track"><div class="pr-track-header">Wrapper — In Production</div>${renderPRList(deployed, { showBots })}</div>`
-      : '';
-  }
-  if (coreTrack) {
-    const deployed = coreTrack.deployed || [];
-    coreProductionContent = deployed.length > 0
-      ? `<div class="pr-track"><div class="pr-track-header">Core — In Production</div>${renderPRList(deployed, { showBots })}</div>`
-      : '';
-  }
-
-  let productionSection = '';
-  if (wrapperProductionContent || coreProductionContent) {
-    productionSection = `
-      <div class="production-section">
-        <h4>In Production</h4>
-        ${wrapperProductionContent}
-        ${coreProductionContent}
-      </div>
-    `;
-  }
-
   // Bot toggle
   const toggleActive = showBots ? ' active' : '';
   const botToggle = `<button class="bot-toggle${toggleActive}" id="bot-toggle">Show dependency updates</button>`;
 
+  // Production section: last 5 per repo with sub-headers (sourced from history events)
+  const { core: coreDeployed, wrapper: wrapperDeployed } = getRecentProductionPRs(historyEvents, city);
+  let productionSection = '';
+  const wrapperProdList = wrapperDeployed.length > 0
+    ? `<div class="pr-track"><div class="pr-track-header">Wrapper</div>${renderPRList(wrapperDeployed, { showBots, limit: 5 })}</div>`
+    : '';
+  const coreProdList = coreDeployed.length > 0
+    ? `<div class="pr-track"><div class="pr-track-header">Core</div>${renderPRList(coreDeployed, { showBots, limit: 5 })}</div>`
+    : '';
+  if (wrapperProdList || coreProdList) {
+    productionSection = `
+      <div class="production-section">
+        <h4>Recent Production Commits</h4>
+        ${wrapperProdList}
+        ${coreProdList}
+      </div>
+    `;
+  }
+
+  // Staging section: unified chronological list with repo labels
+  const coreStaging = city.prTracks?.core?.inStaging || [];
+  const wrapperStaging = city.prTracks?.wrapper?.inStaging || [];
+  const mergedStaging = mergeAndSortPRs(coreStaging, wrapperStaging, { showBots });
+  let stagingSection = '';
+  if (mergedStaging.length > 0) {
+    stagingSection = `
+      <div class="staging-section">
+        <h4>Changes in Staging</h4>
+        ${renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })}
+      </div>
+    `;
+  }
+
+  // Awaiting deployment section: unified chronological list with repo labels
+  const corePending = city.prTracks?.core?.pendingDeployment || [];
+  const wrapperPending = city.prTracks?.wrapper?.pendingDeployment || [];
+  const mergedPending = mergeAndSortPRs(corePending, wrapperPending, { showBots });
+  let pendingSection = '';
+  if (mergedPending.length > 0) {
+    pendingSection = `
+      <div class="pending-section">
+        <h4>Awaiting Deployment</h4>
+        ${renderPRList(mergedPending, { showBots: true, showRepoLabel: true })}
+      </div>
+    `;
+  }
+
+  // Layout order per FR-015: env badges → toggle → production → staging → awaiting
   return `
     <div class="city-detail">
       <h2>${escapeHtml(city.name)}</h2>
@@ -115,10 +153,9 @@ export function renderCityDetail(city, { showBots = false } = {}) {
       </div>
       ${envSections.join('')}
       ${botToggle}
-      ${pendingSection}
-      ${wrapperStagingSection}
-      ${coreStagingSection}
       ${productionSection}
+      ${stagingSection}
+      ${pendingSection}
     </div>
   `;
 }

@@ -233,6 +233,31 @@ main {
 .deploy-badge.in-staging { background: #eff6ff; color: var(--color-staging); }
 .deploy-badge.in-production { background: #f0fdf4; color: var(--color-production); }
 
+/* Repo label (inline [core]/[wrapper] badge) */
+.repo-label {
+  font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* Staging section */
+.staging-section {
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.staging-section h4 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
 /* Bot PR styling */
 .pr-item.bot {
   opacity: 0.6;
