@@ -65,8 +65,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p dist
-          cp -r site/* dist/
-          cp -r data dist/data
+          cp -rL site/* dist/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
