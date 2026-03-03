@@ -3,8 +3,10 @@ import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: 'tests/e2e',
   testMatch: '**/*.spec.ts',
-  timeout: 30000,
+  timeout: 10000,
   retries: 0,
+  fullyParallel: true,
+  workers: '100%',
   use: {
     headless: true,
   },
