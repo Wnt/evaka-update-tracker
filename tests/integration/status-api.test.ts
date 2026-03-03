@@ -39,12 +39,12 @@ describe('fetchVersion', () => {
     scope.done();
   });
 
-  it('returns unavailable status on network/timeout error', async () => {
+  it('returns unavailable status on server error', async () => {
     // Must provide intercepts for initial attempt + 2 retries (maxRetries: 2)
     const scope = nock(BASE_URL)
       .get(STATUS_PATH)
       .times(3)
-      .replyWithError('ETIMEDOUT');
+      .reply(502);
 
     const result = await fetchVersion(DOMAIN);
 
@@ -139,11 +139,11 @@ describe('fetchDeployedSha', () => {
     scope.done();
   });
 
-  it('returns null sha and unavailable status on network error', async () => {
+  it('returns null sha and unavailable status on server error', async () => {
     const scope = nock(BASE_URL)
       .get(STATUS_PATH)
       .times(3)
-      .replyWithError('ECONNREFUSED');
+      .reply(502);
 
     const result = await fetchDeployedSha(DOMAIN);
 
