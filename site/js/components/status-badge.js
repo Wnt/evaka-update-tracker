@@ -3,7 +3,7 @@
  * Accepts a VersionSnapshot object.
  */
 
-export function renderStatusBadge(version) {
+export function renderStatusBadge(version, { detectedAt = null } = {}) {
   if (!version) {
     return '<span class="status-badge"><span class="status-dot unavailable"></span>No data</span>';
   }
@@ -29,13 +29,13 @@ export function renderStatusBadge(version) {
     : 'espoon-voltti/evaka';
 
   const commitUrl = `https://github.com/${repoPath}/commit/${commit.sha}`;
-  const checkedAt = formatTime(version.checkedAt);
+  const displayTime = formatTime(detectedAt || version.checkedAt);
 
   return `
     <span class="status-badge">
       ${dot}
       <a class="commit-link" href="${commitUrl}" target="_blank" rel="noopener">${commit.shortSha}</a>
-      <span class="checked-at">${checkedAt}</span>
+      <span class="checked-at">${displayTime}</span>
     </span>
   `;
 }

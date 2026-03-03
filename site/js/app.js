@@ -49,15 +49,18 @@ function handleCityDetail({ id }, queryParams) {
     renderView('<div class="loading">Loading...</div>');
     return;
   }
-  // Dynamically import city-detail when needed
-  import('./components/city-detail.js').then(({ renderCityDetail, bindCityDetailEvents }) => {
+  // Dynamically import city-detail and load history for detection timestamps
+  Promise.all([
+    import('./components/city-detail.js'),
+    fetch('data/history.json').then((r) => r.ok ? r.json() : { events: [] }).catch(() => ({ events: [] })),
+  ]).then(([{ renderCityDetail, bindCityDetailEvents }, historyData]) => {
     const city = currentData.cityGroups.find((c) => c.id === id);
     if (!city) {
       renderView('<div class="empty-state">City not found</div>');
       return;
     }
     const showBots = queryParams?.get('showBots') === 'true';
-    renderView(renderCityDetail(city, { showBots }));
+    renderView(renderCityDetail(city, { showBots }, historyData.events || []));
     bindCityDetailEvents(city);
     updateTabs(id);
   });

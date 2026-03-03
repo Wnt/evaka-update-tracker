@@ -3,25 +3,33 @@
  * Filters out bot PRs by default (showBots=false).
  */
 
-export function renderPRList(prs, { showBots = false, showStatus = false } = {}) {
+export function renderPRList(prs, { showBots = false, showStatus = false, showRepoLabel = false, limit = 0 } = {}) {
   if (!prs || prs.length === 0) {
     return '<div class="empty-state">No recent PRs</div>';
   }
 
-  const filtered = showBots ? prs : prs.filter((pr) => !pr.isBot);
+  let filtered = showBots ? prs : prs.filter((pr) => !pr.isBot);
   if (filtered.length === 0) {
     return '<div class="empty-state">No recent human PRs</div>';
+  }
+
+  if (limit > 0) {
+    filtered = filtered.slice(0, limit);
   }
 
   const items = filtered.map((pr) => {
     const botClass = pr.isBot ? ' bot' : '';
     const botLabel = pr.isBot ? '<span class="bot-label">bot</span>' : '';
+    const repoLabel = showRepoLabel && pr.repoType
+      ? `<span class="repo-label">[${pr.repoType}]</span>`
+      : '';
     const statusBadge = showStatus ? renderDeployBadge(pr._status) : '';
     const date = formatDate(pr.mergedAt);
 
     return `
       <li class="pr-item${botClass}">
         <a class="pr-number" href="${pr.url}" target="_blank" rel="noopener">#${pr.number}</a>
+        ${repoLabel}
         <span class="pr-title">${escapeHtml(pr.title)}</span>
         ${botLabel}
         ${statusBadge}

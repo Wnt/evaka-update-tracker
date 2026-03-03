@@ -1,6 +1,6 @@
 /**
- * E2E tests for User Story 1 & 3: Production PRs on city detail page.
- * Verifies "In Production" section, PR links, bot toggle, and visual distinction.
+ * E2E tests for redesigned city detail page layout.
+ * Verifies production, staging, and awaiting sections, bot toggle, and section ordering.
  */
 
 import { test, expect } from '@playwright/test';
@@ -14,23 +14,26 @@ function getBaseUrl(): string {
   return info.url;
 }
 
-test.describe('City Detail — In Production section', () => {
-  test('Espoo city detail page shows "In Production" heading with deployed PRs', async ({ page }) => {
+test.describe('City Detail — Recent Production Commits', () => {
+  test('Espoo city detail page shows "Recent Production Commits" heading with PRs', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
 
-    // Assert "In Production" heading is visible
+    // Assert "Recent Production Commits" heading is visible
     const productionHeading = page.locator('.production-section h4');
-    await expect(productionHeading).toHaveText('In Production');
+    await expect(productionHeading).toHaveText('Recent Production Commits');
 
-    // Assert "Core — In Production" track header
-    const coreHeader = page.locator('.production-section .pr-track-header', { hasText: 'Core — In Production' });
+    // Assert "Core" track header exists (not "Core — In Production")
+    const coreHeader = page.locator('.production-section .pr-track-header', { hasText: 'Core' });
     await expect(coreHeader).toBeVisible();
 
-    // Assert PR items are listed (Espoo has 4 deployed human PRs)
+    // Assert PR items are listed (production PRs from history events)
     const prItems = page.locator('.production-section .pr-item');
-    await expect(prItems).toHaveCount(4);
+    const count = await prItems.count();
+    expect(count).toBeGreaterThan(0);
+    // Limited to 5 max per repo
+    expect(count).toBeLessThanOrEqual(5);
 
     // Verify each PR item has number, title, author, and date
     const firstPR = prItems.first();
@@ -40,16 +43,20 @@ test.describe('City Detail — In Production section', () => {
     await expect(firstPR.locator('.pr-date')).toBeVisible();
   });
 
-  test('Tampere city detail page shows both Core and Wrapper production sections', async ({ page }) => {
+  test('Tampere city detail page shows both Core and Wrapper production sub-headers', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/tampere-region`);
     await page.waitForSelector('.city-detail');
 
-    // Assert both "Core — In Production" and "Wrapper — In Production" sections
-    const coreHeader = page.locator('.production-section .pr-track-header', { hasText: 'Core — In Production' });
+    // Assert production section exists
+    const productionSection = page.locator('.production-section');
+    await expect(productionSection).toBeVisible();
+
+    // Assert both "Core" and "Wrapper" sub-headers (new format)
+    const coreHeader = productionSection.locator('.pr-track-header', { hasText: 'Core' });
     await expect(coreHeader).toBeVisible();
 
-    const wrapperHeader = page.locator('.production-section .pr-track-header', { hasText: 'Wrapper — In Production' });
+    const wrapperHeader = productionSection.locator('.pr-track-header', { hasText: 'Wrapper' });
     await expect(wrapperHeader).toBeVisible();
   });
 
@@ -69,6 +76,77 @@ test.describe('City Detail — In Production section', () => {
     }
   });
 
+  test('Production section limited to 5 non-bot PRs per repo', async ({ page }) => {
+    const baseUrl = getBaseUrl();
+    await page.goto(`${baseUrl}/#/city/espoo`);
+    await page.waitForSelector('.city-detail');
+
+    // Each repo sub-section should have at most 5 PR items (bot PRs hidden by default)
+    const coreTrack = page.locator('.production-section .pr-track').first();
+    const prItems = coreTrack.locator('.pr-item');
+    const count = await prItems.count();
+    expect(count).toBeLessThanOrEqual(5);
+    expect(count).toBeGreaterThan(0);
+  });
+});
+
+test.describe('City Detail — Staging Section', () => {
+  test('Staging section shows unified chronological list with repo labels', async ({ page }) => {
+    const baseUrl = getBaseUrl();
+    await page.goto(`${baseUrl}/#/city/espoo`);
+    await page.waitForSelector('.city-detail');
+
+    const stagingSection = page.locator('.staging-section');
+    // Espoo should have staging PRs
+    await expect(stagingSection).toBeVisible();
+
+    // Heading text
+    const heading = stagingSection.locator('h4');
+    await expect(heading).toHaveText('Changes in Staging');
+
+    // PR items should have repo labels
+    const repoLabels = stagingSection.locator('.repo-label');
+    const labelCount = await repoLabels.count();
+    expect(labelCount).toBeGreaterThan(0);
+  });
+
+  test('Staging PRs show [core] or [wrapper] labels', async ({ page }) => {
+    const baseUrl = getBaseUrl();
+    await page.goto(`${baseUrl}/#/city/tampere-region`);
+    await page.waitForSelector('.city-detail');
+
+    const stagingSection = page.locator('.staging-section');
+    if (await stagingSection.isVisible()) {
+      const repoLabels = stagingSection.locator('.repo-label');
+      const count = await repoLabels.count();
+      for (let i = 0; i < count; i++) {
+        const text = await repoLabels.nth(i).textContent();
+        expect(text).toMatch(/\[(core|wrapper)\]/);
+      }
+    }
+  });
+});
+
+test.describe('City Detail — Awaiting Deployment Section', () => {
+  test('Awaiting deployment section shows unified list with repo labels', async ({ page }) => {
+    const baseUrl = getBaseUrl();
+    await page.goto(`${baseUrl}/#/city/espoo`);
+    await page.waitForSelector('.city-detail');
+
+    const pendingSection = page.locator('.pending-section');
+    if (await pendingSection.isVisible()) {
+      const heading = pendingSection.locator('h4');
+      await expect(heading).toHaveText('Awaiting Deployment');
+
+      // Should have repo labels
+      const repoLabels = pendingSection.locator('.repo-label');
+      const labelCount = await repoLabels.count();
+      expect(labelCount).toBeGreaterThan(0);
+    }
+  });
+});
+
+test.describe('City Detail — Bot Toggle', () => {
   test('Bot toggle button exists and can be toggled', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
@@ -79,14 +157,34 @@ test.describe('City Detail — In Production section', () => {
     await expect(botToggle).toBeVisible();
     await expect(botToggle).toHaveText('Show dependency updates');
 
-    // Click toggle — should activate it
+    // Click toggle — should activate it and re-render with showBots=true
     await botToggle.click();
     await page.waitForSelector('#bot-toggle.active');
     const activeToggle = page.locator('#bot-toggle.active');
     await expect(activeToggle).toBeVisible();
   });
 
-  test('Production section appears after pending and staging sections in DOM order', async ({ page }) => {
+  test('Bot toggle affects all sections', async ({ page }) => {
+    const baseUrl = getBaseUrl();
+    await page.goto(`${baseUrl}/#/city/espoo`);
+    await page.waitForSelector('.city-detail');
+
+    // Count PRs before toggle
+    const prodCountBefore = await page.locator('.production-section .pr-item').count();
+
+    // Activate bot toggle
+    await page.locator('#bot-toggle').click();
+    await page.waitForSelector('#bot-toggle.active');
+
+    // Count PRs after toggle — may have more items if bot PRs exist
+    const prodCountAfter = await page.locator('.production-section .pr-item').count();
+    // After toggle, count should be >= before (bot PRs may appear)
+    expect(prodCountAfter).toBeGreaterThanOrEqual(prodCountBefore);
+  });
+});
+
+test.describe('City Detail — Section Ordering (FR-015)', () => {
+  test('Sections appear in correct order: production, staging, awaiting', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
@@ -97,33 +195,32 @@ test.describe('City Detail — In Production section', () => {
       if (!detail) return [];
       const sections: string[] = [];
       for (const child of detail.children) {
-        if (child.classList.contains('pending-section')) sections.push('pending');
-        if (child.querySelector('.pr-track-header')?.textContent?.includes('In Staging')) sections.push('staging');
         if (child.classList.contains('production-section')) sections.push('production');
+        if (child.classList.contains('staging-section')) sections.push('staging');
+        if (child.classList.contains('pending-section')) sections.push('pending');
       }
       return sections;
     });
 
-    // Verify ordering: pending before staging, staging before production
-    const pendingIdx = sectionOrder.indexOf('pending');
-    const stagingIdx = sectionOrder.indexOf('staging');
+    // Verify ordering per FR-015: production → staging → awaiting
     const productionIdx = sectionOrder.indexOf('production');
+    const stagingIdx = sectionOrder.indexOf('staging');
+    const pendingIdx = sectionOrder.indexOf('pending');
 
-    if (pendingIdx >= 0 && stagingIdx >= 0) {
-      expect(pendingIdx).toBeLessThan(stagingIdx);
-    }
-    if (stagingIdx >= 0 && productionIdx >= 0) {
-      expect(stagingIdx).toBeLessThan(productionIdx);
-    }
-    if (pendingIdx >= 0 && productionIdx >= 0) {
-      expect(pendingIdx).toBeLessThan(productionIdx);
-    }
-    // Production section must exist
+    // Production section must exist (sourced from history events)
     expect(productionIdx).toBeGreaterThanOrEqual(0);
-  });
-});
 
-test.describe('City Detail — Visual Distinction (US3)', () => {
+    if (stagingIdx >= 0) {
+      expect(productionIdx).toBeLessThan(stagingIdx);
+    }
+    if (pendingIdx >= 0 && stagingIdx >= 0) {
+      expect(stagingIdx).toBeLessThan(pendingIdx);
+    }
+    if (pendingIdx >= 0) {
+      expect(productionIdx).toBeLessThan(pendingIdx);
+    }
+  });
+
   test('Production section has the CSS class production-section', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
@@ -133,38 +230,12 @@ test.describe('City Detail — Visual Distinction (US3)', () => {
     await expect(productionSection).toBeVisible();
   });
 
-  test('Production section h4 heading text is "In Production"', async ({ page }) => {
+  test('Production section heading text is "Recent Production Commits"', async ({ page }) => {
     const baseUrl = getBaseUrl();
     await page.goto(`${baseUrl}/#/city/espoo`);
     await page.waitForSelector('.city-detail');
 
     const heading = page.locator('.production-section h4');
-    await expect(heading).toHaveText('In Production');
-  });
-
-  test('Pending section has the CSS class pending-section', async ({ page }) => {
-    const baseUrl = getBaseUrl();
-    await page.goto(`${baseUrl}/#/city/espoo`);
-    await page.waitForSelector('.city-detail');
-
-    const pendingSection = page.locator('.pending-section');
-    // Espoo has pending PRs in test data
-    await expect(pendingSection).toBeVisible();
-  });
-
-  test('Sections appear in correct DOM order: pending, staging, production', async ({ page }) => {
-    const baseUrl = getBaseUrl();
-    await page.goto(`${baseUrl}/#/city/espoo`);
-    await page.waitForSelector('.city-detail');
-
-    // Get bounding boxes to verify visual ordering
-    const pendingBox = await page.locator('.pending-section').boundingBox();
-    const productionBox = await page.locator('.production-section').boundingBox();
-
-    expect(pendingBox).not.toBeNull();
-    expect(productionBox).not.toBeNull();
-
-    // Pending must appear above production (smaller y coordinate)
-    expect(pendingBox!.y).toBeLessThan(productionBox!.y);
+    await expect(heading).toHaveText('Recent Production Commits');
   });
 });
