@@ -212,6 +212,7 @@ export const prResponses: Record<number, {
   user: { login: string };
   merged_at: string;
   html_url: string;
+  labels: Array<{ name: string }>;
 }> = {
   // Core deployed PRs
   8573: {
@@ -220,6 +221,7 @@ export const prResponses: Record<number, {
     user: { login: 'terolaakso-reaktor' },
     merged_at: '2026-03-02T09:53:35Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8573',
+    labels: [{ name: 'bug' }],
   },
   8560: {
     number: 8560,
@@ -227,6 +229,7 @@ export const prResponses: Record<number, {
     user: { login: 'Joosakur' },
     merged_at: '2026-03-01T14:20:00Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8560',
+    labels: [{ name: 'enhancement' }],
   },
   8555: {
     number: 8555,
@@ -234,6 +237,7 @@ export const prResponses: Record<number, {
     user: { login: 'tomuli' },
     merged_at: '2026-03-01T11:00:00Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8555',
+    labels: [{ name: 'enhancement' }],
   },
   8551: {
     number: 8551,
@@ -241,6 +245,7 @@ export const prResponses: Record<number, {
     user: { login: 'dependabot[bot]' },
     merged_at: '2026-02-28T16:00:00Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8551',
+    labels: [{ name: 'dependencies' }],
   },
   8545: {
     number: 8545,
@@ -248,6 +253,7 @@ export const prResponses: Record<number, {
     user: { login: 'terolaakso-reaktor' },
     merged_at: '2026-02-28T10:30:00Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8545',
+    labels: [{ name: 'tech' }],
   },
   // Core staging PRs
   8629: {
@@ -256,6 +262,7 @@ export const prResponses: Record<number, {
     user: { login: 'terolaakso-reaktor' },
     merged_at: '2026-03-02T13:41:42Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8629',
+    labels: [{ name: 'tech' }],
   },
   8594: {
     number: 8594,
@@ -263,6 +270,7 @@ export const prResponses: Record<number, {
     user: { login: 'Joosakur' },
     merged_at: '2026-03-02T12:29:22Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8594',
+    labels: [{ name: 'tech' }],
   },
   8602: {
     number: 8602,
@@ -270,6 +278,7 @@ export const prResponses: Record<number, {
     user: { login: 'tomuli' },
     merged_at: '2026-03-02T10:54:11Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8602',
+    labels: [{ name: 'enhancement' }],
   },
   // Core pending PRs
   8630: {
@@ -278,6 +287,7 @@ export const prResponses: Record<number, {
     user: { login: 'terolaakso-reaktor' },
     merged_at: '2026-03-03T06:47:56Z',
     html_url: 'https://github.com/espoon-voltti/evaka/pull/8630',
+    labels: [{ name: 'tech' }],
   },
   // Wrapper PRs (Tampere)
   412: {
@@ -286,6 +296,7 @@ export const prResponses: Record<number, {
     user: { login: 'tampere-dev' },
     merged_at: '2026-03-01T08:00:00Z',
     html_url: 'https://github.com/Tampere/trevaka/pull/412',
+    labels: [{ name: 'enhancement' }],
   },
   415: {
     number: 415,
@@ -293,6 +304,7 @@ export const prResponses: Record<number, {
     user: { login: 'tampere-dev' },
     merged_at: '2026-03-02T15:00:00Z',
     html_url: 'https://github.com/Tampere/trevaka/pull/415',
+    labels: [{ name: 'bug' }],
   },
 };
 

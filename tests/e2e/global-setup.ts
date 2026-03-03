@@ -1,32 +1,23 @@
 /**
- * Playwright global setup: copies static fixture data and starts HTTP server.
+ * Playwright global setup: runs the full backend pipeline with nock-mocked
+ * HTTP calls, then starts HTTP server for browser tests.
  *
- * Uses pre-built fixture JSON instead of running the full backend pipeline.
- * To regenerate fixtures after backend changes: npm start, then copy
- * data/current.json and data/history.json to tests/e2e/fixtures/data/.
+ * This exercises the complete pipeline (status fetch → version resolution →
+ * PR collection → change detection → Slack → file writing → site deployment)
+ * ensuring integration coverage beyond unit tests.
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { generateTestData } from './helpers/generate-test-data.js';
 import { startServer } from './helpers/server.js';
 
-const TEST_DATA_DIR = path.resolve('tests/e2e/test-data');
-const FIXTURE_DATA_DIR = path.resolve('tests/e2e/fixtures/data');
 const SERVER_INFO_PATH = path.resolve('tests/e2e/test-data/.server-info.json');
 
 export default async function globalSetup() {
-  // Copy fixture data to test-data directory
-  if (!fs.existsSync(TEST_DATA_DIR)) {
-    fs.mkdirSync(TEST_DATA_DIR, { recursive: true });
-  }
-  fs.copyFileSync(
-    path.join(FIXTURE_DATA_DIR, 'current.json'),
-    path.join(TEST_DATA_DIR, 'current.json')
-  );
-  fs.copyFileSync(
-    path.join(FIXTURE_DATA_DIR, 'history.json'),
-    path.join(TEST_DATA_DIR, 'history.json')
-  );
+  const start = Date.now();
+  await generateTestData();
+  console.log(`[E2E] Pipeline completed in ${Date.now() - start}ms`);
 
   const server = await startServer();
   fs.writeFileSync(SERVER_INFO_PATH, JSON.stringify({ url: server.url, pid: process.pid }));
