@@ -37,7 +37,7 @@ jobs:
           STAGING_INSTANCES: ${{ secrets.STAGING_INSTANCES }}
           OULU_STAGING_USER: ${{ secrets.OULU_STAGING_USER }}
           OULU_STAGING_PASS: ${{ secrets.OULU_STAGING_PASS }}
-        run: npx ts-node --esm src/index.ts
+        run: npx tsx src/index.ts
 
       - name: Commit data changes
         run: |

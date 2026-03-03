@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "npx ts-node --esm src/index.ts",
+    "start": "npx tsx src/index.ts",
     "test": "jest",
     "test:e2e": "playwright test",
     "lint": "eslint src/ tests/",
