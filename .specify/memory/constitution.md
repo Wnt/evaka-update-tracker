@@ -1,18 +1,21 @@
 <!-- Sync Impact Report
-  Version change: 1.0.0 → 1.1.0
+  Version change: 1.1.0 → 1.2.0
   Modified principles:
-    - I. Code Quality: added DRY enforcement rules (2 new bullets)
+    - II. Pragmatic Testing: expanded to elevate E2E tests as
+      first-class citizens (new sub-section, 5 new bullets)
   Added sections: None
   Removed sections: None
   Templates requiring updates:
     - .specify/templates/plan-template.md ✅ no changes needed
     - .specify/templates/spec-template.md ✅ no changes needed
-    - .specify/templates/tasks-template.md ✅ no changes needed
+    - .specify/templates/tasks-template.md ⚠ pending — Polish phase
+      should reference E2E test update/run as a standard task
     - CLAUDE.md ✅ no changes needed
-    - specs/001-deployment-tracker/plan.md ✅ no changes needed
-      (Constitution Check already passes; DRY does not introduce
-      new violations in the current plan)
-  Follow-up TODOs: None
+  Follow-up TODOs:
+    - E2E tests in tests/e2e/ need updating to match current DOM
+      structure (h4→summary, .pr-number removed, .pr-title is now
+      an <a> element). This is a direct consequence of ratifying
+      this principle.
 -->
 
 # eVaka Update Tracker Constitution
@@ -63,9 +66,22 @@ system component IS required and MUST be enforced in CI:
 - Test files MUST live alongside the code they test or in a
   mirrored `tests/` directory structure. Test naming MUST clearly
   indicate what is being tested.
-- Frontend components do NOT require automated tests unless they
-  contain complex logic (e.g., routing, data transformation).
-  Visual correctness is verified by manual review.
+
+**E2E tests are first-class citizens:**
+
+- E2E tests (`tests/e2e/`) are the primary safety net validating
+  that the application has not been broken by code changes. They
+  MUST be treated with the same importance as unit tests.
+- When frontend components, DOM structure, CSS classes, or page
+  layout are modified, the corresponding E2E tests MUST be updated
+  in the same change to stay in sync with the codebase.
+- E2E tests MUST be run as part of every validation phase before
+  a feature is considered complete. The validation command is
+  `npm run test:e2e`.
+- E2E test failures MUST block feature completion. A feature is
+  NOT done until all E2E tests pass.
+- New user-facing features SHOULD include new E2E test coverage
+  for the added functionality.
 
 ### III. UX Consistency
 
@@ -90,9 +106,11 @@ These gates MUST pass before any code reaches the main branch:
 1. **Lint gate**: Zero ESLint errors, zero Prettier violations.
 2. **Type gate**: TypeScript compilation with zero errors
    (`tsc --noEmit`).
-3. **Test gate**: All tests pass. No skipped tests without a
-   tracked issue reference.
-4. **Build gate**: The data fetcher compiles and the site
+3. **Test gate**: All unit and integration tests pass. No skipped
+   tests without a tracked issue reference.
+4. **E2E gate**: All Playwright end-to-end tests pass
+   (`npm run test:e2e`).
+5. **Build gate**: The data fetcher compiles and the site
    generator produces valid output.
 
 CI configuration MUST fail fast: lint and type checks run before
@@ -123,4 +141,4 @@ principles.
 - If a principle is violated, the violation MUST be justified in
   the Complexity Tracking section of the implementation plan.
 
-**Version**: 1.1.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-02
+**Version**: 1.2.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-03

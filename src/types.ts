@@ -77,6 +77,7 @@ export interface PullRequest {
   repoType: 'core' | 'wrapper';
   isBot: boolean;
   url: string;
+  labels: string[];
 }
 
 export type DeploymentStage = 'merged' | 'in-staging' | 'in-production';

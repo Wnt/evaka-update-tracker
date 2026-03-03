@@ -1,22 +1,12 @@
 /**
- * E2E tests for User Story 2: Production PRs on overview page.
- * Verifies all city cards show "In Production" labeled PR sections.
+ * E2E tests for overview page.
+ * Verifies all city cards render with production PR sections.
  */
 
-import { test, expect } from '@playwright/test';
-import * as fs from 'fs';
-import * as path from 'path';
-
-const SERVER_INFO_PATH = path.resolve('tests/e2e/test-data/.server-info.json');
-
-function getBaseUrl(): string {
-  const info = JSON.parse(fs.readFileSync(SERVER_INFO_PATH, 'utf-8'));
-  return info.url;
-}
+import { test, expect } from './fixtures.js';
 
 test.describe('Overview — In Production sections', () => {
-  test('All 4 city cards are rendered on overview page', async ({ page }) => {
-    const baseUrl = getBaseUrl();
+  test('All 4 city cards are rendered on overview page', async ({ page, baseUrl }) => {
     await page.goto(`${baseUrl}/#/`);
     await page.waitForSelector('.city-grid');
 
@@ -24,8 +14,7 @@ test.describe('Overview — In Production sections', () => {
     await expect(cityCards).toHaveCount(4);
   });
 
-  test('Each city card shows "Core — In Production" header with PR items', async ({ page }) => {
-    const baseUrl = getBaseUrl();
+  test('Each city card shows "Core — In Production" header with PR items', async ({ page, baseUrl }) => {
     await page.goto(`${baseUrl}/#/`);
     await page.waitForSelector('.city-grid');
 
@@ -44,12 +33,10 @@ test.describe('Overview — In Production sections', () => {
     }
   });
 
-  test('Tampere card shows "Wrapper — In Production" header', async ({ page }) => {
-    const baseUrl = getBaseUrl();
+  test('Tampere card shows "Wrapper — In Production" header', async ({ page, baseUrl }) => {
     await page.goto(`${baseUrl}/#/`);
     await page.waitForSelector('.city-grid');
 
-    // Tampere card has data-city-id="tampere-region"
     const tampereCard = page.locator('.city-card[data-city-id="tampere-region"]');
     await expect(tampereCard).toBeVisible();
 
@@ -57,16 +44,13 @@ test.describe('Overview — In Production sections', () => {
     await expect(wrapperHeader).toBeVisible();
   });
 
-  test('Clicking a city card navigates to city detail page', async ({ page }) => {
-    const baseUrl = getBaseUrl();
+  test('Clicking a city card navigates to city detail page', async ({ page, baseUrl }) => {
     await page.goto(`${baseUrl}/#/`);
     await page.waitForSelector('.city-grid');
 
-    // Click Espoo card
     const espooCard = page.locator('.city-card[data-city-id="espoo"]');
     await espooCard.click();
 
-    // Should navigate to city detail
     await page.waitForSelector('.city-detail');
     await expect(page.locator('.city-detail h2')).toHaveText('Espoo');
   });

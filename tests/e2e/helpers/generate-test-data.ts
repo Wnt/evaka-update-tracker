@@ -23,6 +23,7 @@ import {
   TURKU_CORE_PROD_SHA,
   TURKU_CORE_STAGING_SHA,
   PREV_CORE_PROD_SHA,
+  PREV_CORE_STAGING_SHA,
   TAMPERE_WRAPPER_PREV_PROD_SHA,
   OULU_WRAPPER_PREV_PROD_SHA,
   TURKU_WRAPPER_PREV_PROD_SHA,
@@ -148,6 +149,10 @@ function setupGitHubMocks() {
   gh.get(`/repos/espoon-voltti/evaka/compare/${ESPOO_PROD_SHA}...${ESPOO_STAGING_SHA}`)
     .reply(200, coreStagingCompareResponse);
 
+  // Core: staging change detection (prev staging → current staging)
+  gh.get(`/repos/espoon-voltti/evaka/compare/${PREV_CORE_STAGING_SHA}...${ESPOO_STAGING_SHA}`)
+    .reply(200, coreStagingCompareResponse);
+
   // Core: pending PRs (staging → master)
   gh.get(`/repos/espoon-voltti/evaka/compare/${ESPOO_STAGING_SHA}...master`)
     .reply(200, corePendingCompareResponse);
@@ -227,6 +232,7 @@ export async function generateTestData(): Promise<string> {
   );
 
   // Set environment variables
+  process.env.NODE_ENV = 'test';
   process.env.GH_TOKEN = 'test-token-for-e2e';
   process.env.DRY_RUN = 'false';
   process.env.SLACK_WEBHOOK_URL = 'http://localhost/slack-mock';
@@ -263,6 +269,7 @@ export async function generateTestData(): Promise<string> {
     nock.cleanAll();
     nock.enableNetConnect();
     // Clean up env vars
+    delete process.env.NODE_ENV;
     delete process.env.DATA_DIR;
     delete process.env.DIST_DIR;
     delete process.env.STAGING_INSTANCES;

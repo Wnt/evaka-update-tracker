@@ -3,7 +3,7 @@
  * Accepts a VersionSnapshot object.
  */
 
-export function renderStatusBadge(version, { detectedAt = null } = {}) {
+export function renderStatusBadge(version, { detectedAt = null, latestPRTitle = null } = {}) {
   if (!version) {
     return '<span class="status-badge"><span class="status-dot unavailable"></span>Ei tietoja</span>';
   }
@@ -24,20 +24,29 @@ export function renderStatusBadge(version, { detectedAt = null } = {}) {
     return `<span class="status-badge">${dot} ${statusText}</span>`;
   }
 
-  const repoPath = version.wrapperCommit
-    ? guessRepoPath(version.instanceDomain, 'wrapper')
-    : 'espoon-voltti/evaka';
+  const repoPath = version.coreCommit
+    ? 'espoon-voltti/evaka'
+    : guessRepoPath(version.instanceDomain, 'wrapper');
 
   const commitUrl = `https://github.com/${repoPath}/commit/${commit.sha}`;
   const displayTime = formatTime(detectedAt || version.checkedAt);
 
+  const linkText = latestPRTitle
+    ? `<span class="pr-description">${escapeHtml(latestPRTitle)}</span>`
+    : commit.shortSha;
+
   return `
     <span class="status-badge">
       ${dot}
-      <a class="commit-link" href="${commitUrl}" target="_blank" rel="noopener">${commit.shortSha}</a>
+      <a class="commit-link" href="${commitUrl}" target="_blank" rel="noopener">${linkText}</a>
       <span class="checked-at">${displayTime}</span>
     </span>
   `;
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function guessRepoPath(domain, type) {
@@ -60,9 +69,9 @@ function guessRepoPath(domain, type) {
 function formatTime(isoString) {
   if (!isoString) return '';
   const d = new Date(isoString);
-  return d.toLocaleString('fi', {
-    month: 'short', day: 'numeric',
-    hour: '2-digit', minute: '2-digit',
-    hour12: false,
-  });
+  const weekday = d.toLocaleDateString('fi', { weekday: 'short' });
+  const day = d.getDate();
+  const month = d.getMonth() + 1;
+  const hours = d.toLocaleTimeString('fi', { hour: '2-digit', minute: '2-digit', hour12: false });
+  return `${weekday} ${day}.${month}. klo ${hours}`;
 }

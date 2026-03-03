@@ -62,6 +62,7 @@ export const sampleCurrentData: CurrentData = {
               repoType: 'core',
               isBot: false,
               url: 'https://github.com/espoon-voltti/evaka/pull/8504',
+              labels: [],
             },
           ],
           inStaging: [
@@ -74,6 +75,7 @@ export const sampleCurrentData: CurrentData = {
               repoType: 'core',
               isBot: false,
               url: 'https://github.com/espoon-voltti/evaka/pull/8510',
+              labels: [],
             },
           ],
           pendingDeployment: [],
@@ -114,6 +116,7 @@ export const sampleHistoryData: HistoryData = {
           repoType: 'core',
           isBot: false,
           url: 'https://github.com/espoon-voltti/evaka/pull/8504',
+          labels: [],
         },
       ],
       repoType: 'core',

@@ -36,6 +36,7 @@ function makeGitHubPR(number: number, title: string, author: string, mergedAt: s
     user: { login: author },
     merged_at: mergedAt,
     html_url: `https://github.com/${testRepo.owner}/${testRepo.name}/pull/${number}`,
+    labels: [],
   };
 }
 
@@ -115,6 +116,7 @@ describe('pr-collector', () => {
         repoType: 'wrapper',
         isBot,
         url: `https://github.com/Tampere/trevaka/pull/${number}`,
+        labels: [],
       };
     }
 
@@ -189,6 +191,7 @@ describe('pr-collector', () => {
         repoType: 'wrapper',
         isBot,
         url: `https://github.com/Tampere/trevaka/pull/${number}`,
+        labels: [],
       };
     }
 
