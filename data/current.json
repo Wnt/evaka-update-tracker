@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T13:12:42.622Z",
+  "generatedAt": "2026-03-04T13:39:04.190Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-04T13:11:10.420Z",
+            "checkedAt": "2026-03-04T13:38:26.080Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-04T13:11:11.249Z",
+            "checkedAt": "2026-03-04T13:38:26.737Z",
             "status": "auth-error",
             "wrapperCommit": null,
             "coreCommit": null
@@ -123,7 +123,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-04T13:11:21.439Z",
+            "checkedAt": "2026-03-04T13:38:36.551Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -140,187 +140,15 @@
               "author": "Joosakur"
             }
           },
-          "versionMismatch": true,
-          "mismatchDetails": [
-            {
-              "instanceDomain": "varhaiskasvatus.tampere.fi",
-              "checkedAt": "2026-03-04T13:11:21.439Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
-                "shortSha": "2a33a64",
-                "message": "Merge pull request #2035 from Tampere/dependabot/submodules/evaka-bf2c392",
-                "date": "2026-03-04T07:22:19Z",
-                "author": "tomuli"
-              },
-              "coreCommit": {
-                "sha": "bf2c392339a0fe36fec51b4fdc2b1cf022007938",
-                "shortSha": "bf2c392",
-                "message": "Merge pull request #8632 from espoon-voltti/fix-open-income-statement-filter",
-                "date": "2026-03-03T17:07:58Z",
-                "author": "Joosakur"
-              }
-            },
-            {
-              "instanceDomain": "evaka.hameenkyro.fi",
-              "checkedAt": "2026-03-04T13:11:22.398Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.kangasala.fi",
-              "checkedAt": "2026-03-04T13:11:23.406Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.lempaala.fi",
-              "checkedAt": "2026-03-04T13:11:24.356Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.nokiankaupunki.fi",
-              "checkedAt": "2026-03-04T13:11:25.429Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.orivesi.fi",
-              "checkedAt": "2026-03-04T13:11:26.514Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.pirkkala.fi",
-              "checkedAt": "2026-03-04T13:11:27.506Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.vesilahti.fi",
-              "checkedAt": "2026-03-04T13:11:28.564Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            },
-            {
-              "instanceDomain": "evaka.ylojarvi.fi",
-              "checkedAt": "2026-03-04T13:11:29.502Z",
-              "status": "ok",
-              "wrapperCommit": {
-                "sha": "2c67801a007f6883ad754c2075e3f082bae056f8",
-                "shortSha": "2c67801",
-                "message": "Merge pull request #2021 from Tampere/undo-pirkkala-ramp-up",
-                "date": "2026-02-25T08:26:41Z",
-                "author": "tmkrepo"
-              },
-              "coreCommit": {
-                "sha": "8216e179803627eb1f429062560980cbe8fbbc46",
-                "shortSha": "8216e17",
-                "message": "Merge pull request #8578 from espoon-voltti/fix-income-statement-edit-query-invalidation",
-                "date": "2026-02-24T10:57:31Z",
-                "author": "ohinkinen"
-              }
-            }
-          ]
+          "versionMismatch": false,
+          "mismatchDetails": []
         },
         {
           "id": "tampere-test",
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-04T13:11:54.068Z",
+            "checkedAt": "2026-03-04T13:38:44.480Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -344,124 +172,13 @@
       "prTracks": {
         "wrapper": {
           "repository": "Tampere/trevaka",
-          "deployed": [
-            {
-              "number": 2034,
-              "title": "Ramp up Pirkkala archival daily limit to 1000",
-              "author": "ohinkinen",
-              "mergedAt": "2026-03-03T08:53:57Z",
-              "repository": "Tampere/trevaka",
-              "repoType": "wrapper",
-              "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2034",
-              "labels": []
-            },
-            {
-              "number": 2032,
-              "title": "Ramp up Kangasala archival daily limit to 100",
-              "author": "ohinkinen",
-              "mergedAt": "2026-03-03T07:43:18Z",
-              "repository": "Tampere/trevaka",
-              "repoType": "wrapper",
-              "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2032",
-              "labels": []
-            },
-            {
-              "number": 2031,
-              "title": "Ramp up Nokia archival daily limit to 1000",
-              "author": "ohinkinen",
-              "mergedAt": "2026-03-03T07:42:56Z",
-              "repository": "Tampere/trevaka",
-              "repoType": "wrapper",
-              "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2031",
-              "labels": []
-            },
-            {
-              "number": 2023,
-              "title": "Remove Fuel library",
-              "author": "terolaakso-reaktor",
-              "mergedAt": "2026-02-27T07:49:28Z",
-              "repository": "Tampere/trevaka",
-              "repoType": "wrapper",
-              "isBot": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2023",
-              "labels": []
-            }
-          ],
+          "deployed": [],
           "inStaging": [],
           "pendingDeployment": []
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [
-            {
-              "number": 8632,
-              "title": "Ei avoimia tuloselvityksiä -hakuehdon kuuluisi huomioida myös käsittelyssä olevat",
-              "author": "Joosakur",
-              "mergedAt": "2026-03-03T17:07:58Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8632",
-              "labels": [
-                "bug"
-              ]
-            },
-            {
-              "number": 8630,
-              "title": "Tekninen: Poista käyttämätön @types/webpack-riippuvuus",
-              "author": "terolaakso-reaktor",
-              "mergedAt": "2026-03-03T06:47:56Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8630",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8629,
-              "title": "Tekninen: minimatch-kirjaston haavoittuvuuspäivitys",
-              "author": "terolaakso-reaktor",
-              "mergedAt": "2026-03-02T13:41:42Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8629",
-              "labels": [
-                "dependencies"
-              ]
-            },
-            {
-              "number": 8594,
-              "title": "Aikaleimasarakkeiden yhdenmukaistaminen - osa 1",
-              "author": "Joosakur",
-              "mergedAt": "2026-03-02T12:29:22Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8594",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8602,
-              "title": "Johtajalle näkyviin muut toimet -historia",
-              "author": "tomuli",
-              "mergedAt": "2026-03-02T10:54:11Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8602",
-              "labels": [
-                "enhancement"
-              ]
-            }
-          ],
+          "deployed": [],
           "inStaging": [],
           "pendingDeployment": []
         }
@@ -476,7 +193,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-04T13:12:27.169Z",
+            "checkedAt": "2026-03-04T13:38:51.735Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3fa58088d5d5511c506b643e90efa494e2b92cff",
@@ -501,7 +218,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-04T13:12:28.185Z",
+            "checkedAt": "2026-03-04T13:38:52.526Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3fa58088d5d5511c506b643e90efa494e2b92cff",
@@ -546,7 +263,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-04T13:12:29.581Z",
+            "checkedAt": "2026-03-04T13:38:54.325Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "0f30d2917bdf553d4f30aaeb1b0ce6168e1c385a",
@@ -571,7 +288,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-04T13:12:31.396Z",
+            "checkedAt": "2026-03-04T13:38:55.582Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ec9cf46065753fc462f2fa2cb50b5617b1bba4aa",
