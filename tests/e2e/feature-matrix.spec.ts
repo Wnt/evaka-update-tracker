@@ -58,14 +58,13 @@ test.describe('Feature matrix view', () => {
     await page.goto(`${baseUrl}/#/features`);
     await page.waitForSelector('.feature-matrix');
 
-    const totalRowsBefore = await page.locator('.flag-row').count();
+    const visibleBefore = await page.locator('.flag-row:not(.filtered-diff):not(.filtered-type)').count();
 
     // Click the differences-only toggle
     await page.click('#differences-toggle');
-    await page.waitForSelector('.feature-matrix');
 
-    const totalRowsAfter = await page.locator('.flag-row').count();
-    expect(totalRowsAfter).toBeLessThan(totalRowsBefore);
+    const visibleAfter = await page.locator('.flag-row:not(.filtered-diff):not(.filtered-type)').count();
+    expect(visibleAfter).toBeLessThan(visibleBefore);
 
     // Verify URL param is set
     const url = page.url();
@@ -73,25 +72,23 @@ test.describe('Feature matrix view', () => {
 
     // Toggle off — all rows return
     await page.click('#differences-toggle');
-    await page.waitForSelector('.feature-matrix');
 
-    const totalRowsRestored = await page.locator('.flag-row').count();
-    expect(totalRowsRestored).toBe(totalRowsBefore);
+    const visibleRestored = await page.locator('.flag-row:not(.filtered-diff):not(.filtered-type)').count();
+    expect(visibleRestored).toBe(visibleBefore);
   });
 
   test('non-boolean values toggle works', async ({ page, baseUrl }) => {
     await page.goto(`${baseUrl}/#/features`);
     await page.waitForSelector('.feature-matrix');
 
-    // Initially, non-boolean flags should be hidden
-    const rowsBefore = await page.locator('.flag-row').count();
+    // Initially, non-boolean flags should be hidden via CSS class
+    const visibleBefore = await page.locator('.flag-row:not(.filtered-diff):not(.filtered-type)').count();
 
     // Click show values toggle
     await page.click('#values-toggle');
-    await page.waitForSelector('.feature-matrix');
 
-    const rowsAfter = await page.locator('.flag-row').count();
-    expect(rowsAfter).toBeGreaterThan(rowsBefore);
+    const visibleAfter = await page.locator('.flag-row:not(.filtered-diff):not(.filtered-type)').count();
+    expect(visibleAfter).toBeGreaterThan(visibleBefore);
 
     // Verify URL param is set
     const url = page.url();
@@ -102,9 +99,8 @@ test.describe('Feature matrix view', () => {
     await page.goto(`${baseUrl}/#/features`);
     await page.waitForSelector('.feature-matrix');
 
-    // Check for divergent markers (some Tampere-region values differ, e.g. Nokia has different threshold)
+    // Show non-boolean values to see numeric divergences too
     await page.click('#values-toggle');
-    await page.waitForSelector('.feature-matrix');
 
     const divergentCells = page.locator('.tampere-divergent');
     // Nokia has different freeAbsenceGivesADailyRefund and citizenReservationThresholdHours

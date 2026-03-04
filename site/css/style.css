@@ -547,8 +547,12 @@ footer {
 .feature-toolbar {
   display: flex;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem 0;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-bg);
 }
 
 .feature-filter-btn {
@@ -587,10 +591,6 @@ details[open] > .category-header {
 .category-header.frontend { color: #7c3aed; }
 .category-header.backend { color: #0369a1; }
 
-.matrix-scroll {
-  overflow-x: auto;
-}
-
 .feature-matrix {
   width: 100%;
   border-collapse: collapse;
@@ -607,8 +607,9 @@ details[open] > .category-header {
 
 .feature-matrix thead th {
   position: sticky;
-  top: 0;
-  background: var(--color-card);
+  top: 2.5rem;
+  z-index: 10;
+  background: var(--color-bg);
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -656,6 +657,19 @@ details[open] > .category-header {
 
 .flag-unset {
   color: #94a3b8;
+}
+
+.flag-default {
+  opacity: 0.3;
+}
+
+.flag-row.filtered-diff,
+.flag-row.filtered-type {
+  display: none;
+}
+
+.feature-category.category-hidden {
+  display: none;
 }
 
 .flag-value {
