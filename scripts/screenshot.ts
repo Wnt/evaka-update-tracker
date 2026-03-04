@@ -76,7 +76,8 @@ async function main() {
     // Small delay for any async rendering
     await page.waitForTimeout(500);
 
-    await page.screenshot({ path: config.output });
+    // Screenshot the body element to clip to actual content height
+    await page.locator('body').screenshot({ path: config.output });
     console.log(`[Screenshot] Saved to ${config.output}`);
 
     await browser.close();
