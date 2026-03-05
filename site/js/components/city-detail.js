@@ -136,56 +136,55 @@ export function renderCityDetail(city, { showBots = false } = {}, historyEvents 
 
   // Production section: last 5 per repo with sub-headers (sourced from history events)
   const { core: coreDeployed, wrapper: wrapperDeployed } = getRecentProductionPRs(historyEvents, city);
-  let productionSection = '';
   const wrapperProdList = wrapperDeployed.length > 0
     ? `<div class="pr-track"><div class="pr-track-header">Kuntaimplementaatio</div>${renderPRList(wrapperDeployed, { showBots, limit: 5 })}</div>`
     : '';
   const coreProdList = coreDeployed.length > 0
     ? `<div class="pr-track"><div class="pr-track-header">Ydin</div>${renderPRList(coreDeployed, { showBots, limit: 5 })}</div>`
     : '';
-  if (wrapperProdList || coreProdList) {
-    productionSection = `
-      <div class="production-section">
-        <details>
-          <summary>Viimeisimmät muutokset tuotantoympäristössä</summary>
-          ${wrapperProdList}
-          ${coreProdList}
-        </details>
-      </div>
-    `;
-  }
+  const productionContent = (wrapperProdList || coreProdList)
+    ? `${wrapperProdList}${coreProdList}`
+    : '<div class="empty-state">Ei viimeaikaisia tuotantomuutoksia</div>';
+  const productionSection = `
+    <div class="production-section">
+      <details>
+        <summary>Viimeisimmät muutokset tuotantoympäristössä</summary>
+        ${productionContent}
+      </details>
+    </div>
+  `;
 
   // Staging section: unified chronological list with repo labels
   const coreStaging = city.prTracks?.core?.inStaging || [];
   const wrapperStaging = city.prTracks?.wrapper?.inStaging || [];
   const mergedStaging = mergeAndSortPRs(coreStaging, wrapperStaging, { showBots });
-  let stagingSection = '';
-  if (mergedStaging.length > 0) {
-    stagingSection = `
-      <div class="staging-section">
-        <details open>
-          <summary>Muutokset testauksessa</summary>
-          ${renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })}
-        </details>
-      </div>
-    `;
-  }
+  const stagingContent = mergedStaging.length > 0
+    ? renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })
+    : '<div class="empty-state">Ei muutoksia testauksessa</div>';
+  const stagingSection = `
+    <div class="staging-section">
+      <details open>
+        <summary>Muutokset testauksessa</summary>
+        ${stagingContent}
+      </details>
+    </div>
+  `;
 
   // Awaiting deployment section: unified chronological list with repo labels
   const corePending = city.prTracks?.core?.pendingDeployment || [];
   const wrapperPending = city.prTracks?.wrapper?.pendingDeployment || [];
   const mergedPending = mergeAndSortPRs(corePending, wrapperPending, { showBots });
-  let pendingSection = '';
-  if (mergedPending.length > 0) {
-    pendingSection = `
-      <div class="pending-section">
-        <details open>
-          <summary>Odottaa julkaisua</summary>
-          ${renderPRList(mergedPending, { showBots: true, showRepoLabel: true })}
-        </details>
-      </div>
-    `;
-  }
+  const pendingContent = mergedPending.length > 0
+    ? renderPRList(mergedPending, { showBots: true, showRepoLabel: true })
+    : '<div class="empty-state">Ei odottavia muutoksia</div>';
+  const pendingSection = `
+    <div class="pending-section">
+      <details open>
+        <summary>Odottaa julkaisua</summary>
+        ${pendingContent}
+      </details>
+    </div>
+  `;
 
   // Feature flag summary
   const featureSummary = renderFeatureSummary(city, featureData);
