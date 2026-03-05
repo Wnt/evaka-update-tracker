@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-05T10:42:29.591Z",
+  "generatedAt": "2026-03-05T11:03:27.387Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-05T10:41:52.064Z",
+            "checkedAt": "2026-03-05T11:02:28.347Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-05T10:41:52.769Z",
+            "checkedAt": "2026-03-05T11:02:29.370Z",
             "status": "auth-error",
             "wrapperCommit": null,
             "coreCommit": null
@@ -123,7 +123,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-05T10:42:02.675Z",
+            "checkedAt": "2026-03-05T11:02:40.525Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -148,7 +148,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-05T10:42:10.357Z",
+            "checkedAt": "2026-03-05T11:02:51.358Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -207,7 +207,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-05T10:42:18.373Z",
+            "checkedAt": "2026-03-05T11:03:03.094Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3fa58088d5d5511c506b643e90efa494e2b92cff",
@@ -232,7 +232,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-05T10:42:19.379Z",
+            "checkedAt": "2026-03-05T11:03:04.580Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3fa58088d5d5511c506b643e90efa494e2b92cff",
@@ -291,10 +291,22 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-05T10:42:21.297Z",
-            "status": "unavailable",
-            "wrapperCommit": null,
-            "coreCommit": null
+            "checkedAt": "2026-03-05T11:03:07.021Z",
+            "status": "ok",
+            "wrapperCommit": {
+              "sha": "ec9cf46065753fc462f2fa2cb50b5617b1bba4aa",
+              "shortSha": "ec9cf46",
+              "message": "Merge pull request #252 from City-of-Turku/dependabot/submodules/evaka-bf2c392",
+              "date": "2026-03-04T02:14:40Z",
+              "author": "github-actions[bot]"
+            },
+            "coreCommit": {
+              "sha": "bf2c392339a0fe36fec51b4fdc2b1cf022007938",
+              "shortSha": "bf2c392",
+              "message": "Merge pull request #8632 from espoon-voltti/fix-open-income-statement-filter",
+              "date": "2026-03-03T17:07:58Z",
+              "author": "Joosakur"
+            }
           },
           "versionMismatch": false,
           "mismatchDetails": []
@@ -304,7 +316,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-05T10:42:27.998Z",
+            "checkedAt": "2026-03-05T11:03:17.097Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ec9cf46065753fc462f2fa2cb50b5617b1bba4aa",
@@ -334,7 +346,73 @@
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
+          "deployed": [
+            {
+              "number": 8632,
+              "title": "Ei avoimia tuloselvityksiä -hakuehdon kuuluisi huomioida myös käsittelyssä olevat",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-03T17:07:58Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8632",
+              "labels": [
+                "bug"
+              ]
+            },
+            {
+              "number": 8630,
+              "title": "Tekninen: Poista käyttämätön @types/webpack-riippuvuus",
+              "author": "terolaakso-reaktor",
+              "mergedAt": "2026-03-03T06:47:56Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8630",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8629,
+              "title": "Tekninen: minimatch-kirjaston haavoittuvuuspäivitys",
+              "author": "terolaakso-reaktor",
+              "mergedAt": "2026-03-02T13:41:42Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8629",
+              "labels": [
+                "dependencies"
+              ]
+            },
+            {
+              "number": 8594,
+              "title": "Aikaleimasarakkeiden yhdenmukaistaminen - osa 1",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-02T12:29:22Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8594",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8602,
+              "title": "Johtajalle näkyviin muut toimet -historia",
+              "author": "tomuli",
+              "mergedAt": "2026-03-02T10:54:11Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8602",
+              "labels": [
+                "enhancement"
+              ]
+            }
+          ],
           "inStaging": [],
           "pendingDeployment": [
             {
