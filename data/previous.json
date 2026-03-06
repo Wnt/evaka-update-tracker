@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-03-06T07:17:17.633Z",
+  "checkedAt": "2026-03-06T07:28:43.564Z",
   "versions": {
     "espoo-prod": {
       "wrapperSha": null,
@@ -14,8 +14,8 @@
       "coreSha": "bf2c392339a0fe36fec51b4fdc2b1cf022007938"
     },
     "tampere-test": {
-      "wrapperSha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
-      "coreSha": "bf2c392339a0fe36fec51b4fdc2b1cf022007938"
+      "wrapperSha": "aa16bae59839c52678c464e3ed5f718dabc1d10a",
+      "coreSha": "9a4e61b6ce6660969c83119edef971a501573fd3"
     },
     "oulu-prod": {
       "wrapperSha": "3fa58088d5d5511c506b643e90efa494e2b92cff",
@@ -30,8 +30,8 @@
       "coreSha": "bf2c392339a0fe36fec51b4fdc2b1cf022007938"
     },
     "turku-staging": {
-      "wrapperSha": "ec9cf46065753fc462f2fa2cb50b5617b1bba4aa",
-      "coreSha": "bf2c392339a0fe36fec51b4fdc2b1cf022007938"
+      "wrapperSha": "4e953857499d77b269c602fbed1f00ec0cf36488",
+      "coreSha": "9a4e61b6ce6660969c83119edef971a501573fd3"
     }
   }
 }
