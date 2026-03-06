@@ -41,6 +41,8 @@ jobs:
           STAGING_INSTANCES: ${{ secrets.STAGING_INSTANCES }}
           OULU_STAGING_USER: ${{ secrets.OULU_STAGING_USER }}
           OULU_STAGING_PASS: ${{ secrets.OULU_STAGING_PASS }}
+          ESPOO_STAGING_USER: ${{ secrets.ESPOO_STAGING_USER }}
+          ESPOO_STAGING_PASS: ${{ secrets.ESPOO_STAGING_PASS }}
         run: npx tsx src/index.ts
 
       - name: Commit data changes
