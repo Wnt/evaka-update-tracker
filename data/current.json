@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-06T09:50:02.522Z",
+  "generatedAt": "2026-03-06T10:04:50.371Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-06T09:49:14.486Z",
+            "checkedAt": "2026-03-06T10:04:13.270Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-06T09:49:15.381Z",
+            "checkedAt": "2026-03-06T10:04:14.049Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -118,6 +118,19 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8628,
+              "title": "Testidatan refaktorointi - ei käytetä lateinit",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-06T10:02:01Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8628",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
               "number": 8633,
               "title": "Endpoint-kohtainen huoltotila",
               "author": "Joosakur",
@@ -143,7 +156,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-06T09:49:22.681Z",
+            "checkedAt": "2026-03-06T10:04:20.012Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -168,7 +181,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-06T09:49:34.634Z",
+            "checkedAt": "2026-03-06T10:04:28.928Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "aa16bae59839c52678c464e3ed5f718dabc1d10a",
@@ -242,6 +255,19 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8628,
+              "title": "Testidatan refaktorointi - ei käytetä lateinit",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-06T10:02:01Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8628",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
               "number": 8633,
               "title": "Endpoint-kohtainen huoltotila",
               "author": "Joosakur",
@@ -267,7 +293,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-06T09:49:49.708Z",
+            "checkedAt": "2026-03-06T10:04:40.522Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3fa58088d5d5511c506b643e90efa494e2b92cff",
@@ -292,7 +318,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-06T09:49:51.258Z",
+            "checkedAt": "2026-03-06T10:04:41.562Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "91284abc3ae0edf04ba1537dfe1bd09a0c03322b",
@@ -366,6 +392,19 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8628,
+              "title": "Testidatan refaktorointi - ei käytetä lateinit",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-06T10:02:01Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8628",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
               "number": 8633,
               "title": "Endpoint-kohtainen huoltotila",
               "author": "Joosakur",
@@ -391,7 +430,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-06T09:49:56.187Z",
+            "checkedAt": "2026-03-06T10:04:45.295Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ec9cf46065753fc462f2fa2cb50b5617b1bba4aa",
@@ -416,7 +455,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-06T09:49:57.683Z",
+            "checkedAt": "2026-03-06T10:04:46.436Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "4e953857499d77b269c602fbed1f00ec0cf36488",
@@ -489,6 +528,19 @@
             }
           ],
           "pendingDeployment": [
+            {
+              "number": 8628,
+              "title": "Testidatan refaktorointi - ei käytetä lateinit",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-06T10:02:01Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8628",
+              "labels": [
+                "tech"
+              ]
+            },
             {
               "number": 8633,
               "title": "Endpoint-kohtainen huoltotila",
