@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T08:07:17.522Z",
+  "generatedAt": "2026-03-09T08:27:00.041Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-09T08:06:38.506Z",
+            "checkedAt": "2026-03-09T08:25:56.055Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-09T08:06:39.152Z",
+            "checkedAt": "2026-03-09T08:25:56.918Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -63,7 +63,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-09T08:06:43.194Z",
+            "checkedAt": "2026-03-09T08:26:02.163Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -88,21 +88,21 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-09T08:06:50.018Z",
+            "checkedAt": "2026-03-09T08:26:13.666Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "aa16bae59839c52678c464e3ed5f718dabc1d10a",
-              "shortSha": "aa16bae",
-              "message": "Merge pull request #2037 from Tampere/dependabot/submodules/evaka-9a4e61b",
-              "date": "2026-03-06T07:14:52Z",
-              "author": "tomuli"
+              "sha": "755d4b5a112134aef452537361a1309fb1ddbf98",
+              "shortSha": "755d4b5",
+              "message": "Merge pull request #2036 from Tampere/dependabot/gradle/service/gradle-wrapper-9.4.0",
+              "date": "2026-03-09T07:51:57Z",
+              "author": "akheron"
             },
             "coreCommit": {
-              "sha": "9a4e61b6ce6660969c83119edef971a501573fd3",
-              "shortSha": "9a4e61b",
-              "message": "Merge pull request #8634 from espoon-voltti/swedish-translations-for-employee-frontends",
-              "date": "2026-03-05T12:22:53Z",
-              "author": "Joosakur"
+              "sha": "7ea1d36fb0f560af1243de4ea681824195b2fafb",
+              "shortSha": "7ea1d36",
+              "message": "Update dependency postcss to v8.5.8 (#8659)",
+              "date": "2026-03-08T02:10:48Z",
+              "author": "renovate[bot]"
             }
           },
           "versionMismatch": false,
@@ -120,6 +120,32 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [
+            {
+              "number": 8628,
+              "title": "Testidatan refaktorointi - ei käytetä lateinit",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-06T10:02:01Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8628",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8633,
+              "title": "Endpoint-kohtainen huoltotila",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-06T09:34:41Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8633",
+              "labels": [
+                "tech"
+              ]
+            },
             {
               "number": 8634,
               "title": "Henkilökunnan ruotsi-käännökset",
@@ -160,34 +186,7 @@
               ]
             }
           ],
-          "pendingDeployment": [
-            {
-              "number": 8628,
-              "title": "Testidatan refaktorointi - ei käytetä lateinit",
-              "author": "Joosakur",
-              "mergedAt": "2026-03-06T10:02:01Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8628",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8633,
-              "title": "Endpoint-kohtainen huoltotila",
-              "author": "Joosakur",
-              "mergedAt": "2026-03-06T09:34:41Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8633",
-              "labels": [
-                "tech"
-              ]
-            }
-          ]
+          "pendingDeployment": []
         }
       }
     },
@@ -200,7 +199,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-09T08:07:03.309Z",
+            "checkedAt": "2026-03-09T08:26:41.177Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "91284abc3ae0edf04ba1537dfe1bd09a0c03322b",
@@ -225,7 +224,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-09T08:07:04.181Z",
+            "checkedAt": "2026-03-09T08:26:42.523Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b968504fc4cd68d1f61c777b82113e048a83b8ce",
@@ -297,7 +296,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-09T08:07:10.158Z",
+            "checkedAt": "2026-03-09T08:26:50.582Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "4e953857499d77b269c602fbed1f00ec0cf36488",
@@ -322,7 +321,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-09T08:07:11.060Z",
+            "checkedAt": "2026-03-09T08:26:51.990Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "df54f3f0d610f0973e2492d5ce8d3b550299d408",
