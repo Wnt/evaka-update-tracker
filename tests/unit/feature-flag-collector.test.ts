@@ -191,7 +191,7 @@ describe('collectFeatureFlags', () => {
     const shiftCare = frontendFlags.find(
       (f) => f.key === 'citizenShiftCareAbsence'
     );
-    expect(shiftCare!.label).toBe('Vuorohoidon poissaolot kansalaisille');
+    expect(shiftCare!.label).toBe('Vuorohoidon poissaolot kuntalaisille');
 
     const backendFlags = result.categories[1].flags;
     const threshold = backendFlags.find(
