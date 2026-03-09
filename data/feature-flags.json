@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T12:21:09.415Z",
+  "generatedAt": "2026-03-09T13:08:06.089Z",
   "cities": [
     {
       "id": "espoo",
@@ -214,7 +214,7 @@
         },
         {
           "key": "citizenAttendanceSummary",
-          "label": "Kansalaisen läsnäoloyhteenveto",
+          "label": "Kuntalaisen läsnäoloyhteenveto",
           "type": "boolean",
           "values": {
             "espoo": false,
@@ -233,7 +233,7 @@
         },
         {
           "key": "citizenChildDocumentTypes",
-          "label": "Kansalaisen lapsiasiakirjatyypit",
+          "label": "Kuntalaisen lapsiasiakirjatyypit",
           "type": "boolean",
           "values": {
             "espoo": true,
@@ -252,7 +252,7 @@
         },
         {
           "key": "citizenShiftCareAbsence",
-          "label": "Vuorohoidon poissaolot kansalaisille",
+          "label": "Vuorohoidon poissaolot kuntalaisille",
           "type": "boolean",
           "values": {
             "espoo": true,
@@ -271,7 +271,7 @@
         },
         {
           "key": "daycareApplication.dailyTimes",
-          "label": "Päivähoitohakemus: päivittäiset ajat",
+          "label": "Päivähoitohakemus: päivittäinen varhaiskasvatusaika",
           "type": "boolean",
           "values": {
             "espoo": true,
@@ -442,7 +442,7 @@
         },
         {
           "key": "forceUnpublishDocumentTemplate",
-          "label": "Asiakirjamallien pakkojulkaisun peruminen",
+          "label": "Asiakirjapohjien julkaisun peruminen",
           "type": "boolean",
           "values": {
             "espoo": false,
@@ -632,7 +632,7 @@
         },
         {
           "key": "placementGuarantee",
-          "label": "Paikkavakuus",
+          "label": "Varhaiskasvatuspaikkatakuu",
           "type": "boolean",
           "values": {
             "espoo": true,
@@ -689,7 +689,7 @@
         },
         {
           "key": "preschoolApplication.connectedDaycarePreferredStartDate",
-          "label": "Esiopetushakemus: liittyvän päivähoidon aloituspäivä",
+          "label": "Esiopetushakemus: liittyvän varhaiskasvatuksen aloituspäivä",
           "type": "boolean",
           "values": {
             "espoo": true,
@@ -784,7 +784,7 @@
         },
         {
           "key": "showMetadataToCitizen",
-          "label": "Metatiedot kansalaiselle",
+          "label": "Metatiedot kuntalaiselle",
           "type": "boolean",
           "values": {
             "espoo": false,
