@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T09:51:32.473Z",
+  "generatedAt": "2026-03-09T10:11:58.792Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,15 +10,15 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-09T09:50:50.363Z",
+            "checkedAt": "2026-03-09T10:10:57.356Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
-              "sha": "c1c5b3c7d0238c06e05f91a68df1bc9400ad3c64",
-              "shortSha": "c1c5b3c",
-              "message": "Merge pull request #8628 from espoon-voltti/worktree-refactor-lateinit-test-data",
-              "date": "2026-03-06T10:02:01Z",
-              "author": "Joosakur"
+              "sha": "7ea1d36fb0f560af1243de4ea681824195b2fafb",
+              "shortSha": "7ea1d36",
+              "message": "Update dependency postcss to v8.5.8 (#8659)",
+              "date": "2026-03-08T02:10:48Z",
+              "author": "renovate[bot]"
             }
           },
           "versionMismatch": false,
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-09T09:50:50.947Z",
+            "checkedAt": "2026-03-09T10:11:02.346Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -63,7 +63,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-09T09:50:55.468Z",
+            "checkedAt": "2026-03-09T10:11:10.111Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -88,7 +88,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-09T09:51:02.601Z",
+            "checkedAt": "2026-03-09T10:11:18.612Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "755d4b5a112134aef452537361a1309fb1ddbf98",
@@ -199,7 +199,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-09T09:51:17.415Z",
+            "checkedAt": "2026-03-09T10:11:37.033Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "91284abc3ae0edf04ba1537dfe1bd09a0c03322b",
@@ -224,7 +224,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-09T09:51:18.284Z",
+            "checkedAt": "2026-03-09T10:11:38.082Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b968504fc4cd68d1f61c777b82113e048a83b8ce",
@@ -296,7 +296,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-09T09:51:24.515Z",
+            "checkedAt": "2026-03-09T10:11:47.743Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "4e953857499d77b269c602fbed1f00ec0cf36488",
@@ -321,7 +321,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-09T09:51:25.490Z",
+            "checkedAt": "2026-03-09T10:11:48.855Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "df54f3f0d610f0973e2492d5ce8d3b550299d408",
