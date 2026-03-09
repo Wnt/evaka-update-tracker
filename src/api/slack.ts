@@ -101,7 +101,7 @@ function buildSlackMessage(events: DeploymentEvent[], dashboardBaseUrl: string) 
 export async function sendSlackNotification(
   webhookUrl: string,
   events: DeploymentEvent | DeploymentEvent[],
-  dashboardBaseUrl: string = 'https://wnt.github.io/evaka-update-tracker/'
+  dashboardBaseUrl: string = 'https://espoon-voltti.github.io/evaka-update-tracker/'
 ): Promise<void> {
   const eventArray = Array.isArray(events) ? events : [events];
   const firstEvent = eventArray[0];
