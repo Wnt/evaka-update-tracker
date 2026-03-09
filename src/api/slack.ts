@@ -14,7 +14,7 @@ function getRepoTypeDisplay(repoType: string): string {
 function buildSlackMessage(event: DeploymentEvent, dashboardBaseUrl: string) {
   const isProduction = event.environmentId.includes('prod');
   const emoji = isProduction ? '\ud83d\ude80' : '\ud83e\uddea';
-  const envLabel = isProduction ? 'Tuotantoon asennettu' : 'Testaus päivitetty';
+  const envLabel = isProduction ? 'Tuotanto päivitetty' : 'Staging / testaus päivitetty';
   const cityName = event.cityGroupId.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   const repoTypeDisplay = getRepoTypeDisplay(event.repoType);
 
@@ -54,7 +54,7 @@ function buildSlackMessage(event: DeploymentEvent, dashboardBaseUrl: string) {
         elements: [
           {
             type: 'mrkdwn',
-            text: `<${dashboardBaseUrl}#/city/${event.cityGroupId}|Näytä hallintapaneeli>`,
+            text: `<${dashboardBaseUrl}#/city/${event.cityGroupId}|Ympäristöjen tiedot>`,
           },
         ],
       },
