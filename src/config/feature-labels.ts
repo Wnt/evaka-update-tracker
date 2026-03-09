@@ -4,12 +4,12 @@
  */
 export const FEATURE_LABELS: Record<string, string> = {
   // Frontend flags (from BaseFeatureFlags in types.d.ts)
-  citizenShiftCareAbsence: 'Vuorohoidon poissaolot kansalaisille',
+  citizenShiftCareAbsence: 'Vuorohoidon poissaolot kuntalaisille',
   assistanceActionOther: 'Tukitoimi: muu',
-  'daycareApplication.dailyTimes': 'Päivähoitohakemus: päivittäiset ajat',
+  'daycareApplication.dailyTimes': 'Päivähoitohakemus: päivittäinen varhaiskasvatusaika',
   'daycareApplication.serviceNeedOption': 'Päivähoitohakemus: palveluntarpeen valinta',
   'preschoolApplication.connectedDaycarePreferredStartDate':
-    'Esiopetushakemus: liittyvän päivähoidon aloituspäivä',
+    'Esiopetushakemus: liittyvän varhaiskasvatuksen aloituspäivä',
   'preschoolApplication.serviceNeedOption': 'Esiopetushakemus: palveluntarpeen valinta',
   decisionDraftMultipleUnits: 'Sijoitushahmotelma: erilliset yksiköt',
   preschool: 'Esiopetuksen tuki',
@@ -17,9 +17,9 @@ export const FEATURE_LABELS: Record<string, string> = {
   urgencyAttachments: 'Kiireellisyyden liitteet',
   financeDecisionHandlerSelect: 'Talouspäätöksen käsittelijän valinta',
   feeDecisionPreschoolClubFilter: 'Maksupäätökset: esiopetuskerhon suodatus',
-  placementGuarantee: 'Paikkavakuus',
+  placementGuarantee: 'Varhaiskasvatuspaikkatakuu',
   intermittentShiftCare: 'Ajoittainen vuorohoito',
-  citizenAttendanceSummary: 'Kansalaisen läsnäoloyhteenveto',
+  citizenAttendanceSummary: 'Kuntalaisen läsnäoloyhteenveto',
   noAbsenceType: 'Ei poissaolotyyppiä mobiilissa',
   voucherUnitPayments: 'Palvelusetelimaksatus',
   voucherValueSeparation: 'Palveluseteliarvojen erittely',
@@ -29,7 +29,7 @@ export const FEATURE_LABELS: Record<string, string> = {
   jamixIntegration: 'Jamix-ruokatilausintegraatio',
   aromiIntegration: 'Aromi-ruokatilausintegraatio',
   nekkuIntegration: 'Nekku-ruokatilausintegraatio',
-  forceUnpublishDocumentTemplate: 'Asiakirjamallien pakkojulkaisun peruminen',
+  forceUnpublishDocumentTemplate: 'Asiakirjapohjien julkaisun peruminen',
   invoiceDisplayAccountNumber: 'Tilinumero laskun tiedoissa',
   serviceApplications: 'Palveluntarvemuutokset',
   absenceApplications: 'Poissaolohakemukset',
@@ -40,11 +40,11 @@ export const FEATURE_LABELS: Record<string, string> = {
   'archiveIntegration.childDocuments': 'Arkistointi: lapsiasiakirjat',
   'archiveIntegration.feeDecisions': 'Arkistointi: maksupäätökset',
   'archiveIntegration.voucherValueDecisions': 'Arkistointi: arvopäätökset',
-  citizenChildDocumentTypes: 'Kansalaisen lapsiasiakirjatyypit',
+  citizenChildDocumentTypes: 'Kuntalaisen lapsiasiakirjatyypit',
   decisionChildDocumentTypes: 'Päätösasiakirjatyypit',
   showCitizenApplicationPreschoolTerms: 'Esiopetuskauden tiedot hakemuksella',
   missingQuestionnaireAnswerMarkerEnabled: 'Puuttuvan kyselyvastauksen merkintä',
-  showMetadataToCitizen: 'Metatiedot kansalaiselle',
+  showMetadataToCitizen: 'Metatiedot kuntalaiselle',
   placementDesktop: 'Sijoituksen työpöytänäkymä',
 
   // Backend config (from FeatureConfig.kt)
