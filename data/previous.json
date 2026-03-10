@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-03-10T12:47:33.318Z",
+  "checkedAt": "2026-03-10T12:59:43.183Z",
   "versions": {
     "espoo-prod": {
       "wrapperSha": null,
@@ -18,8 +18,8 @@
       "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
     },
     "oulu-prod": {
-      "wrapperSha": "91284abc3ae0edf04ba1537dfe1bd09a0c03322b",
-      "coreSha": "9a4e61b6ce6660969c83119edef971a501573fd3"
+      "wrapperSha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
+      "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
     },
     "oulu-staging": {
       "wrapperSha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
