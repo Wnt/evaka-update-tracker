@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T11:20:56.393Z",
+  "generatedAt": "2026-03-10T11:25:25.111Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-10T11:19:45.204Z",
+            "checkedAt": "2026-03-10T11:24:41.880Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-10T11:19:51.448Z",
+            "checkedAt": "2026-03-10T11:24:42.496Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -48,49 +48,23 @@
         "wrapper": null,
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [
+          "deployed": [],
+          "inStaging": [],
+          "pendingDeployment": [
             {
-              "number": 8638,
-              "title": "Oulu only: Korjataan poissaolokyselyn kehykset ja sopimuspoissaolojen merkkaaminen",
-              "author": "ohinkinen",
-              "mergedAt": "2026-03-09T14:32:31Z",
+              "number": 8637,
+              "title": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä",
+              "author": "ilja-git",
+              "mergedAt": "2026-03-10T11:24:16Z",
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8638",
-              "labels": [
-                "bug"
-              ]
-            },
-            {
-              "number": 8662,
-              "title": "Laukaistaan muutosseurannan datapäivitys muutoksista",
-              "author": "Wnt",
-              "mergedAt": "2026-03-09T14:24:10Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8662",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8598,
-              "title": "Parannuksia sandboxiin",
-              "author": "akheron",
-              "mergedAt": "2026-03-09T11:30:45Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8598",
+              "url": "https://github.com/espoon-voltti/evaka/pull/8637",
               "labels": [
                 "tech"
               ]
             }
-          ],
-          "inStaging": [],
-          "pendingDeployment": []
+          ]
         }
       }
     },
@@ -103,7 +77,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-10T11:19:57.716Z",
+            "checkedAt": "2026-03-10T11:24:43.708Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -128,7 +102,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-10T11:20:09.631Z",
+            "checkedAt": "2026-03-10T11:24:51.381Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "c2a7f7a53b466965cd11686c6e0f499b6f3231ba",
@@ -226,7 +200,21 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8637,
+              "title": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä",
+              "author": "ilja-git",
+              "mergedAt": "2026-03-10T11:24:16Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8637",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     },
@@ -239,7 +227,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-10T11:20:36.598Z",
+            "checkedAt": "2026-03-10T11:25:10.646Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "91284abc3ae0edf04ba1537dfe1bd09a0c03322b",
@@ -264,7 +252,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-10T11:20:38.055Z",
+            "checkedAt": "2026-03-10T11:25:11.759Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -362,7 +350,21 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8637,
+              "title": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä",
+              "author": "ilja-git",
+              "mergedAt": "2026-03-10T11:24:16Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8637",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     },
@@ -375,7 +377,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-10T11:20:52.627Z",
+            "checkedAt": "2026-03-10T11:25:22.184Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ab5e158a12bb22419a4695fcfa509c04a8e2bc30",
@@ -400,7 +402,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-10T11:20:53.932Z",
+            "checkedAt": "2026-03-10T11:25:23.077Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ab5e158a12bb22419a4695fcfa509c04a8e2bc30",
@@ -432,7 +434,21 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8637,
+              "title": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä",
+              "author": "ilja-git",
+              "mergedAt": "2026-03-10T11:24:16Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8637",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     }
