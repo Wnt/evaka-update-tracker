@@ -1,8 +1,8 @@
 <!-- Sync Impact Report
-  Version change: 1.2.0 → 1.3.0
+  Version change: 1.3.0 → 1.4.0
   Modified sections:
-    - Development Workflow: added screenshot maintenance requirement
-      (new bullet with sub-bullets)
+    - Development Workflow: added GitHub Actions workflow maintenance
+      requirement for new environment-configurable features
   Added sections: None
   Removed sections: None
   Templates requiring updates:
@@ -10,7 +10,7 @@
     - .specify/templates/spec-template.md ✅ no changes needed
     - .specify/templates/tasks-template.md ⚠ pending — Polish phase
       should reference screenshot regeneration as a standard task
-      when view changes are involved
+      when view changes are involved (carried from 1.3.0)
     - CLAUDE.md ✅ no changes needed
   Follow-up TODOs: None
 -->
@@ -133,6 +133,15 @@ tests to provide quick feedback.
     existing screenshot inaccurate or misleading. Minor tweaks
     (color adjustments, small text changes) do NOT require a
     screenshot update.
+- The application runs primarily in GitHub Actions. When a new
+  feature introduces environment variables or secrets, the
+  workflow YAML (`.github/workflows/monitor.yml`) MUST be
+  updated in the same change to expose those variables to the
+  runtime environment.
+  - This applies to any new `process.env.*` references in
+    TypeScript code that read from secrets or configuration.
+  - Forgetting to add the variable to the workflow means the
+    feature silently fails in production while passing locally.
 
 ## Governance
 
@@ -147,4 +156,4 @@ principles.
 - If a principle is violated, the violation MUST be justified in
   the Complexity Tracking section of the implementation plan.
 
-**Version**: 1.3.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-04
+**Version**: 1.4.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-10
