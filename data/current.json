@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T11:03:55.285Z",
+  "generatedAt": "2026-03-11T11:21:04.390Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,15 +10,15 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-11T11:02:53.458Z",
+            "checkedAt": "2026-03-11T11:20:16.412Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
-              "sha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc",
-              "shortSha": "e1d38a8",
-              "message": "Merge pull request #8638 from espoon-voltti/fix-missing-holiday-questionnaire-answer",
-              "date": "2026-03-09T14:32:31Z",
-              "author": "ohinkinen"
+              "sha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225",
+              "shortSha": "2d5ce68",
+              "message": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä (#8637)",
+              "date": "2026-03-10T11:24:15Z",
+              "author": "ilja-git"
             }
           },
           "versionMismatch": false,
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-11T11:02:54.440Z",
+            "checkedAt": "2026-03-11T11:20:17.681Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -48,8 +48,7 @@
         "wrapper": null,
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 8637,
               "title": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä",
@@ -64,6 +63,7 @@
               ]
             }
           ],
+          "inStaging": [],
           "pendingDeployment": []
         }
       }
@@ -77,7 +77,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-11T11:02:56.361Z",
+            "checkedAt": "2026-03-11T11:20:19.128Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -102,7 +102,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-11T11:03:09.059Z",
+            "checkedAt": "2026-03-11T11:20:30.137Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -236,7 +236,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-11T11:03:42.274Z",
+            "checkedAt": "2026-03-11T11:20:53.896Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -261,7 +261,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-11T11:03:44.181Z",
+            "checkedAt": "2026-03-11T11:20:55.033Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "00373d9a8695994857e7e45aacf5c3d4c2e238ea",
@@ -332,21 +332,21 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-11T11:03:49.070Z",
+            "checkedAt": "2026-03-11T11:20:58.413Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "ab5e158a12bb22419a4695fcfa509c04a8e2bc30",
-              "shortSha": "ab5e158",
-              "message": "Merge pull request #257 from City-of-Turku/dependabot/submodules/evaka-e1d38a8",
-              "date": "2026-03-10T02:14:32Z",
+              "sha": "b0ad729bb9764af8b1def32010acdc626a9e852d",
+              "shortSha": "b0ad729",
+              "message": "Merge pull request #259 from City-of-Turku/dependabot/submodules/evaka-2d5ce68",
+              "date": "2026-03-11T02:14:44Z",
               "author": "github-actions[bot]"
             },
             "coreCommit": {
-              "sha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc",
-              "shortSha": "e1d38a8",
-              "message": "Merge pull request #8638 from espoon-voltti/fix-missing-holiday-questionnaire-answer",
-              "date": "2026-03-09T14:32:31Z",
-              "author": "ohinkinen"
+              "sha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225",
+              "shortSha": "2d5ce68",
+              "message": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä (#8637)",
+              "date": "2026-03-10T11:24:15Z",
+              "author": "ilja-git"
             }
           },
           "versionMismatch": false,
@@ -357,7 +357,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-11T11:03:50.718Z",
+            "checkedAt": "2026-03-11T11:21:01.131Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b0ad729bb9764af8b1def32010acdc626a9e852d",
@@ -399,8 +399,7 @@
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 8637,
               "title": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä",
@@ -415,6 +414,7 @@
               ]
             }
           ],
+          "inStaging": [],
           "pendingDeployment": []
         }
       }
