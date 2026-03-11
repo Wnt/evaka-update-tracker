@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T10:06:35.284Z",
+  "generatedAt": "2026-03-11T10:24:57.563Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-11T10:05:48.413Z",
+            "checkedAt": "2026-03-11T10:24:08.681Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-11T10:05:49.421Z",
+            "checkedAt": "2026-03-11T10:24:09.589Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -77,7 +77,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-11T10:05:50.906Z",
+            "checkedAt": "2026-03-11T10:24:11.272Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -102,7 +102,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-11T10:05:59.487Z",
+            "checkedAt": "2026-03-11T10:24:22.127Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -236,7 +236,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-11T10:06:27.525Z",
+            "checkedAt": "2026-03-11T10:24:47.742Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -261,7 +261,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-11T10:06:28.603Z",
+            "checkedAt": "2026-03-11T10:24:49.008Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "00373d9a8695994857e7e45aacf5c3d4c2e238ea",
@@ -287,7 +287,19 @@
           "repository": "Oulunkaupunki/evakaoulu",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 300,
+              "title": "Tekninen: CircleCI Slack-notifikaatiokanavan päivitys",
+              "author": "terolaakso-reaktor",
+              "mergedAt": "2026-03-11T10:18:58Z",
+              "repository": "Oulunkaupunki/evakaoulu",
+              "repoType": "wrapper",
+              "isBot": false,
+              "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/300",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
@@ -320,7 +332,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-11T10:06:31.384Z",
+            "checkedAt": "2026-03-11T10:24:52.653Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ab5e158a12bb22419a4695fcfa509c04a8e2bc30",
@@ -345,7 +357,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-11T10:06:32.377Z",
+            "checkedAt": "2026-03-11T10:24:53.940Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b0ad729bb9764af8b1def32010acdc626a9e852d",
@@ -371,7 +383,19 @@
           "repository": "City-of-Turku/evakaturku",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 260,
+              "title": "Tekninen: CircleCI Slack-notifikaatiokanavan päivitys",
+              "author": "terolaakso-reaktor",
+              "mergedAt": "2026-03-11T10:08:52Z",
+              "repository": "City-of-Turku/evakaturku",
+              "repoType": "wrapper",
+              "isBot": false,
+              "url": "https://github.com/City-of-Turku/evakaturku/pull/260",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
