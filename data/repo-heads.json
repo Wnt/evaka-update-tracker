@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-03-11T07:38:17.379Z",
+  "checkedAt": "2026-03-11T07:56:43.243Z",
   "repos": {
     "espoon-voltti/evaka": {
       "sha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225",
       "branch": "master"
     },
     "Tampere/trevaka": {
-      "sha": "980b0704f2b63790fcc93108c31080dc9301ae3b",
+      "sha": "8b99cbffc6e39e6bd10aad7aa78443ead9786441",
       "branch": "main"
     },
     "Oulunkaupunki/evakaoulu": {
