@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-03-11T05:31:05.917Z",
+  "checkedAt": "2026-03-11T05:53:18.777Z",
   "versions": {
     "espoo-prod": {
       "wrapperSha": null,
@@ -7,7 +7,7 @@
     },
     "espoo-staging": {
       "wrapperSha": null,
-      "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
+      "coreSha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225"
     },
     "tampere-prod": {
       "wrapperSha": "2a33a649c8e1cb8f8f621f2ab376ac382655f2ff",
@@ -22,16 +22,16 @@
       "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
     },
     "oulu-staging": {
-      "wrapperSha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
-      "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
+      "wrapperSha": "00373d9a8695994857e7e45aacf5c3d4c2e238ea",
+      "coreSha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225"
     },
     "turku-prod": {
       "wrapperSha": "ab5e158a12bb22419a4695fcfa509c04a8e2bc30",
       "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
     },
     "turku-staging": {
-      "wrapperSha": "ab5e158a12bb22419a4695fcfa509c04a8e2bc30",
-      "coreSha": "e1d38a805c8b29b7be9d36d4da0450f4e5c12efc"
+      "wrapperSha": "b0ad729bb9764af8b1def32010acdc626a9e852d",
+      "coreSha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225"
     }
   }
 }
