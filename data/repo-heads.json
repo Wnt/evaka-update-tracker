@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-03-13T02:08:05.811Z",
+  "checkedAt": "2026-03-13T03:10:30.797Z",
   "repos": {
     "espoon-voltti/evaka": {
       "sha": "ba4c2f4c840f04bf004341d9ee0ab401f459fdcb",
@@ -10,11 +10,11 @@
       "branch": "main"
     },
     "Oulunkaupunki/evakaoulu": {
-      "sha": "2af2f531c3adf940fe0c91d71d80afb291f474d4",
+      "sha": "d184d5da589f5d1243e41a3721d9cf3e56fb13bc",
       "branch": "main"
     },
     "City-of-Turku/evakaturku": {
-      "sha": "c67a704d8f9d40bcd5ea52acdecaea6cda81638a",
+      "sha": "79d9d027bfb536080f08a6555717e4ddfa7c2899",
       "branch": "main"
     }
   }
