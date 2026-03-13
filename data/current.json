@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T09:58:19.064Z",
+  "generatedAt": "2026-03-13T10:13:04.015Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,15 +10,15 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-13T09:57:51.135Z",
+            "checkedAt": "2026-03-13T10:12:22.672Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
-              "sha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225",
-              "shortSha": "2d5ce68",
-              "message": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä (#8637)",
-              "date": "2026-03-10T11:24:15Z",
-              "author": "ilja-git"
+              "sha": "ba4c2f4c840f04bf004341d9ee0ab401f459fdcb",
+              "shortSha": "ba4c2f4",
+              "message": "Merge pull request #8546 from espoon-voltti/playwright-runner",
+              "date": "2026-03-12T15:03:50Z",
+              "author": "akheron"
             }
           },
           "versionMismatch": false,
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-13T09:57:51.842Z",
+            "checkedAt": "2026-03-13T10:12:25.011Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -48,8 +48,7 @@
         "wrapper": null,
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 8546,
               "title": "Käytetään playwright test runneria e2e-testeissä",
@@ -77,6 +76,7 @@
               ]
             }
           ],
+          "inStaging": [],
           "pendingDeployment": []
         }
       }
@@ -90,7 +90,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-13T09:57:53.809Z",
+            "checkedAt": "2026-03-13T10:12:27.183Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -115,7 +115,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-13T09:58:00.601Z",
+            "checkedAt": "2026-03-13T10:12:37.679Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -221,7 +221,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-13T09:58:09.501Z",
+            "checkedAt": "2026-03-13T10:12:49.715Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -246,7 +246,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-13T09:58:10.407Z",
+            "checkedAt": "2026-03-13T10:12:50.943Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6a89a92860ab8acc1b7f56a99447afe7362dd2c2",
@@ -354,21 +354,21 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-13T09:58:14.800Z",
+            "checkedAt": "2026-03-13T10:12:56.273Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "b0ad729bb9764af8b1def32010acdc626a9e852d",
-              "shortSha": "b0ad729",
-              "message": "Merge pull request #259 from City-of-Turku/dependabot/submodules/evaka-2d5ce68",
-              "date": "2026-03-11T02:14:44Z",
-              "author": "github-actions[bot]"
+              "sha": "6bcba1ff858a70ad9830370231b24886b228fce6",
+              "shortSha": "6bcba1f",
+              "message": "Merge pull request #264 from City-of-Turku/playwright-runner",
+              "date": "2026-03-13T08:39:08Z",
+              "author": "akheron"
             },
             "coreCommit": {
-              "sha": "2d5ce68519b8961ee33b58cee1fd049a7fdec225",
-              "shortSha": "2d5ce68",
-              "message": "Tuki konttien ajamiseen kirjoitussuojatussa-tiedostojärjestessä (#8637)",
-              "date": "2026-03-10T11:24:15Z",
-              "author": "ilja-git"
+              "sha": "ba4c2f4c840f04bf004341d9ee0ab401f459fdcb",
+              "shortSha": "ba4c2f4",
+              "message": "Merge pull request #8546 from espoon-voltti/playwright-runner",
+              "date": "2026-03-12T15:03:50Z",
+              "author": "akheron"
             }
           },
           "versionMismatch": false,
@@ -379,7 +379,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-13T09:58:15.707Z",
+            "checkedAt": "2026-03-13T10:12:59.907Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6bcba1ff858a70ad9830370231b24886b228fce6",
@@ -403,8 +403,7 @@
       "prTracks": {
         "wrapper": {
           "repository": "City-of-Turku/evakaturku",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 264,
               "title": "Käytetään playwright runneria e2e-testeissä",
@@ -428,12 +427,12 @@
               "labels": []
             }
           ],
+          "inStaging": [],
           "pendingDeployment": []
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 8546,
               "title": "Käytetään playwright test runneria e2e-testeissä",
@@ -461,6 +460,7 @@
               ]
             }
           ],
+          "inStaging": [],
           "pendingDeployment": []
         }
       }
