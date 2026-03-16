@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T09:37:22.965Z",
+  "generatedAt": "2026-03-16T10:04:22.458Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-16T09:36:00.126Z",
+            "checkedAt": "2026-03-16T10:02:46.028Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-16T09:36:01.255Z",
+            "checkedAt": "2026-03-16T10:02:47.229Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -51,6 +51,19 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8698,
+              "title": "Selkeytys sijoituslähteen tekstiin",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-16T09:52:18Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8698",
+              "labels": [
+                "no-changelog"
+              ]
+            },
             {
               "number": 8665,
               "title": "Colima-virtuaalikonepohjainen sandbox",
@@ -116,7 +129,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-16T09:36:13.680Z",
+            "checkedAt": "2026-03-16T10:03:01.942Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -141,7 +154,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-16T09:36:24.107Z",
+            "checkedAt": "2026-03-16T10:03:13.456Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9efa74eb7c07b1bfc06afcc71280280fb63de1d0",
@@ -248,6 +261,19 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8698,
+              "title": "Selkeytys sijoituslähteen tekstiin",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-16T09:52:18Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8698",
+              "labels": [
+                "no-changelog"
+              ]
+            },
+            {
               "number": 8665,
               "title": "Colima-virtuaalikonepohjainen sandbox",
               "author": "akheron",
@@ -312,7 +338,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-16T09:36:49.191Z",
+            "checkedAt": "2026-03-16T10:03:43.967Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -337,7 +363,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-16T09:36:50.529Z",
+            "checkedAt": "2026-03-16T10:03:45.324Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "835834cebe4992c5ed99874a7bc1c5c4bbf36a65",
@@ -434,6 +460,19 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8698,
+              "title": "Selkeytys sijoituslähteen tekstiin",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-16T09:52:18Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8698",
+              "labels": [
+                "no-changelog"
+              ]
+            },
+            {
               "number": 8665,
               "title": "Colima-virtuaalikonepohjainen sandbox",
               "author": "akheron",
@@ -498,7 +537,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-16T09:37:07.012Z",
+            "checkedAt": "2026-03-16T10:04:05.099Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6bcba1ff858a70ad9830370231b24886b228fce6",
@@ -523,7 +562,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-16T09:37:08.433Z",
+            "checkedAt": "2026-03-16T10:04:06.686Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a9d06e93f398a3251928dd8fee4c68fd3fede848",
@@ -556,6 +595,19 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8698,
+              "title": "Selkeytys sijoituslähteen tekstiin",
+              "author": "Joosakur",
+              "mergedAt": "2026-03-16T09:52:18Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8698",
+              "labels": [
+                "no-changelog"
+              ]
+            },
             {
               "number": 8665,
               "title": "Colima-virtuaalikonepohjainen sandbox",
