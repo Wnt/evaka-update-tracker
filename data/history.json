@@ -1,6 +1,40 @@
 {
   "events": [
     {
+      "id": "2026-03-16T10:55:03.617Z_oulu-staging_wrapper",
+      "environmentId": "oulu-staging",
+      "cityGroupId": "oulu",
+      "detectedAt": "2026-03-16T10:55:03.617Z",
+      "previousCommit": {
+        "sha": "835834cebe4992c5ed99874a7bc1c5c4bbf36a65",
+        "shortSha": "835834c",
+        "message": "",
+        "date": "",
+        "author": ""
+      },
+      "newCommit": {
+        "sha": "f2eaec0f13a3a77e5a771359b6ebc80d6ca9eed3",
+        "shortSha": "f2eaec0",
+        "message": "Merge pull request #299 from Oulunkaupunki/voucher-value-decision-update",
+        "date": "2026-03-16T10:29:54Z",
+        "author": "tomuli"
+      },
+      "includedPRs": [
+        {
+          "number": 299,
+          "title": "Palvelusetelipäätöksen päivitys",
+          "author": "tomuli",
+          "mergedAt": "2026-03-16T10:29:54Z",
+          "repository": "Oulunkaupunki/evakaoulu",
+          "repoType": "wrapper",
+          "isBot": false,
+          "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/299",
+          "labels": []
+        }
+      ],
+      "repoType": "wrapper"
+    },
+    {
       "id": "2026-03-16T10:41:52.514Z_espoo-prod_core",
       "environmentId": "espoo-prod",
       "cityGroupId": "espoo",
