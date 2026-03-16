@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T08:40:31.173Z",
+  "generatedAt": "2026-03-16T09:07:06.339Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-16T08:39:27.837Z",
+            "checkedAt": "2026-03-16T09:05:57.668Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-16T08:39:28.612Z",
+            "checkedAt": "2026-03-16T09:05:58.491Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -116,7 +116,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-16T08:39:38.657Z",
+            "checkedAt": "2026-03-16T09:06:09.744Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -141,7 +141,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-16T08:39:45.986Z",
+            "checkedAt": "2026-03-16T09:06:17.248Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9efa74eb7c07b1bfc06afcc71280280fb63de1d0",
@@ -201,7 +201,19 @@
               "labels": []
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 2051,
+              "title": "Ramp up Kangasala archival daily limit to 1000",
+              "author": "ohinkinen",
+              "mergedAt": "2026-03-16T08:52:40Z",
+              "repository": "Tampere/trevaka",
+              "repoType": "wrapper",
+              "isBot": false,
+              "url": "https://github.com/Tampere/trevaka/pull/2051",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
@@ -300,7 +312,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-16T08:40:05.058Z",
+            "checkedAt": "2026-03-16T09:06:38.345Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -325,7 +337,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-16T08:40:05.918Z",
+            "checkedAt": "2026-03-16T09:06:39.354Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "835834cebe4992c5ed99874a7bc1c5c4bbf36a65",
@@ -486,7 +498,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-16T08:40:19.470Z",
+            "checkedAt": "2026-03-16T09:06:53.447Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6bcba1ff858a70ad9830370231b24886b228fce6",
@@ -511,7 +523,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-16T08:40:20.619Z",
+            "checkedAt": "2026-03-16T09:06:54.513Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a9d06e93f398a3251928dd8fee4c68fd3fede848",
