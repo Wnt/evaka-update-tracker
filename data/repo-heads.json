@@ -1,8 +1,8 @@
 {
-  "checkedAt": "2026-03-16T06:47:07.800Z",
+  "checkedAt": "2026-03-16T07:18:38.124Z",
   "repos": {
     "espoon-voltti/evaka": {
-      "sha": "be164613ea452529fc131990135a591eeaae28e8",
+      "sha": "a881fa97d8dd271faa5d8113d698cfc13a5c96d1",
       "branch": "master"
     },
     "Tampere/trevaka": {

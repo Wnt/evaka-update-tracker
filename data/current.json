@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T06:47:07.795Z",
+  "generatedAt": "2026-03-16T07:18:38.119Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-16T06:46:10.942Z",
+            "checkedAt": "2026-03-16T07:17:21.166Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-16T06:46:11.826Z",
+            "checkedAt": "2026-03-16T07:17:22.328Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -50,7 +50,47 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8668,
+              "title": "Tekstimuutos espoon vaka-hakemukselle",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:01:53Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8668",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8667,
+              "title": "Espoon esiopetuspäätöksen pykälämuutokset",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:00:56Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8667",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8696,
+              "title": "Korjataan flaky e2e-testi",
+              "author": "akheron",
+              "mergedAt": "2026-03-16T06:49:54Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8696",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     },
@@ -63,7 +103,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-16T06:46:20.329Z",
+            "checkedAt": "2026-03-16T07:17:33.824Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -88,7 +128,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-16T06:46:27.401Z",
+            "checkedAt": "2026-03-16T07:17:44.375Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9efa74eb7c07b1bfc06afcc71280280fb63de1d0",
@@ -181,7 +221,47 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8668,
+              "title": "Tekstimuutos espoon vaka-hakemukselle",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:01:53Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8668",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8667,
+              "title": "Espoon esiopetuspäätöksen pykälämuutokset",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:00:56Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8667",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8696,
+              "title": "Korjataan flaky e2e-testi",
+              "author": "akheron",
+              "mergedAt": "2026-03-16T06:49:54Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8696",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     },
@@ -194,7 +274,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-16T06:46:44.654Z",
+            "checkedAt": "2026-03-16T07:18:07.593Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -219,7 +299,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-16T06:46:45.421Z",
+            "checkedAt": "2026-03-16T07:18:09.004Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "835834cebe4992c5ed99874a7bc1c5c4bbf36a65",
@@ -314,7 +394,47 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8668,
+              "title": "Tekstimuutos espoon vaka-hakemukselle",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:01:53Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8668",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8667,
+              "title": "Espoon esiopetuspäätöksen pykälämuutokset",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:00:56Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8667",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8696,
+              "title": "Korjataan flaky e2e-testi",
+              "author": "akheron",
+              "mergedAt": "2026-03-16T06:49:54Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8696",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     },
@@ -327,7 +447,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-16T06:46:57.314Z",
+            "checkedAt": "2026-03-16T07:18:24.291Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6bcba1ff858a70ad9830370231b24886b228fce6",
@@ -352,7 +472,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-16T06:46:58.619Z",
+            "checkedAt": "2026-03-16T07:18:25.773Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a9d06e93f398a3251928dd8fee4c68fd3fede848",
@@ -384,7 +504,47 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8668,
+              "title": "Tekstimuutos espoon vaka-hakemukselle",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:01:53Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8668",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8667,
+              "title": "Espoon esiopetuspäätöksen pykälämuutokset",
+              "author": "tomuli",
+              "mergedAt": "2026-03-16T07:00:56Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8667",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
+              "number": 8696,
+              "title": "Korjataan flaky e2e-testi",
+              "author": "akheron",
+              "mergedAt": "2026-03-16T06:49:54Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8696",
+              "labels": [
+                "tech"
+              ]
+            }
+          ]
         }
       }
     }
