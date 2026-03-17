@@ -15,8 +15,8 @@
 
 **Purpose**: Create the shared label mapping module that both user stories depend on
 
-- [ ] T001 Create label mapping module with `SLACK_LABEL_MAP` constant and `formatLabelTags()` function in `src/config/label-map.ts`
-- [ ] T002 Create unit tests for `formatLabelTags()` covering: single label, multiple labels, no labels, unmapped labels, undefined/empty input in `tests/unit/label-map.test.ts`
+- [x] T001 Create label mapping module with `SLACK_LABEL_MAP` constant and `formatLabelTags()` function in `src/config/label-map.ts`
+- [x] T002 Create unit tests for `formatLabelTags()` covering: single label, multiple labels, no labels, unmapped labels, undefined/empty input in `tests/unit/label-map.test.ts`
 
 **Checkpoint**: Shared label mapping is available and tested
 
@@ -30,8 +30,8 @@
 
 ### Implementation for User Story 1
 
-- [ ] T003 [US1] Update `buildChangesSection()` in `src/api/slack.ts` to import `formatLabelTags` and prepend label tags to each PR line (after `#NUMBER`, before title)
-- [ ] T004 [US1] Add integration tests for labels in deployment notifications in `tests/integration/slack-api.test.ts`: PR with single label, multiple labels, no labels, unmapped labels
+- [x] T003 [US1] Update `buildChangesSection()` in `src/api/slack.ts` to import `formatLabelTags` and prepend label tags to each PR line (after `#NUMBER`, before title)
+- [x] T004 [US1] Add integration tests for labels in deployment notifications in `tests/integration/slack-api.test.ts`: PR with single label, multiple labels, no labels, unmapped labels
 
 **Checkpoint**: Deployment notifications show label tags — User Story 1 is complete and testable
 
@@ -45,8 +45,8 @@
 
 ### Implementation for User Story 2
 
-- [ ] T005 [US2] Update `buildChangeAnnouncement()` in `src/services/change-announcer.ts` to import `formatLabelTags` and prepend label tags to each PR line (after `#NUMBER`, before title)
-- [ ] T006 [US2] Add unit tests for labels in change announcements in `tests/unit/change-announcer.test.ts`: PR with single label, multiple labels, no labels
+- [x] T005 [US2] Update `buildChangeAnnouncement()` in `src/services/change-announcer.ts` to import `formatLabelTags` and prepend label tags to each PR line (after `#NUMBER`, before title)
+- [x] T006 [US2] Add unit tests for labels in change announcements in `tests/unit/change-announcer.test.ts`: PR with single label, multiple labels, no labels
 
 **Checkpoint**: Change announcements show label tags — User Story 2 is complete and testable
 
@@ -56,9 +56,9 @@
 
 **Purpose**: Ensure backend-frontend mapping consistency (SC-003) and validate all tests pass
 
-- [ ] T007 Create cross-check test in `tests/cross-check/label-map-sync.test.ts` that reads `SLACK_LABEL_MAP` from backend and `LABEL_MAP` from `site/js/components/pr-list.js`, verifying identical text values for all keys
-- [ ] T008 Run full test suite (`npm test`) and fix any failures
-- [ ] T009 Run lint (`npm run lint`) and fix any issues
+- [x] T007 Create cross-check test in `tests/cross-check/label-map-sync.test.ts` that reads `SLACK_LABEL_MAP` from backend and `LABEL_MAP` from `site/js/components/pr-list.js`, verifying identical text values for all keys
+- [x] T008 Run full test suite (`npm test`) and fix any failures
+- [x] T009 Run lint (`npm run lint`) and fix any issues
 
 ---
 
