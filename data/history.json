@@ -1,6 +1,40 @@
 {
   "events": [
     {
+      "id": "2026-03-17T10:34:58.457Z_oulu-staging_wrapper",
+      "environmentId": "oulu-staging",
+      "cityGroupId": "oulu",
+      "detectedAt": "2026-03-17T10:34:58.457Z",
+      "previousCommit": {
+        "sha": "a37ca753005d27eeebe577679ca91f94eb926534",
+        "shortSha": "a37ca75",
+        "message": "",
+        "date": "",
+        "author": ""
+      },
+      "newCommit": {
+        "sha": "9c77156ccd553f5d285b7f82c603e106c2a9931d",
+        "shortSha": "9c77156",
+        "message": "Merge pull request #308 from Oulunkaupunki/voucher-value-decision-revert",
+        "date": "2026-03-17T10:13:28Z",
+        "author": "tomuli"
+      },
+      "includedPRs": [
+        {
+          "number": 308,
+          "title": "Perutaan palvelusetelipäätöksen päivitys",
+          "author": "tomuli",
+          "mergedAt": "2026-03-17T10:13:28Z",
+          "repository": "Oulunkaupunki/evakaoulu",
+          "repoType": "wrapper",
+          "isBot": false,
+          "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/308",
+          "labels": []
+        }
+      ],
+      "repoType": "wrapper"
+    },
+    {
       "id": "2026-03-17T10:15:31.240Z_espoo-prod_core",
       "environmentId": "espoo-prod",
       "cityGroupId": "espoo",
