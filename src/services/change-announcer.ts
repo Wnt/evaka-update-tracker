@@ -10,6 +10,7 @@ import {
 import { getCommit } from '../api/github.js';
 import { collectPRsBetween, filterHumanPRs } from '../services/pr-collector.js';
 import { resolveChangeWebhookUrl } from '../config/change-routing.js';
+import { formatLabelTags } from '../config/label-map.js';
 
 /**
  * Extracts unique repositories from city group configuration.
@@ -80,7 +81,9 @@ export function buildChangeAnnouncement(prs: PullRequest[], now?: Date): string 
     .map((pr) => {
       const mergedAt = new Date(pr.mergedAt);
       const ageMs = currentTime.getTime() - mergedAt.getTime();
-      const base = `<${pr.url}|#${pr.number}> ${pr.title} \u2014 ${pr.authorName ?? pr.author}`;
+      const tags = formatLabelTags(pr.labels);
+      const tagPrefix = tags ? `${tags} ` : '';
+      const base = `<${pr.url}|#${pr.number}> ${tagPrefix}${pr.title} \u2014 ${pr.authorName ?? pr.author}`;
       if (ageMs > DELAY_THRESHOLD_MS) {
         return `${base} \u2014 ${formatFinnishTimestamp(mergedAt)}`;
       }

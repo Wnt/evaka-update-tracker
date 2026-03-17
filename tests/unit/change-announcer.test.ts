@@ -248,4 +248,41 @@ describe('buildChangeAnnouncement', () => {
     const text = buildChangeAnnouncement([mockPRs[0]], now);
     expect(text.split('\n')).toHaveLength(1);
   });
+
+  it('includes label tags for PRs with a single label', () => {
+    const prWithLabel: PullRequest = {
+      ...mockPRs[0],
+      labels: ['bug'],
+    };
+    const now = new Date('2026-03-08T10:05:00Z');
+    const text = buildChangeAnnouncement([prWithLabel], now);
+    expect(text).toContain('[Korjaus]');
+    expect(text).toContain('#8628> [Korjaus] Testidatan');
+  });
+
+  it('includes multiple label tags for PRs with multiple labels', () => {
+    const prWithLabels: PullRequest = {
+      ...mockPRs[0],
+      labels: ['enhancement', 'frontend'],
+    };
+    const now = new Date('2026-03-08T10:05:00Z');
+    const text = buildChangeAnnouncement([prWithLabels], now);
+    expect(text).toContain('[Parannus] [Käyttöliittymä]');
+  });
+
+  it('shows no tags for PRs without labels', () => {
+    const now = new Date('2026-03-08T10:05:00Z');
+    const text = buildChangeAnnouncement([mockPRs[0]], now);
+    expect(text).not.toMatch(/\[.*\]/);
+  });
+
+  it('ignores unmapped labels', () => {
+    const prWithUnmapped: PullRequest = {
+      ...mockPRs[0],
+      labels: ['wontfix'],
+    };
+    const now = new Date('2026-03-08T10:05:00Z');
+    const text = buildChangeAnnouncement([prWithUnmapped], now);
+    expect(text).not.toMatch(/\[.*\]/);
+  });
 });

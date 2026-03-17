@@ -36,6 +36,7 @@ Auto-generated from all feature plans. Last updated: 2026-03-02
 - TypeScript 5.x on Node.js 20+ + axios (HTTP), nock (test mocking) — no new dependencies (020-slack-announcement-retry)
 - TypeScript 5.9 on Node.js 20 (backend/data pipeline); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test mocking), jest (testing) — no new dependencies (021-real-name-display)
 - JSON files (`data/current.json`, `data/history.json`, `data/user-names.json` — new cache file) (021-real-name-display)
+- JSON files (`data/current.json`, `data/history.json`) — no changes needed (022-add-pr-tags-slack)
 
 - TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend) + axios (HTTP client), @octokit/rest or direct fetch (GitHub API) — minimal dependency se (001-deployment-tracker)
 
@@ -56,9 +57,9 @@ npm test && npm run lint
 TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend): Follow standard conventions
 
 ## Recent Changes
+- 022-add-pr-tags-slack: Added TypeScript 5.x on Node.js 20+ (backend); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test HTTP mocking)
 - 021-real-name-display: Added TypeScript 5.9 on Node.js 20 (backend/data pipeline); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test mocking), jest (testing) — no new dependencies
 - 020-slack-announcement-retry: Added TypeScript 5.x on Node.js 20+ + axios (HTTP), nock (test mocking) — no new dependencies
-- 019-update-feature-labels: Added TypeScript 5.x on Node.js 20+ + None (standalone string constants file)
 
 
 <!-- MANUAL ADDITIONS START -->
