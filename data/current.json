@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T08:29:46.109Z",
+  "generatedAt": "2026-03-18T08:51:41.512Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T08:28:28.756Z",
+            "checkedAt": "2026-03-18T08:50:43.167Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T08:28:29.481Z",
+            "checkedAt": "2026-03-18T08:50:43.777Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -113,6 +113,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8700,
+              "title": "Vain AD-kirjautunut käyttäjä voidaan asettaa pääkäyttäjäksi",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T08:33:23Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8700",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8703,
               "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
               "author": "Joosakur",
@@ -140,7 +155,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T08:28:32.453Z",
+            "checkedAt": "2026-03-18T08:50:47.307Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -165,7 +180,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T08:28:39.082Z",
+            "checkedAt": "2026-03-18T08:50:54.013Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -341,6 +356,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8700,
+              "title": "Vain AD-kirjautunut käyttäjä voidaan asettaa pääkäyttäjäksi",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T08:33:23Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8700",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8703,
               "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
               "author": "Joosakur",
@@ -368,7 +398,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T08:29:23.967Z",
+            "checkedAt": "2026-03-18T08:51:17.448Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -393,7 +423,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T08:29:24.776Z",
+            "checkedAt": "2026-03-18T08:51:18.523Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9ea4eed02246a5be0c87ee4093fb56aff4cda19e",
@@ -556,6 +586,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8700,
+              "title": "Vain AD-kirjautunut käyttäjä voidaan asettaa pääkäyttäjäksi",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T08:33:23Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8700",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8703,
               "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
               "author": "Joosakur",
@@ -583,7 +628,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-18T08:29:41.308Z",
+            "checkedAt": "2026-03-18T08:51:36.024Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "c2bf27c85059c56d6f367fbbf753dbf11b915345",
@@ -608,7 +653,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-18T08:29:42.316Z",
+            "checkedAt": "2026-03-18T08:51:37.238Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f49e173e47f6f43137600ba2e80a41dbb257e303",
@@ -702,6 +747,21 @@
             }
           ],
           "pendingDeployment": [
+            {
+              "number": 8700,
+              "title": "Vain AD-kirjautunut käyttäjä voidaan asettaa pääkäyttäjäksi",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T08:33:23Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8700",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8703,
               "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
