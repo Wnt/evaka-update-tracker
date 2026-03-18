@@ -14,6 +14,7 @@
 - Q: Where should committed snapshots live in the repository? → A: `docs/snapshots/` — in a documentation directory.
 - Q: How should Slack message snapshots (environment updates & new feature announcements) be generated? → A: Call the existing Slack formatting functions directly with test data and convert their Block Kit / mrkdwn output to standard Markdown files. No browser rendering or Slack webhook needed.
 - Q: Where should Slack message snapshots be saved relative to dashboard view snapshots? → A: Same `docs/snapshots/` directory with a `slack-` filename prefix (e.g., `slack-deployment-espoo.md`, `slack-change-announcement-core.md`).
+- Q: How many scenario variants should be captured per Slack message type? → A: One representative example per message type per city/repo — minimal set. Edge cases are better covered by unit tests.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -31,6 +32,7 @@ A developer or CI pipeline runs `npm run capture-views` to automatically generat
 2. **Given** the tool is run with default settings, **When** it completes, **Then** each output file is named descriptively (e.g., `overview.md`, `city-tampere-region.md`, `city-tampere-region-history.md`, `features.md`).
 3. **Given** the output directory does not exist, **When** the tool runs, **Then** it creates the directory automatically.
 4. **Given** the tool has run and snapshots are committed, **When** a developer opens a PR that changes the frontend, **Then** the diff of the snapshot files shows what text content changed in each view.
+5. **Given** the tool is run with test data, **When** it completes, **Then** Markdown snapshots of Slack messages are also generated: one deployment notification per city and one change announcement per tracked repo, saved with `slack-` prefix in the same output directory.
 
 ---
 
@@ -94,6 +96,7 @@ A developer specifies a custom output directory for the captured snapshots, e.g.
 - **FR-001**: System MUST capture text-based Markdown snapshots of all major dashboard routes: overview (`/`), features (`/features`), city detail (`/city/:id` for each city in test data), and city history (`/city/:id/history` for each city).
 - **FR-012**: System MUST capture Markdown snapshots of Slack messages by calling the existing formatting functions directly with test data: deployment notifications (environment update messages using Block Kit) and change announcements (new PR/feature announcements using plain mrkdwn). Block Kit and Slack mrkdwn output MUST be converted to standard Markdown format.
 - **FR-013**: Slack message snapshots MUST be saved in the same `docs/snapshots/` directory as dashboard view snapshots, using a `slack-` filename prefix (e.g., `slack-deployment-espoo.md`, `slack-change-announcement-core.md`).
+- **FR-014**: System MUST generate one representative Slack message snapshot per message type per city/repo. Multiple scenario variants (bot-only, both repos changed, etc.) are NOT required — edge cases are covered by unit tests.
 - **FR-002**: System MUST generate test data and start a local server before capturing (reusing existing E2E test fixtures).
 - **FR-003**: System MUST save each snapshot as a Markdown file with a descriptive filename (e.g., `overview.md`, `features.md`, `city-tampere-region.md`, `city-tampere-region-history.md`).
 - **FR-004**: System MUST extract the rendered DOM content of each view as structured Markdown — preserving headings, lists, and tables from the DOM hierarchy — not plain innerText or raw HTML.
@@ -122,6 +125,7 @@ A developer specifies a custom output directory for the captured snapshots, e.g.
 - **SC-004**: The tool reuses existing E2E test fixtures (test data generation, local server) without duplication.
 - **SC-005**: CI detects stale snapshots within the normal build pipeline and fails with an actionable error message.
 - **SC-006**: Snapshot diffs in pull requests clearly show what text content changed in each view.
+- **SC-007**: Running `npm run capture-views` also produces Slack message snapshots (deployment notifications and change announcements) alongside dashboard view snapshots.
 
 ## Assumptions
 
