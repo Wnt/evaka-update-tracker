@@ -239,9 +239,6 @@ export async function run() {
     allPRs.push(...event.includedPRs);
   }
   await resolveNames(allPRs, nameCache, getUser);
-  if (!DRY_RUN) {
-    saveNameCache(nameCachePath, nameCache);
-  }
 
   // Send Slack notifications for deployment events (grouped by environment)
   if (allEvents.length > 0) {
@@ -270,9 +267,14 @@ export async function run() {
 
   // Announce changes to repo default branches (independent from deployment notifications)
   try {
-    await announceChanges(cityGroups, DATA_DIR);
+    await announceChanges(cityGroups, DATA_DIR, nameCache, getUser);
   } catch (err) {
     console.warn('Change announcements failed (non-fatal):', err);
+  }
+
+  // Save name cache after all name resolution (deployment + change announcements)
+  if (!DRY_RUN) {
+    saveNameCache(nameCachePath, nameCache);
   }
 
   // Collect feature flags (non-blocking — errors don't fail the pipeline)

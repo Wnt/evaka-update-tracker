@@ -11,6 +11,7 @@ import { getCommit } from '../api/github.js';
 import { collectPRsBetween, filterHumanPRs } from '../services/pr-collector.js';
 import { resolveChangeWebhookUrl } from '../config/change-routing.js';
 import { formatLabelTags } from '../config/label-map.js';
+import { UserNameCache, resolveNames } from '../services/name-resolver.js';
 
 /**
  * Extracts unique repositories from city group configuration.
@@ -52,44 +53,14 @@ export function writeRepoHeads(filePath: string, data: RepoHeadsData): void {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
-const FINNISH_WEEKDAYS = ['su', 'ma', 'ti', 'ke', 'to', 'pe', 'la'];
-const DELAY_THRESHOLD_MS = 20 * 60 * 1000; // 20 minutes
-
 /**
- * Formats a Date as a Finnish-locale timestamp in Europe/Helsinki timezone.
- * Example: "pe 6.3. klo 09.28"
+ * Formats a single PR into a Slack mrkdwn line.
+ * Format: <PR_URL|#NUMBER> [TAGS] TITLE — AUTHOR
  */
-export function formatFinnishTimestamp(date: Date): string {
-  const helsinkiDate = new Date(date.toLocaleString('en-US', { timeZone: 'Europe/Helsinki' }));
-  const weekday = FINNISH_WEEKDAYS[helsinkiDate.getDay()];
-  const day = helsinkiDate.getDate();
-  const month = helsinkiDate.getMonth() + 1;
-  const hour = String(helsinkiDate.getHours()).padStart(2, '0');
-  const minute = String(helsinkiDate.getMinutes()).padStart(2, '0');
-
-  return `${weekday} ${day}.${month}. klo ${hour}.${minute}`;
-}
-
-/**
- * Formats a list of PRs into a minimal Slack mrkdwn message.
- * One line per PR: <PR_URL|#NUMBER> TITLE — AUTHOR
- * PRs merged more than 20 minutes ago include a Finnish timestamp.
- */
-export function buildChangeAnnouncement(prs: PullRequest[], now?: Date): string {
-  const currentTime = now ?? new Date();
-  return prs
-    .map((pr) => {
-      const mergedAt = new Date(pr.mergedAt);
-      const ageMs = currentTime.getTime() - mergedAt.getTime();
-      const tags = formatLabelTags(pr.labels);
-      const tagPrefix = tags ? `${tags} ` : '';
-      const base = `<${pr.url}|#${pr.number}> ${tagPrefix}${pr.title} \u2014 ${pr.authorName ?? pr.author}`;
-      if (ageMs > DELAY_THRESHOLD_MS) {
-        return `${base} \u2014 ${formatFinnishTimestamp(mergedAt)}`;
-      }
-      return base;
-    })
-    .join('\n');
+export function formatPRLine(pr: PullRequest): string {
+  const tags = formatLabelTags(pr.labels);
+  const tagPrefix = tags ? `${tags} ` : '';
+  return `<${pr.url}|#${pr.number}> ${tagPrefix}${pr.title} \u2014 ${pr.authorName ?? pr.author}`;
 }
 
 /**
@@ -122,7 +93,9 @@ export async function sendChangeAnnouncement(webhookUrl: string, text: string): 
  */
 export async function announceChanges(
   cityGroups: CityGroup[],
-  dataDir: string
+  dataDir: string,
+  nameCache: UserNameCache,
+  lookupUser: (username: string) => Promise<string | null>
 ): Promise<void> {
   const headsPath = path.join(dataDir, 'repo-heads.json');
   const previousHeads = readRepoHeads(headsPath);
@@ -182,6 +155,9 @@ export async function announceChanges(
       continue;
     }
 
+    // Resolve author display names
+    await resolveNames(humanPRs, nameCache, lookupUser);
+
     // Resolve webhook URL
     const webhookUrl = resolveChangeWebhookUrl(repo.type, repo.cityGroupId);
     if (!webhookUrl) {
@@ -195,10 +171,17 @@ export async function announceChanges(
       continue;
     }
 
-    // Send announcement — only update HEAD on success
-    const text = buildChangeAnnouncement(humanPRs);
-    const success = await sendChangeAnnouncement(webhookUrl, text);
-    if (success) {
+    // Send one message per PR — only update HEAD if all succeed
+    let allSuccess = true;
+    for (const pr of humanPRs) {
+      const text = formatPRLine(pr);
+      const success = await sendChangeAnnouncement(webhookUrl, text);
+      if (!success) {
+        allSuccess = false;
+        break;
+      }
+    }
+    if (allSuccess) {
       console.log(`[CHANGE] Announced ${humanPRs.length} PR(s) for ${repoKey}`);
       updateHead();
     } else {

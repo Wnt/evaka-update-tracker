@@ -112,7 +112,7 @@ describe('announceChanges - end-to-end', () => {
       author: 'dev',
     }));
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     // Should have stored heads
     const heads = JSON.parse(fs.readFileSync(path.join(TEST_DATA_DIR, 'repo-heads.json'), 'utf-8'));
@@ -182,7 +182,7 @@ describe('announceChanges - end-to-end', () => {
       })
       .reply(200, 'ok');
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     expect(slackScope.isDone()).toBe(true);
 
@@ -246,7 +246,7 @@ describe('announceChanges - end-to-end', () => {
       })
       .reply(200, 'ok');
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     expect(tampereScope.isDone()).toBe(true);
   });
@@ -307,7 +307,7 @@ describe('announceChanges - end-to-end', () => {
       .post('/services/T00/TAMPERE/XXX')
       .reply(200, 'ok');
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     expect(coreScope.isDone()).toBe(true);
     expect(tampereScope.isDone()).toBe(true);
@@ -363,7 +363,7 @@ describe('announceChanges - end-to-end', () => {
       .post('/services/T00/CORE/XXX')
       .reply(200, 'ok');
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     expect(slackScope.isDone()).toBe(false);
     nock.cleanAll();
@@ -449,7 +449,7 @@ describe('announceChanges - end-to-end', () => {
       })
       .reply(200, 'ok');
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     expect(slackScope.isDone()).toBe(true);
   });
@@ -507,7 +507,7 @@ describe('announceChanges - end-to-end', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
 
     // Should not throw
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     warnSpy.mockRestore();
 
@@ -566,7 +566,7 @@ describe('announceChanges - end-to-end', () => {
       .reply(404, 'Not Found');
 
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
     warnSpy.mockRestore();
 
     const heads = JSON.parse(fs.readFileSync(path.join(TEST_DATA_DIR, 'repo-heads.json'), 'utf-8'));
@@ -624,7 +624,7 @@ describe('announceChanges - end-to-end', () => {
       .reply(500, 'Internal Server Error');
 
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
     warnSpy.mockRestore();
 
     // HEAD should not be updated
@@ -639,7 +639,7 @@ describe('announceChanges - end-to-end', () => {
       })
       .reply(200, 'ok');
 
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
 
     expect(slackScope.isDone()).toBe(true);
 
@@ -706,7 +706,7 @@ describe('announceChanges - end-to-end', () => {
       .reply(200, 'ok');
 
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-    await announceChanges(mockCityGroups, TEST_DATA_DIR);
+    await announceChanges(mockCityGroups, TEST_DATA_DIR, {}, async () => null);
     warnSpy.mockRestore();
 
     const heads = JSON.parse(fs.readFileSync(path.join(TEST_DATA_DIR, 'repo-heads.json'), 'utf-8'));
