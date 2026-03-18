@@ -1,20 +1,20 @@
 {
-  "checkedAt": "2026-03-17T12:57:49.192Z",
+  "checkedAt": "2026-03-18T11:55:02.666Z",
   "repos": {
     "espoon-voltti/evaka": {
-      "sha": "2b9f38584717b0408667c60d63c45e4aa329e6e3",
+      "sha": "d7d20210bb597472a8685e498603732b797682ef",
       "branch": "master"
     },
     "Tampere/trevaka": {
-      "sha": "0a7f72ca7c5ad84b73d54df8a4a28e7c1474d5c9",
+      "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
       "branch": "main"
     },
     "Oulunkaupunki/evakaoulu": {
-      "sha": "9c77156ccd553f5d285b7f82c603e106c2a9931d",
+      "sha": "9ea4eed02246a5be0c87ee4093fb56aff4cda19e",
       "branch": "main"
     },
     "City-of-Turku/evakaturku": {
-      "sha": "c2bf27c85059c56d6f367fbbf753dbf11b915345",
+      "sha": "f49e173e47f6f43137600ba2e80a41dbb257e303",
       "branch": "main"
     }
   }

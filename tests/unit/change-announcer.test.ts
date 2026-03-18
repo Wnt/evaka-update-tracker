@@ -2,8 +2,7 @@ import * as fs from 'fs';
 import {
   getTrackedRepositories,
   readRepoHeads,
-  buildChangeAnnouncement,
-  formatFinnishTimestamp,
+  formatPRLine,
 } from '../../src/services/change-announcer';
 import { CityGroup, PullRequest } from '../../src/types';
 
@@ -128,124 +127,65 @@ describe('readRepoHeads', () => {
   });
 });
 
-describe('formatFinnishTimestamp', () => {
-  it('formats a Friday morning correctly', () => {
-    // 2026-03-06 is a Friday. 09:28 Helsinki time = 07:28 UTC (EET = UTC+2 in March before DST)
-    const date = new Date('2026-03-06T07:28:00Z');
-    expect(formatFinnishTimestamp(date)).toBe('pe 6.3. klo 09.28');
-  });
+describe('formatPRLine', () => {
+  const basePR: PullRequest = {
+    number: 8628,
+    title: 'Testidatan refaktorointi - ei käytetä lateinit',
+    author: 'Joosakur',
+    authorName: 'Joosa Kurvinen',
+    mergedAt: '2026-03-08T10:00:00Z',
+    repository: 'espoon-voltti/evaka',
+    repoType: 'core',
+    isBot: false,
+    isHidden: false,
+    url: 'https://github.com/espoon-voltti/evaka/pull/8628',
+    labels: [],
+  };
 
-  it('formats a Monday afternoon correctly', () => {
-    // 2026-03-09 is a Monday. 14:05 Helsinki time = 12:05 UTC
-    const date = new Date('2026-03-09T12:05:00Z');
-    expect(formatFinnishTimestamp(date)).toBe('ma 9.3. klo 14.05');
-  });
-
-  it('formats midnight correctly with zero-padded hours', () => {
-    // 2026-03-10 is a Tuesday. 00:03 Helsinki time = 22:03 UTC on March 9
-    const date = new Date('2026-03-09T22:03:00Z');
-    expect(formatFinnishTimestamp(date)).toBe('ti 10.3. klo 00.03');
-  });
-
-  it('formats a Sunday correctly', () => {
-    // 2026-03-08 is a Sunday. 16:30 Helsinki time = 14:30 UTC
-    const date = new Date('2026-03-08T14:30:00Z');
-    expect(formatFinnishTimestamp(date)).toBe('su 8.3. klo 16.30');
-  });
-
-  it('handles DST transition (last Sunday of March)', () => {
-    // 2026-03-29 is a Sunday, DST starts. 15:00 Helsinki time (EEST = UTC+3) = 12:00 UTC
-    const date = new Date('2026-03-29T12:00:00Z');
-    expect(formatFinnishTimestamp(date)).toBe('su 29.3. klo 15.00');
-  });
-});
-
-describe('buildChangeAnnouncement', () => {
-  const mockPRs: PullRequest[] = [
-    {
-      number: 8628,
-      title: 'Testidatan refaktorointi - ei käytetä lateinit',
-      author: 'Joosakur',
-      authorName: 'Joosa Kurvinen',
-      mergedAt: '2026-03-08T10:00:00Z',
-      repository: 'espoon-voltti/evaka',
-      repoType: 'core',
-      isBot: false,
-      url: 'https://github.com/espoon-voltti/evaka/pull/8628',
-      labels: [],
-    },
-    {
-      number: 8629,
-      title: 'Fix login redirect',
-      author: 'developer2',
-      authorName: null,
-      mergedAt: '2026-03-08T11:00:00Z',
-      repository: 'espoon-voltti/evaka',
-      repoType: 'core',
-      isBot: false,
-      url: 'https://github.com/espoon-voltti/evaka/pull/8629',
-      labels: [],
-    },
-  ];
-
-  it('formats recent PRs without timestamp', () => {
-    // "now" is 5 minutes after mergedAt
-    const now = new Date('2026-03-08T10:05:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
+  it('formats PR with real name', () => {
+    const text = formatPRLine(basePR);
     expect(text).toBe(
       '<https://github.com/espoon-voltti/evaka/pull/8628|#8628> Testidatan refaktorointi - ei käytetä lateinit \u2014 Joosa Kurvinen'
     );
   });
 
-  it('formats old PRs with Finnish timestamp', () => {
-    // "now" is 2 hours after mergedAt (well over 20 min)
-    const now = new Date('2026-03-08T12:00:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
-    // 2026-03-08T10:00:00Z = 12:00 Helsinki time (EET +2), Sunday
-    expect(text).toBe(
-      '<https://github.com/espoon-voltti/evaka/pull/8628|#8628> Testidatan refaktorointi - ei käytetä lateinit \u2014 Joosa Kurvinen \u2014 su 8.3. klo 12.00'
-    );
-  });
-
-  it('does not include timestamp at exactly 20 minutes', () => {
-    const now = new Date('2026-03-08T10:20:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
-    expect(text).not.toContain('klo');
-  });
-
-  it('includes timestamp at 21 minutes', () => {
-    const now = new Date('2026-03-08T10:21:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
-    expect(text).toContain('klo');
-  });
-
-  it('handles mixed PRs — old with timestamp, recent without', () => {
-    const prs: PullRequest[] = [
-      { ...mockPRs[0], mergedAt: '2026-03-08T10:00:00Z' }, // old
-      { ...mockPRs[1], mergedAt: '2026-03-08T11:55:00Z' }, // recent
-    ];
-    const now = new Date('2026-03-08T12:00:00Z');
-    const text = buildChangeAnnouncement(prs, now);
-    const lines = text.split('\n');
-    expect(lines[0]).toContain('klo'); // old PR has timestamp
-    expect(lines[1]).not.toContain('klo'); // recent PR does not
+  it('falls back to GitHub username when authorName is null', () => {
+    const pr: PullRequest = { ...basePR, authorName: null };
+    const text = formatPRLine(pr);
+    expect(text).toContain('\u2014 Joosakur');
   });
 
   it('uses Slack mrkdwn link format for PR numbers', () => {
-    const now = new Date('2026-03-08T10:05:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
+    const text = formatPRLine(basePR);
     expect(text).toContain('<https://github.com/espoon-voltti/evaka/pull/8628|#8628>');
   });
 
   it('uses em dash between title and author', () => {
-    const now = new Date('2026-03-08T10:05:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
+    const text = formatPRLine(basePR);
     expect(text).toContain('\u2014 Joosa Kurvinen');
   });
 
-  it('returns single line for single PR', () => {
-    const now = new Date('2026-03-08T10:05:00Z');
-    const text = buildChangeAnnouncement([mockPRs[0]], now);
-    expect(text.split('\n')).toHaveLength(1);
+  it('includes label tags for PRs with a single label', () => {
+    const pr: PullRequest = { ...basePR, labels: ['bug'] };
+    const text = formatPRLine(pr);
+    expect(text).toContain('[Korjaus]');
+    expect(text).toContain('#8628> [Korjaus] Testidatan');
+  });
+
+  it('includes multiple label tags for PRs with multiple labels', () => {
+    const pr: PullRequest = { ...basePR, labels: ['enhancement', 'frontend'] };
+    const text = formatPRLine(pr);
+    expect(text).toContain('[Parannus] [Käyttöliittymä]');
+  });
+
+  it('shows no tags for PRs without labels', () => {
+    const text = formatPRLine(basePR);
+    expect(text).not.toMatch(/\[.*\]/);
+  });
+
+  it('ignores unmapped labels', () => {
+    const pr: PullRequest = { ...basePR, labels: ['wontfix'] };
+    const text = formatPRLine(pr);
+    expect(text).not.toMatch(/\[.*\]/);
   });
 });
