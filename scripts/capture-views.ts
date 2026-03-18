@@ -343,6 +343,9 @@ function captureSlackChangeAnnouncement(repoType: 'core' | 'wrapper'): CaptureRe
 async function main() {
   const config = parseArgs(process.argv.slice(2));
 
+  // Force Helsinki timezone so timestamps are identical regardless of host TZ
+  process.env.TZ = 'Europe/Helsinki';
+
   console.log('[Capture] Generating test data...');
   // Freeze Date to a fixed point so snapshots are deterministic
   const FIXED_DATE = new Date('2026-03-03T10:00:00Z');
@@ -402,7 +405,11 @@ async function main() {
     try {
       console.log('[Capture] Launching browser...');
       const browser = await chromium.launch({ headless: true });
-      const page = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+      const page = await browser.newPage({
+        viewport: { width: 1200, height: 900 },
+        timezoneId: 'Europe/Helsinki',
+        locale: 'fi-FI',
+      });
 
       for (const view of browserViews) {
         try {
