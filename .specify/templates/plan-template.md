@@ -33,6 +33,12 @@
 
 [Gates determined based on constitution file]
 
+**View Mockup Capture**: If this feature affects any user-facing view
+(web dashboard pages, Slack messages), "before" mockups MUST be
+captured before implementation begins (see Constitution §Development
+Workflow). Use `npm run capture-views` or create mockups manually and
+save to `specs/[###-feature]/mockups-before.md`.
+
 ## Project Structure
 
 ### Documentation (this feature)
