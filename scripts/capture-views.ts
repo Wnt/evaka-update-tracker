@@ -157,13 +157,22 @@ const DOM_EXTRACT_SCRIPT = `
     return walkChildren(node);
   };
 
+  var BLOCK_TAGS = {h1:1,h2:1,h3:1,h4:1,h5:1,h6:1,p:1,div:1,section:1,details:1,ul:1,ol:1,table:1,blockquote:1,hr:1,header:1,footer:1,nav:1,main:1,article:1,aside:1};
+
   var walkChildren = function(node) {
     var parts = [];
     for (var i = 0; i < node.childNodes.length; i++) {
-      var t = walkNode(node.childNodes[i]);
-      if (t) parts.push(t);
+      var child = node.childNodes[i];
+      var t = walkNode(child);
+      if (!t) continue;
+      // Block-level elements get their own line instead of being space-joined
+      if (child.nodeType === Node.ELEMENT_NODE && BLOCK_TAGS[child.tagName.toLowerCase()]) {
+        parts.push('\\n' + t);
+      } else {
+        parts.push(t);
+      }
     }
-    return parts.join(' ').replace(/ +/g, ' ').trim();
+    return parts.join(' ').replace(/ *\\n+ */g, '\\n').replace(/ +/g, ' ').trim();
   };
 
   var convertTable = function(table) {

@@ -1,7 +1,6 @@
 ## Ominaisuusvertailu
 
- ### Käyttöliittymäominaisuudet
-
+### Käyttöliittymäominaisuudet
 | Ominaisuus | Espoo | Tampereen seutu | Oulu | Turku |
 | --- | --- | --- | --- | --- |
 | Vuorohoidon poissaolot kansalaisille | ✓ | ✗ | ✗ | ✗ |
@@ -12,8 +11,8 @@
 | Valmistava opetus | ✓ | ✗ | ✗ | ✗ |
 | Paikkavakuus | ✓ | ✓ | ✓ | ✓ |
 | Palvelusetelimaksatus | ✗ | ✓ | ✓ | ✓ |
-| Keskusteluvaraukset | ✓ | ✓ | ✓ | ✓ | ### Taustajärjestelmän asetukset
-
+| Keskusteluvaraukset | ✓ | ✓ | ✓ | ✓ |
+### Taustajärjestelmän asetukset
 | Ominaisuus | Espoo | Tampereen seutu | Oulu | Turku |
 | --- | --- | --- | --- | --- |
 | Kapasiteettikerroin arvopäätöksissä | ✗ | ✓ | ✗ | ✗ |
