@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T07:02:17.609Z",
+  "generatedAt": "2026-03-18T07:31:41.450Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T07:01:08.167Z",
+            "checkedAt": "2026-03-18T07:30:48.234Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T07:01:09.125Z",
+            "checkedAt": "2026-03-18T07:30:48.861Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -51,6 +51,48 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8704,
+              "title": "Päivitetään postgres-volumen polku",
+              "author": "tomuli",
+              "authorName": "Samuli Toivonen",
+              "mergedAt": "2026-03-18T07:18:09Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
+              "labels": [
+                "no-changelog"
+              ]
+            },
+            {
+              "number": 8708,
+              "title": "Yksinkertaistetaan PDF-konfiguraatiota",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-18T07:11:12Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8708",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8663,
+              "title": "Järjestellään suljettujen ryhmien viestilaatikot alimmas",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-18T07:10:39Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8663",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8699,
               "title": "Päivitys e2e-dokumenttiin",
@@ -92,7 +134,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T07:01:11.333Z",
+            "checkedAt": "2026-03-18T07:30:51.386Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -117,7 +159,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T07:01:22.519Z",
+            "checkedAt": "2026-03-18T07:30:58.062Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "0a7f72ca7c5ad84b73d54df8a4a28e7c1474d5c9",
@@ -271,6 +313,48 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8704,
+              "title": "Päivitetään postgres-volumen polku",
+              "author": "tomuli",
+              "authorName": "Samuli Toivonen",
+              "mergedAt": "2026-03-18T07:18:09Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
+              "labels": [
+                "no-changelog"
+              ]
+            },
+            {
+              "number": 8708,
+              "title": "Yksinkertaistetaan PDF-konfiguraatiota",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-18T07:11:12Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8708",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8663,
+              "title": "Järjestellään suljettujen ryhmien viestilaatikot alimmas",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-18T07:10:39Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8663",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8699,
               "title": "Päivitys e2e-dokumenttiin",
               "author": "terolaakso-reaktor",
@@ -311,7 +395,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T07:01:53.608Z",
+            "checkedAt": "2026-03-18T07:31:20.098Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -336,7 +420,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T07:01:54.925Z",
+            "checkedAt": "2026-03-18T07:31:20.937Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9c77156ccd553f5d285b7f82c603e106c2a9931d",
@@ -490,6 +574,48 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8704,
+              "title": "Päivitetään postgres-volumen polku",
+              "author": "tomuli",
+              "authorName": "Samuli Toivonen",
+              "mergedAt": "2026-03-18T07:18:09Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
+              "labels": [
+                "no-changelog"
+              ]
+            },
+            {
+              "number": 8708,
+              "title": "Yksinkertaistetaan PDF-konfiguraatiota",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-18T07:11:12Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8708",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8663,
+              "title": "Järjestellään suljettujen ryhmien viestilaatikot alimmas",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-18T07:10:39Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8663",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8699,
               "title": "Päivitys e2e-dokumenttiin",
               "author": "terolaakso-reaktor",
@@ -530,7 +656,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-18T07:02:13.356Z",
+            "checkedAt": "2026-03-18T07:31:37.534Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "c2bf27c85059c56d6f367fbbf753dbf11b915345",
@@ -555,7 +681,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-18T07:02:14.606Z",
+            "checkedAt": "2026-03-18T07:31:38.285Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "c2bf27c85059c56d6f367fbbf753dbf11b915345",
@@ -588,6 +714,48 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8704,
+              "title": "Päivitetään postgres-volumen polku",
+              "author": "tomuli",
+              "authorName": "Samuli Toivonen",
+              "mergedAt": "2026-03-18T07:18:09Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
+              "labels": [
+                "no-changelog"
+              ]
+            },
+            {
+              "number": 8708,
+              "title": "Yksinkertaistetaan PDF-konfiguraatiota",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-18T07:11:12Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8708",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8663,
+              "title": "Järjestellään suljettujen ryhmien viestilaatikot alimmas",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-18T07:10:39Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8663",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8699,
               "title": "Päivitys e2e-dokumenttiin",
