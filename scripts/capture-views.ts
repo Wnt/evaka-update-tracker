@@ -14,7 +14,7 @@ import * as fs from 'fs';
 import { generateTestData } from '../tests/e2e/helpers/generate-test-data.js';
 import { startServer } from '../tests/e2e/helpers/server.js';
 import { buildSlackMessage } from '../src/api/slack.js';
-import { buildChangeAnnouncement } from '../src/services/change-announcer.js';
+import { formatPRLine } from '../src/services/change-announcer.js';
 import { blockKitToMarkdown, slackMrkdwnToMarkdown } from '../src/utils/slack-to-markdown.js';
 import { DeploymentEvent, PullRequest, CurrentData } from '../src/types.js';
 
@@ -329,8 +329,7 @@ function captureSlackChangeAnnouncement(repoType: 'core' | 'wrapper'): CaptureRe
   const name = `slack-change-announcement-${repoType}`;
   try {
     const prs = buildTestPRs(repoType);
-    // Use a fixed "now" far in the future so no timestamps are appended
-    const mrkdwnText = buildChangeAnnouncement(prs, new Date('2026-03-03T07:00:00Z'));
+    const mrkdwnText = prs.map(pr => formatPRLine(pr)).join('\n');
     const markdown = slackMrkdwnToMarkdown(mrkdwnText);
     return { name, markdown, success: true };
   } catch (error) {
