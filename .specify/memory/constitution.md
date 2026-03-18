@@ -1,8 +1,9 @@
 <!-- Sync Impact Report
-  Version change: 1.3.0 → 1.4.0
+  Version change: 1.4.0 → 1.5.0
   Modified sections:
-    - Development Workflow: added GitHub Actions workflow maintenance
-      requirement for new environment-configurable features
+    - Development Workflow: added PR mockup requirement — PRs that
+      affect user-facing views MUST include markdown before/after
+      mockups in the PR description
   Added sections: None
   Removed sections: None
   Templates requiring updates:
@@ -10,7 +11,8 @@
     - .specify/templates/spec-template.md ✅ no changes needed
     - .specify/templates/tasks-template.md ⚠ pending — Polish phase
       should reference screenshot regeneration as a standard task
-      when view changes are involved (carried from 1.3.0)
+      when view changes are involved (carried from 1.3.0); should
+      also reference PR mockup generation for view-affecting tasks
     - CLAUDE.md ✅ no changes needed
   Follow-up TODOs: None
 -->
@@ -142,6 +144,24 @@ tests to provide quick feedback.
     TypeScript code that read from secrets or configuration.
   - Forgetting to add the variable to the workflow means the
     feature silently fails in production while passing locally.
+- When a pull request affects any user-facing view (web dashboard
+  pages, Slack messages, or other rendered output), the PR
+  description MUST include a markdown mockup showing **before** and
+  **after** for each affected view.
+  - Mockups MUST use fenced code blocks or markdown formatting that
+    approximates the visual layout (ASCII art, tables, or
+    structured text).
+  - Each mockup pair MUST be labeled with the view name (e.g.,
+    "Overview page", "Slack deployment notification").
+  - The purpose is to make reviewing visual changes easy without
+    needing to build and run the application locally.
+  - For Slack messages, show the message structure including
+    formatting (bold, links, emoji) as it would appear.
+  - For web views, show the relevant section of the page with
+    representative data.
+  - If a view is entirely new (no "before" state), show only the
+    "after" mockup with a note that this is a new view.
+  - Backend-only changes with no visual impact are exempt.
 
 ## Governance
 
@@ -156,4 +176,4 @@ principles.
 - If a principle is violated, the violation MUST be justified in
   the Complexity Tracking section of the implementation plan.
 
-**Version**: 1.4.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-10
+**Version**: 1.5.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-18
