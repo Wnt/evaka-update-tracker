@@ -64,6 +64,7 @@ const mockCoreEvent: DeploymentEvent = {
       repository: 'espoon-voltti/evaka',
       repoType: 'core',
       isBot: false,
+      isHidden: false,
       url: 'https://github.com/espoon-voltti/evaka/pull/123',
       labels: [],
     },
@@ -100,6 +101,7 @@ const mockWrapperEvent: DeploymentEvent = {
       repository: 'espoo/evaka-wrapper',
       repoType: 'wrapper',
       isBot: false,
+      isHidden: false,
       url: 'https://github.com/espoo/evaka-wrapper/pull/456',
       labels: [],
     },
@@ -224,6 +226,7 @@ describe('sendSlackNotification', () => {
           repository: 'espoon-voltti/evaka',
           repoType: 'core',
           isBot: true,
+      isHidden: true,
           url: 'https://github.com/espoon-voltti/evaka/pull/2037',
           labels: [],
         },
@@ -262,6 +265,7 @@ describe('sendSlackNotification', () => {
           repository: 'espoon-voltti/evaka',
           repoType: 'core',
           isBot: true,
+      isHidden: true,
           url: 'https://github.com/espoon-voltti/evaka/pull/2037',
           labels: [],
         },
@@ -274,6 +278,7 @@ describe('sendSlackNotification', () => {
           repository: 'espoon-voltti/evaka',
           repoType: 'core',
           isBot: true,
+      isHidden: true,
           url: 'https://github.com/espoon-voltti/evaka/pull/2038',
           labels: [],
         },
@@ -294,6 +299,141 @@ describe('sendSlackNotification', () => {
     await sendSlackNotification(
       'https://hooks.slack.com/services/T00/B00/XXX',
       [allBotEvent]
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  it('includes label tags in PR lines for PRs with labels', async () => {
+    const eventWithLabels: DeploymentEvent = {
+      ...mockCoreEvent,
+      includedPRs: [
+        {
+          number: 123,
+          title: 'Fix login redirect',
+          author: 'dev2',
+          authorName: 'Developer Two',
+          mergedAt: '2026-03-01T14:00:00Z',
+          repository: 'espoon-voltti/evaka',
+          repoType: 'core',
+          isBot: false,
+      isHidden: false,
+          url: 'https://github.com/espoon-voltti/evaka/pull/123',
+          labels: ['bug'],
+        },
+      ],
+    };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ text?: { text: string } }>;
+        const changesText = blocks[2].text!.text;
+        expect(changesText).toContain('[Korjaus]');
+        expect(changesText).toContain('#123');
+        expect(changesText).toContain('Fix login redirect');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [eventWithLabels]
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  it('includes multiple label tags for PRs with multiple labels', async () => {
+    const eventWithMultiLabels: DeploymentEvent = {
+      ...mockCoreEvent,
+      includedPRs: [
+        {
+          number: 124,
+          title: 'Update UI validation',
+          author: 'dev2',
+          authorName: 'Developer Two',
+          mergedAt: '2026-03-01T14:00:00Z',
+          repository: 'espoon-voltti/evaka',
+          repoType: 'core',
+          isBot: false,
+      isHidden: false,
+          url: 'https://github.com/espoon-voltti/evaka/pull/124',
+          labels: ['bug', 'frontend'],
+        },
+      ],
+    };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ text?: { text: string } }>;
+        const changesText = blocks[2].text!.text;
+        expect(changesText).toContain('[Korjaus] [Käyttöliittymä]');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [eventWithMultiLabels]
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  it('shows no tags for PRs without labels', async () => {
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ text?: { text: string } }>;
+        const changesText = blocks[2].text!.text;
+        // Should have PR number and title but no brackets
+        expect(changesText).toContain('#123');
+        expect(changesText).toContain('Add feature X');
+        expect(changesText).not.toMatch(/\[.*\]/);
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockCoreEvent]
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  it('ignores unmapped labels in PR lines', async () => {
+    const eventWithUnmappedLabels: DeploymentEvent = {
+      ...mockCoreEvent,
+      includedPRs: [
+        {
+          number: 125,
+          title: 'Some change',
+          author: 'dev2',
+          authorName: 'Developer Two',
+          mergedAt: '2026-03-01T14:00:00Z',
+          repository: 'espoon-voltti/evaka',
+          repoType: 'core',
+          isBot: false,
+      isHidden: false,
+          url: 'https://github.com/espoon-voltti/evaka/pull/125',
+          labels: ['wontfix', 'custom-label'],
+        },
+      ],
+    };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ text?: { text: string } }>;
+        const changesText = blocks[2].text!.text;
+        expect(changesText).toContain('#125');
+        expect(changesText).not.toMatch(/\[.*\]/);
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [eventWithUnmappedLabels]
     );
 
     expect(scope.isDone()).toBe(true);

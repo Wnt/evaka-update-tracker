@@ -1,18 +1,23 @@
 <!-- Sync Impact Report
-  Version change: 1.3.0 → 1.4.0
+  Version change: 1.5.0 → 1.5.1
   Modified sections:
-    - Development Workflow: added GitHub Actions workflow maintenance
-      requirement for new environment-configurable features
+    - Development Workflow: corrected PR mockup requirement — removed
+      new-view exemption (all PRs MUST show before AND after); added
+      requirement to capture "before" mockups prior to implementation;
+      added reference to `npm run capture-views` script
   Added sections: None
   Removed sections: None
   Templates requiring updates:
-    - .specify/templates/plan-template.md ✅ no changes needed
+    - .specify/templates/plan-template.md ✅ updated — added mockup
+      capture note to Constitution Check section
     - .specify/templates/spec-template.md ✅ no changes needed
-    - .specify/templates/tasks-template.md ⚠ pending — Polish phase
-      should reference screenshot regeneration as a standard task
-      when view changes are involved (carried from 1.3.0)
+    - .specify/templates/tasks-template.md ✅ updated — added
+      pre-implementation mockup capture task to Phase 1 and PR
+      mockup assembly task to Polish phase
     - CLAUDE.md ✅ no changes needed
-  Follow-up TODOs: None
+  Follow-up TODOs:
+    - Create `scripts/capture-views.ts` script (tracked as a future
+      feature, not part of this constitution amendment)
 -->
 
 # eVaka Update Tracker Constitution
@@ -142,6 +147,33 @@ tests to provide quick feedback.
     TypeScript code that read from secrets or configuration.
   - Forgetting to add the variable to the workflow means the
     feature silently fails in production while passing locally.
+- When a pull request affects any user-facing view (web dashboard
+  pages, Slack messages, or other rendered output), the PR
+  description MUST include a markdown mockup showing **before**
+  (current state) and **after** (proposed state) for each affected
+  view.
+  - "Before" mockups MUST be captured **before implementation
+    begins**, while the current behavior is still intact. The
+    implementation workflow (plan/tasks templates) accounts for
+    this by including a pre-implementation capture step.
+  - The capture tool is `npm run capture-views` which generates
+    markdown representations of all views. When this script is
+    not yet available, mockups MUST be written manually.
+  - Mockups MUST use fenced code blocks or markdown formatting
+    that approximates the visual layout (ASCII art, tables, or
+    structured text).
+  - Each mockup pair MUST be labeled with the view name (e.g.,
+    "Overview page", "Slack deployment notification").
+  - The purpose is to make reviewing visual changes easy without
+    needing to build and run the application locally.
+  - For Slack messages, show the message structure including
+    formatting (bold, links, emoji) as it would appear.
+  - For web views, show the relevant section of the page with
+    representative data.
+  - For entirely new views, the "before" mockup shows the page
+    or message area **without** the new element (i.e., the
+    current state), and the "after" shows it with the addition.
+  - Backend-only changes with no visual impact are exempt.
 
 ## Governance
 
@@ -156,4 +188,4 @@ principles.
 - If a principle is violated, the violation MUST be justified in
   the Complexity Tracking section of the implementation plan.
 
-**Version**: 1.4.0 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-10
+**Version**: 1.5.1 | **Ratified**: 2026-03-02 | **Last Amended**: 2026-03-18

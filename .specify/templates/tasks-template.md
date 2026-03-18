@@ -51,6 +51,11 @@ description: "Task list template for feature implementation"
 - [ ] T001 Create project structure per implementation plan
 - [ ] T002 Initialize [language] project with [framework] dependencies
 - [ ] T003 [P] Configure linting and formatting tools
+- [ ] T004-MK [P] **If this feature affects user-facing views**: Capture
+  "before" mockups of all affected views (web pages, Slack messages)
+  using `npm run capture-views` or manually. Save to
+  `specs/[###-feature]/mockups-before.md`. This MUST happen before
+  any implementation changes.
 
 ---
 
@@ -156,6 +161,10 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
 - [ ] TXXX Security hardening
 - [ ] TXXX Run quickstart.md validation
+- [ ] TXXX [P] **If this feature affects user-facing views**: Capture
+  "after" mockups and assemble before/after comparison in
+  `specs/[###-feature]/mockups.md` for inclusion in the PR
+  description (see Constitution §Development Workflow)
 
 ---
 
