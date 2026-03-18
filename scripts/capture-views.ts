@@ -64,7 +64,7 @@ function buildViewRegistry(currentData: CurrentData): ViewDefinition[] {
   for (const cityGroup of currentData.cityGroups) {
     const id = cityGroup.id;
     views.push({ name: `city-${id}`, type: 'browser', route: `#/city/${id}`, waitFor: '.city-detail' });
-    views.push({ name: `city-${id}-history`, type: 'browser', route: `#/city/${id}/history`, waitFor: '.history-list' });
+    views.push({ name: `city-${id}-history`, type: 'browser', route: `#/city/${id}/history`, waitFor: '.city-detail' });
   }
 
   // Slack deployment notifications (one per city)
@@ -80,156 +80,139 @@ function buildViewRegistry(currentData: CurrentData): ViewDefinition[] {
 }
 
 // --- DOM-to-Markdown Extraction ---
+// NOTE: The extraction code is passed as a string to page.evaluate() to avoid
+// tsx/esbuild injecting __name() helpers that don't exist in the browser context.
+
+const DOM_EXTRACT_SCRIPT = `
+(function() {
+  var escapeTableCell = function(text) {
+    return text.replace(/\\|/g, '\\\\|').replace(/\\n/g, ' ');
+  };
+
+  var walkNode = function(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      return (node.textContent || '').trim();
+    }
+    if (node.nodeType !== Node.ELEMENT_NODE) return '';
+
+    var el = node;
+    var tag = el.tagName.toLowerCase();
+
+    if (el.style.display === 'none' || el.hidden) return '';
+    if (tag === 'script' || tag === 'style') return '';
+
+    if (/^h[1-6]$/.test(tag)) {
+      var level = parseInt(tag[1]);
+      var text = (el.textContent || '').trim();
+      return '#'.repeat(level) + ' ' + text + '\\n\\n';
+    }
+
+    if (tag === 'table') return convertTable(el);
+    if (tag === 'ul' || tag === 'ol') return convertList(el, tag === 'ol');
+    if (tag === 'li') return walkChildren(node);
+
+    if (tag === 'a') {
+      var href = el.href;
+      var linkText = (el.textContent || '').trim();
+      if (href && linkText) return '[' + linkText + '](' + href + ')';
+      return linkText;
+    }
+
+    if (tag === 'details') {
+      var summary = el.querySelector('summary');
+      var summaryText = summary ? (summary.textContent || '').trim() : '';
+      var childContent = [];
+      for (var i = 0; i < el.childNodes.length; i++) {
+        if (el.childNodes[i] === summary) continue;
+        var t = walkNode(el.childNodes[i]);
+        if (t) childContent.push(t);
+      }
+      return '### ' + summaryText + '\\n\\n' + childContent.join('\\n') + '\\n\\n';
+    }
+    if (tag === 'summary') return '';
+
+    if (tag === 'p') {
+      var pText = walkChildren(node);
+      return pText ? pText + '\\n\\n' : '';
+    }
+
+    if (tag === 'span') {
+      var cls = el.className || '';
+      if (cls.indexOf('flag-true') >= 0) return '\\u2713';
+      if (cls.indexOf('flag-false') >= 0) return '\\u2717';
+      if (cls.indexOf('flag-unset') >= 0) return '\\u2014';
+      if (cls.indexOf('flag-value') >= 0) return (el.textContent || '').trim();
+      if (cls.indexOf('divergent-marker') >= 0) return (el.textContent || '').trim();
+      if (cls.indexOf('count-badge') >= 0) {
+        var valEl = el.querySelector('.count-value');
+        var lblEl = el.querySelector('.count-label');
+        var val = valEl ? (valEl.textContent || '').trim() : '';
+        var lbl = lblEl ? (lblEl.textContent || '').trim() : '';
+        return val && lbl ? lbl + ': ' + val : '';
+      }
+    }
+
+    if (tag === 'button') return '';
+
+    return walkChildren(node);
+  };
+
+  var walkChildren = function(node) {
+    var parts = [];
+    for (var i = 0; i < node.childNodes.length; i++) {
+      var t = walkNode(node.childNodes[i]);
+      if (t) parts.push(t);
+    }
+    return parts.join(' ').replace(/ +/g, ' ').trim();
+  };
+
+  var convertTable = function(table) {
+    var rows = [];
+    for (var r = 0; r < table.rows.length; r++) {
+      var cells = [];
+      for (var c = 0; c < table.rows[r].cells.length; c++) {
+        cells.push(escapeTableCell((table.rows[r].cells[c].textContent || '').trim()));
+      }
+      rows.push(cells);
+    }
+    if (rows.length === 0) return '';
+    var header = rows[0];
+    var separator = header.map(function() { return '---'; });
+    var lines = ['| ' + header.join(' | ') + ' |', '| ' + separator.join(' | ') + ' |'];
+    for (var i = 1; i < rows.length; i++) {
+      lines.push('| ' + rows[i].join(' | ') + ' |');
+    }
+    return lines.join('\\n') + '\\n\\n';
+  };
+
+  var convertList = function(el, ordered) {
+    var items = [];
+    var index = 1;
+    for (var i = 0; i < el.children.length; i++) {
+      if (el.children[i].tagName.toLowerCase() === 'li') {
+        var t = walkNode(el.children[i]);
+        if (t) {
+          var prefix = ordered ? (index++) + '.' : '-';
+          items.push(prefix + ' ' + t);
+        }
+      }
+    }
+    return items.join('\\n') + '\\n\\n';
+  };
+
+  var mainContent =
+    document.querySelector('.city-grid') ||
+    document.querySelector('.city-detail') ||
+    document.querySelector('.feature-view') ||
+    document.querySelector('#app') ||
+    document.body;
+
+  return walkNode(mainContent);
+})()
+`;
 
 async function extractDomToMarkdown(page: import('@playwright/test').Page): Promise<string> {
-  return page.evaluate(() => {
-    function escapeTableCell(text: string): string {
-      return text.replace(/\|/g, '\\|').replace(/\n/g, ' ');
-    }
-
-    function walkNode(node: Node): string {
-      if (node.nodeType === Node.TEXT_NODE) {
-        return node.textContent?.trim() || '';
-      }
-
-      if (node.nodeType !== Node.ELEMENT_NODE) return '';
-
-      const el = node as HTMLElement;
-      const tag = el.tagName.toLowerCase();
-
-      // Skip hidden elements
-      if (el.style.display === 'none' || el.hidden) return '';
-
-      // Skip script, style
-      if (tag === 'script' || tag === 'style') return '';
-
-      // Headings
-      if (/^h[1-6]$/.test(tag)) {
-        const level = parseInt(tag[1]);
-        const text = el.textContent?.trim() || '';
-        return `${'#'.repeat(level)} ${text}\n\n`;
-      }
-
-      // Tables
-      if (tag === 'table') {
-        return convertTable(el as HTMLTableElement);
-      }
-
-      // Lists
-      if (tag === 'ul' || tag === 'ol') {
-        return convertList(el, tag === 'ol');
-      }
-
-      // Skip li processing here — handled by convertList
-      if (tag === 'li') {
-        return walkChildren(node);
-      }
-
-      // Links
-      if (tag === 'a') {
-        const href = (el as HTMLAnchorElement).href;
-        const text = el.textContent?.trim() || '';
-        if (href && text) return `[${text}](${href})`;
-        return text;
-      }
-
-      // Details/summary
-      if (tag === 'details') {
-        const summary = el.querySelector('summary');
-        const summaryText = summary?.textContent?.trim() || '';
-        const childContent: string[] = [];
-        for (const child of el.childNodes) {
-          if (child === summary) continue;
-          const text = walkNode(child);
-          if (text) childContent.push(text);
-        }
-        return `### ${summaryText}\n\n${childContent.join('\n')}\n\n`;
-      }
-      if (tag === 'summary') return '';
-
-      // Paragraphs and divs
-      if (tag === 'p') {
-        const text = walkChildren(node);
-        return text ? `${text}\n\n` : '';
-      }
-
-      // Span with specific classes
-      if (tag === 'span') {
-        const cls = el.className;
-        if (cls.includes('flag-true')) return '\u2713';
-        if (cls.includes('flag-false')) return '\u2717';
-        if (cls.includes('flag-unset')) return '\u2014';
-        if (cls.includes('flag-value')) return el.textContent?.trim() || '';
-        if (cls.includes('divergent-marker')) return el.textContent?.trim() || '';
-        if (cls.includes('count-badge')) {
-          const value = el.querySelector('.count-value')?.textContent?.trim() || '';
-          const label = el.querySelector('.count-label')?.textContent?.trim() || '';
-          return value && label ? `${label}: ${value}` : '';
-        }
-      }
-
-      // Button (skip interactive elements in snapshot)
-      if (tag === 'button') return '';
-
-      // Default: walk children
-      return walkChildren(node);
-    }
-
-    function walkChildren(node: Node): string {
-      const parts: string[] = [];
-      for (const child of node.childNodes) {
-        const text = walkNode(child);
-        if (text) parts.push(text);
-      }
-      return parts.join(' ').replace(/ +/g, ' ').trim();
-    }
-
-    function convertTable(table: HTMLTableElement): string {
-      const rows: string[][] = [];
-      for (const row of table.rows) {
-        const cells: string[] = [];
-        for (const cell of row.cells) {
-          cells.push(escapeTableCell(cell.textContent?.trim() || ''));
-        }
-        rows.push(cells);
-      }
-      if (rows.length === 0) return '';
-
-      const header = rows[0];
-      const separator = header.map(() => '---');
-      const lines = [
-        `| ${header.join(' | ')} |`,
-        `| ${separator.join(' | ')} |`,
-        ...rows.slice(1).map((row) => `| ${row.join(' | ')} |`),
-      ];
-      return lines.join('\n') + '\n\n';
-    }
-
-    function convertList(el: HTMLElement, ordered: boolean): string {
-      const items: string[] = [];
-      let index = 1;
-      for (const child of el.children) {
-        if (child.tagName.toLowerCase() === 'li') {
-          const text = walkNode(child);
-          if (text) {
-            const prefix = ordered ? `${index++}.` : '-';
-            items.push(`${prefix} ${text}`);
-          }
-        }
-      }
-      return items.join('\n') + '\n\n';
-    }
-
-    // Find main content container
-    const mainContent =
-      document.querySelector('.city-grid') ||
-      document.querySelector('.city-detail') ||
-      document.querySelector('.feature-view') ||
-      document.querySelector('#app') ||
-      document.body;
-
-    return walkNode(mainContent);
-  });
+  return page.evaluate(DOM_EXTRACT_SCRIPT);
 }
 
 // --- Slack Snapshot Helpers ---
