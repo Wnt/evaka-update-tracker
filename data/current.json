@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T08:09:08.167Z",
+  "generatedAt": "2026-03-18T08:21:04.605Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T08:08:08.242Z",
+            "checkedAt": "2026-03-18T08:19:38.514Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T08:08:08.917Z",
+            "checkedAt": "2026-03-18T08:19:39.382Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -51,20 +51,6 @@
           "deployed": [],
           "inStaging": [
             {
-              "number": 8704,
-              "title": "Päivitetään postgres-volumen polku",
-              "author": "tomuli",
-              "authorName": "Samuli Toivonen",
-              "mergedAt": "2026-03-18T07:18:09Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
-              "labels": [
-                "no-changelog"
-              ]
-            },
-            {
               "number": 8708,
               "title": "Yksinkertaistetaan PDF-konfiguraatiota",
               "author": "akheron",
@@ -73,6 +59,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8708",
               "labels": [
                 "tech"
@@ -87,6 +74,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8663",
               "labels": [
                 "enhancement"
@@ -101,6 +89,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8699",
               "labels": [
                 "tech"
@@ -115,6 +104,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8600",
               "labels": [
                 "enhancement"
@@ -131,6 +121,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8703",
               "labels": [
                 "enhancement"
@@ -149,7 +140,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T08:08:12.178Z",
+            "checkedAt": "2026-03-18T08:19:44.347Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -174,7 +165,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T08:08:19.261Z",
+            "checkedAt": "2026-03-18T08:19:55.270Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -209,6 +200,7 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Tampere/trevaka/pull/2054",
               "labels": []
             },
@@ -221,6 +213,7 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Tampere/trevaka/pull/2051",
               "labels": []
             },
@@ -233,6 +226,7 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Tampere/trevaka/pull/2046",
               "labels": []
             },
@@ -245,6 +239,7 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Tampere/trevaka/pull/2044",
               "labels": []
             },
@@ -257,6 +252,7 @@
               "repository": "Tampere/trevaka",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Tampere/trevaka/pull/2042",
               "labels": []
             }
@@ -276,6 +272,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8708",
               "labels": [
                 "tech"
@@ -290,6 +287,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8663",
               "labels": [
                 "enhancement"
@@ -304,6 +302,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8699",
               "labels": [
                 "tech"
@@ -318,23 +317,25 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8600",
               "labels": [
                 "enhancement"
               ]
             },
             {
-              "number": 8697,
-              "title": "Espoo: arvopäätösten uudet tekstit",
-              "author": "Joosakur",
-              "authorName": "Joosa Kurvinen",
-              "mergedAt": "2026-03-16T16:32:18Z",
+              "number": 8665,
+              "title": "Colima-virtuaalikonepohjainen sandbox",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-16T08:11:23Z",
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8697",
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8665",
               "labels": [
-                "no-changelog"
+                "tech"
               ]
             }
           ],
@@ -348,23 +349,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8703",
               "labels": [
                 "enhancement"
-              ]
-            },
-            {
-              "number": 8704,
-              "title": "Päivitetään postgres-volumen polku",
-              "author": "tomuli",
-              "authorName": "Samuli Toivonen",
-              "mergedAt": "2026-03-18T07:18:09Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
-              "labels": [
-                "no-changelog"
               ]
             }
           ]
@@ -380,7 +368,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T08:08:45.077Z",
+            "checkedAt": "2026-03-18T08:20:31.221Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -405,7 +393,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T08:08:45.926Z",
+            "checkedAt": "2026-03-18T08:20:32.835Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9ea4eed02246a5be0c87ee4093fb56aff4cda19e",
@@ -440,6 +428,7 @@
               "repository": "Oulunkaupunki/evakaoulu",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/308",
               "labels": []
             },
@@ -452,6 +441,7 @@
               "repository": "Oulunkaupunki/evakaoulu",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/299",
               "labels": []
             },
@@ -464,6 +454,7 @@
               "repository": "Oulunkaupunki/evakaoulu",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/303",
               "labels": []
             },
@@ -476,6 +467,7 @@
               "repository": "Oulunkaupunki/evakaoulu",
               "repoType": "wrapper",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/300",
               "labels": []
             }
@@ -495,6 +487,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8708",
               "labels": [
                 "tech"
@@ -509,6 +502,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8663",
               "labels": [
                 "enhancement"
@@ -523,6 +517,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8699",
               "labels": [
                 "tech"
@@ -537,23 +532,25 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8600",
               "labels": [
                 "enhancement"
               ]
             },
             {
-              "number": 8697,
-              "title": "Espoo: arvopäätösten uudet tekstit",
-              "author": "Joosakur",
-              "authorName": "Joosa Kurvinen",
-              "mergedAt": "2026-03-16T16:32:18Z",
+              "number": 8665,
+              "title": "Colima-virtuaalikonepohjainen sandbox",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-16T08:11:23Z",
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8697",
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8665",
               "labels": [
-                "no-changelog"
+                "tech"
               ]
             }
           ],
@@ -567,23 +564,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8703",
               "labels": [
                 "enhancement"
-              ]
-            },
-            {
-              "number": 8704,
-              "title": "Päivitetään postgres-volumen polku",
-              "author": "tomuli",
-              "authorName": "Samuli Toivonen",
-              "mergedAt": "2026-03-18T07:18:09Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
-              "labels": [
-                "no-changelog"
               ]
             }
           ]
@@ -599,7 +583,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-18T08:09:03.313Z",
+            "checkedAt": "2026-03-18T08:20:57.507Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "c2bf27c85059c56d6f367fbbf753dbf11b915345",
@@ -624,7 +608,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-18T08:09:04.129Z",
+            "checkedAt": "2026-03-18T08:20:58.806Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f49e173e47f6f43137600ba2e80a41dbb257e303",
@@ -665,6 +649,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8708",
               "labels": [
                 "tech"
@@ -679,6 +664,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8663",
               "labels": [
                 "enhancement"
@@ -693,6 +679,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8699",
               "labels": [
                 "tech"
@@ -707,6 +694,7 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8600",
               "labels": [
                 "enhancement"
@@ -723,23 +711,10 @@
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
+              "isHidden": false,
               "url": "https://github.com/espoon-voltti/evaka/pull/8703",
               "labels": [
                 "enhancement"
-              ]
-            },
-            {
-              "number": 8704,
-              "title": "Päivitetään postgres-volumen polku",
-              "author": "tomuli",
-              "authorName": "Samuli Toivonen",
-              "mergedAt": "2026-03-18T07:18:09Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8704",
-              "labels": [
-                "no-changelog"
               ]
             }
           ]
