@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-18T07:38:58.575Z",
+  "generatedAt": "2026-03-18T07:54:59.069Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T07:37:42.242Z",
+            "checkedAt": "2026-03-18T07:53:46.351Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,15 +29,15 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-18T07:37:43.140Z",
+            "checkedAt": "2026-03-18T07:53:47.282Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
-              "sha": "184622c06f65a2285bf9204bf404b3f085a92e88",
-              "shortSha": "184622c",
-              "message": "Merge pull request #8697 from espoon-voltti/espoo-voucher-decision-texts-2026",
-              "date": "2026-03-16T16:32:18Z",
-              "author": "Joosakur"
+              "sha": "f58d417c3f67081bdf224d57184d922fe7505b65",
+              "shortSha": "f58d417",
+              "message": "Merge pull request #8704 from espoon-voltti/compose-postgres-path",
+              "date": "2026-03-18T07:18:09Z",
+              "author": "tomuli"
             }
           },
           "versionMismatch": false,
@@ -49,8 +49,7 @@
         "core": {
           "repository": "espoon-voltti/evaka",
           "deployed": [],
-          "inStaging": [],
-          "pendingDeployment": [
+          "inStaging": [
             {
               "number": 8704,
               "title": "Päivitetään postgres-volumen polku",
@@ -121,6 +120,22 @@
                 "enhancement"
               ]
             }
+          ],
+          "pendingDeployment": [
+            {
+              "number": 8703,
+              "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T07:50:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8703",
+              "labels": [
+                "enhancement"
+              ]
+            }
           ]
         }
       }
@@ -134,7 +149,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T07:37:46.677Z",
+            "checkedAt": "2026-03-18T07:53:53.001Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f0d4ef461bbfee4610928aa5d8ba98f8dfb1f454",
@@ -159,7 +174,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-18T07:37:57.389Z",
+            "checkedAt": "2026-03-18T07:54:02.939Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "0a7f72ca7c5ad84b73d54df8a4a28e7c1474d5c9",
@@ -326,6 +341,20 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8703,
+              "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T07:50:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8703",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8704,
               "title": "Päivitetään postgres-volumen polku",
               "author": "tomuli",
@@ -380,20 +409,6 @@
               "labels": [
                 "tech"
               ]
-            },
-            {
-              "number": 8600,
-              "title": "Ytimen monen kunnan tuki",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-17T07:54:10Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8600",
-              "labels": [
-                "enhancement"
-              ]
             }
           ]
         }
@@ -408,7 +423,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T07:38:29.451Z",
+            "checkedAt": "2026-03-18T07:54:31.998Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a14b8a16702f65d22ec42bde50ded84d8b665633",
@@ -433,7 +448,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-18T07:38:30.757Z",
+            "checkedAt": "2026-03-18T07:54:33.280Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "9ea4eed02246a5be0c87ee4093fb56aff4cda19e",
@@ -587,6 +602,20 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8703,
+              "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T07:50:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8703",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8704,
               "title": "Päivitetään postgres-volumen polku",
               "author": "tomuli",
@@ -613,7 +642,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-18T07:38:52.335Z",
+            "checkedAt": "2026-03-18T07:54:53.038Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "c2bf27c85059c56d6f367fbbf753dbf11b915345",
@@ -638,7 +667,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-18T07:38:53.645Z",
+            "checkedAt": "2026-03-18T07:54:54.302Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f49e173e47f6f43137600ba2e80a41dbb257e303",
@@ -728,6 +757,20 @@
             }
           ],
           "pendingDeployment": [
+            {
+              "number": 8703,
+              "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-18T07:50:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8703",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8704,
               "title": "Päivitetään postgres-volumen polku",
