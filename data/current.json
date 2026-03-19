@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T11:19:29.945Z",
+  "generatedAt": "2026-03-19T11:22:06.816Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-19T11:18:43.715Z",
+            "checkedAt": "2026-03-19T11:21:36.821Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-19T11:18:44.577Z",
+            "checkedAt": "2026-03-19T11:21:37.489Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -51,6 +51,21 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8705,
+              "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-19T11:21:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8705",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8710,
               "title": "Virhelokitus tausta-ajon epäonnistumisesta",
@@ -109,7 +124,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-19T11:18:47.752Z",
+            "checkedAt": "2026-03-19T11:21:39.968Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -134,7 +149,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-19T11:18:59.096Z",
+            "checkedAt": "2026-03-19T11:21:48.028Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "dfbdf66ded9056c8d41511c7d90475bda8627c9e",
@@ -199,6 +214,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8705,
+              "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-19T11:21:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8705",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8710,
               "title": "Virhelokitus tausta-ajon epäonnistumisesta",
               "author": "tomuli",
@@ -256,7 +286,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-19T11:19:15.015Z",
+            "checkedAt": "2026-03-19T11:21:59.577Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7e1cfb58e81b73bdd1c0c8442f239ac808f47c88",
@@ -281,7 +311,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-19T11:19:16.447Z",
+            "checkedAt": "2026-03-19T11:22:00.512Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7e1cfb58e81b73bdd1c0c8442f239ac808f47c88",
@@ -314,6 +344,21 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8705,
+              "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
+              "author": "Joosakur",
+              "authorName": "Joosa Kurvinen",
+              "mergedAt": "2026-03-19T11:21:05Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8705",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8710,
               "title": "Virhelokitus tausta-ajon epäonnistumisesta",
@@ -372,7 +417,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-19T11:19:20.193Z",
+            "checkedAt": "2026-03-19T11:22:03.117Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8ce66458a3f380c5303760751892a13a23a6859c",
@@ -397,7 +442,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-19T11:19:24.326Z",
+            "checkedAt": "2026-03-19T11:22:04.150Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8ce66458a3f380c5303760751892a13a23a6859c",
@@ -427,40 +472,24 @@
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [
+          "deployed": [],
+          "inStaging": [],
+          "pendingDeployment": [
             {
-              "number": 8700,
-              "title": "Vain AD-kirjautunut käyttäjä voidaan asettaa pääkäyttäjäksi",
+              "number": 8705,
+              "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
               "author": "Joosakur",
               "authorName": "Joosa Kurvinen",
-              "mergedAt": "2026-03-18T08:33:23Z",
+              "mergedAt": "2026-03-19T11:21:05Z",
               "repository": "espoon-voltti/evaka",
               "repoType": "core",
               "isBot": false,
               "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8700",
+              "url": "https://github.com/espoon-voltti/evaka/pull/8705",
               "labels": [
                 "enhancement"
               ]
             },
-            {
-              "number": 8703,
-              "title": "Karttahaku toimii myös hakemalla muun kuin ensimmäisen sanan alusta",
-              "author": "Joosakur",
-              "authorName": "Joosa Kurvinen",
-              "mergedAt": "2026-03-18T07:50:05Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8703",
-              "labels": [
-                "enhancement"
-              ]
-            }
-          ],
-          "inStaging": [],
-          "pendingDeployment": [
             {
               "number": 8710,
               "title": "Virhelokitus tausta-ajon epäonnistumisesta",
