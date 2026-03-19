@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T13:51:54.176Z",
+  "generatedAt": "2026-03-19T14:15:11.163Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-19T13:51:16.547Z",
+            "checkedAt": "2026-03-19T14:14:23.361Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-19T13:51:17.428Z",
+            "checkedAt": "2026-03-19T14:14:24.311Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -51,6 +51,21 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8702,
+              "title": "Näytetään vuorohoitoryhmä henkilökunnan mobiilissa",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-19T14:09:49Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8702",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8705,
               "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
@@ -124,7 +139,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-19T13:51:20.447Z",
+            "checkedAt": "2026-03-19T14:14:28.077Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -149,7 +164,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-19T13:51:30.302Z",
+            "checkedAt": "2026-03-19T14:14:38.801Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "dfbdf66ded9056c8d41511c7d90475bda8627c9e",
@@ -228,6 +243,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8702,
+              "title": "Näytetään vuorohoitoryhmä henkilökunnan mobiilissa",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-19T14:09:49Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8702",
+              "labels": [
+                "enhancement"
+              ]
+            },
+            {
               "number": 8705,
               "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
               "author": "Joosakur",
@@ -300,7 +330,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-19T13:51:45.111Z",
+            "checkedAt": "2026-03-19T14:14:55.353Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7e1cfb58e81b73bdd1c0c8442f239ac808f47c88",
@@ -325,7 +355,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-19T13:51:46.392Z",
+            "checkedAt": "2026-03-19T14:14:56.761Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7e1cfb58e81b73bdd1c0c8442f239ac808f47c88",
@@ -358,6 +388,21 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8702,
+              "title": "Näytetään vuorohoitoryhmä henkilökunnan mobiilissa",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-19T14:09:49Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8702",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8705,
               "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
@@ -431,7 +476,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-19T13:51:49.612Z",
+            "checkedAt": "2026-03-19T14:15:01.587Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8ce66458a3f380c5303760751892a13a23a6859c",
@@ -456,7 +501,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-19T13:51:50.921Z",
+            "checkedAt": "2026-03-19T14:15:07.097Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8ce66458a3f380c5303760751892a13a23a6859c",
@@ -489,6 +534,21 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8702,
+              "title": "Näytetään vuorohoitoryhmä henkilökunnan mobiilissa",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-19T14:09:49Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8702",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8705,
               "title": "Työntekijöiden viestiliitteet saavat olla video/audio-tiedostoja",
