@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DeploymentEvent } from '../types.js';
+import { DeploymentEvent, StagingContext } from '../types.js';
 import { withRetry } from '../utils/retry.js';
 import { formatFinnishDateTime } from '../utils/date-format.js';
 import { formatLabelTags } from '../config/label-map.js';
@@ -63,7 +63,7 @@ function buildChangesSection(event: DeploymentEvent): { type: string; text: { ty
   };
 }
 
-export function buildSlackMessage(events: DeploymentEvent[], dashboardBaseUrl: string) {
+export function buildSlackMessage(events: DeploymentEvent[], dashboardBaseUrl: string, stagingContext?: StagingContext) {
   const firstEvent = events[0];
   const isProduction = firstEvent.environmentId.includes('prod');
   const emoji = isProduction ? '\ud83d\ude80' : '\ud83e\uddea';
@@ -91,9 +91,19 @@ export function buildSlackMessage(events: DeploymentEvent[], dashboardBaseUrl: s
       {
         type: 'context',
         elements: [
+          ...(stagingContext?.productionAvailable ? [{
+            type: 'mrkdwn',
+            text: stagingContext.inStagingCount === 0
+              ? 'Sama versio kuin tuotannossa'
+              : stagingContext.inStagingCount === 1
+                ? '+1 muutos verrattuna tuotantoon'
+                : `+${stagingContext.inStagingCount} muutosta verrattuna tuotantoon`,
+          }] : []),
           {
             type: 'mrkdwn',
-            text: `<${dashboardBaseUrl}#/city/${firstEvent.cityGroupId}|Ympäristöjen tiedot>`,
+            text: isProduction
+              ? `<${dashboardBaseUrl}#/city/${firstEvent.cityGroupId}|Ympäristöjen tiedot>`
+              : `<${dashboardBaseUrl}#/city/${firstEvent.cityGroupId}|Katso ${cityName} ympäristöjen tilanne>`,
           },
         ],
       },
@@ -104,7 +114,8 @@ export function buildSlackMessage(events: DeploymentEvent[], dashboardBaseUrl: s
 export async function sendSlackNotification(
   webhookUrl: string,
   events: DeploymentEvent | DeploymentEvent[],
-  dashboardBaseUrl: string = 'https://espoon-voltti.github.io/evaka-update-tracker/'
+  dashboardBaseUrl: string = 'https://espoon-voltti.github.io/evaka-update-tracker/',
+  stagingContext?: StagingContext
 ): Promise<void> {
   const eventArray = Array.isArray(events) ? events : [events];
   const firstEvent = eventArray[0];
@@ -120,7 +131,7 @@ export async function sendSlackNotification(
     return;
   }
 
-  const message = buildSlackMessage(eventArray, dashboardBaseUrl);
+  const message = buildSlackMessage(eventArray, dashboardBaseUrl, stagingContext);
 
   try {
     await withRetry(

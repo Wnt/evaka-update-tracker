@@ -16,13 +16,13 @@ import { startServer } from '../tests/e2e/helpers/server.js';
 import { buildSlackMessage } from '../src/api/slack.js';
 import { formatPRLine } from '../src/services/change-announcer.js';
 import { blockKitToMarkdown, slackMrkdwnToMarkdown } from '../src/utils/slack-to-markdown.js';
-import { DeploymentEvent, PullRequest, CurrentData } from '../src/types.js';
+import { DeploymentEvent, PullRequest, CurrentData, StagingContext } from '../src/types.js';
 
 // --- Types ---
 
 interface ViewDefinition {
   name: string;
-  type: 'browser' | 'slack-deployment' | 'slack-change';
+  type: 'browser' | 'slack-deployment' | 'slack-deployment-staging' | 'slack-change';
   route?: string;
   waitFor?: string;
 }
@@ -67,9 +67,10 @@ function buildViewRegistry(currentData: CurrentData): ViewDefinition[] {
     views.push({ name: `city-${id}-history`, type: 'browser', route: `#/city/${id}/history`, waitFor: '.city-detail' });
   }
 
-  // Slack deployment notifications (one per city)
+  // Slack deployment notifications (production + staging per city)
   for (const cityGroup of currentData.cityGroups) {
     views.push({ name: `slack-deployment-${cityGroup.id}`, type: 'slack-deployment' });
+    views.push({ name: `slack-deployment-staging-${cityGroup.id}`, type: 'slack-deployment-staging' });
   }
 
   // Slack change announcements (one per repo type)
@@ -334,6 +335,21 @@ function captureSlackDeployment(cityGroupId: string, cityName: string): CaptureR
   }
 }
 
+function captureSlackDeploymentStaging(cityGroupId: string, cityName: string): CaptureResult {
+  try {
+    const event = buildTestDeploymentEvent(cityGroupId, cityName);
+    // Override to staging environment
+    event.environmentId = `${cityGroupId}-staging`;
+    const stagingContext: StagingContext = { inStagingCount: 5, productionAvailable: true };
+    const message = buildSlackMessage([event], 'https://espoon-voltti.github.io/evaka-update-tracker/', stagingContext);
+    const markdown = blockKitToMarkdown(message.blocks);
+    return { name: `slack-deployment-staging-${cityGroupId}`, markdown, success: true };
+  } catch (error) {
+    const msg = error instanceof Error ? error.message : String(error);
+    return { name: `slack-deployment-staging-${cityGroupId}`, markdown: '', success: false, error: msg };
+  }
+}
+
 function captureSlackChangeAnnouncement(repoType: 'core' | 'wrapper'): CaptureResult {
   const name = `slack-change-announcement-${repoType}`;
   try {
@@ -452,6 +468,17 @@ async function main() {
     const cityName = cityGroup?.id.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) || cityGroupId;
     console.log(`[Capture] ${view.name}`);
     const result = captureSlackDeployment(cityGroupId, cityName);
+    results.push(result);
+    if (!result.success) hasFailures = true;
+  }
+
+  const slackDeploymentStagingViews = views.filter((v) => v.type === 'slack-deployment-staging');
+  for (const view of slackDeploymentStagingViews) {
+    const cityGroupId = view.name.replace('slack-deployment-staging-', '');
+    const cityGroup = currentData.cityGroups.find((cg) => cg.id === cityGroupId);
+    const cityName = cityGroup?.id.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) || cityGroupId;
+    console.log(`[Capture] ${view.name}`);
+    const result = captureSlackDeploymentStaging(cityGroupId, cityName);
     results.push(result);
     if (!result.success) hasFailures = true;
   }
