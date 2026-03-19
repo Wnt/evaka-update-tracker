@@ -23,6 +23,7 @@ import {
   PreviousData,
   PullRequest,
   Repository,
+  StagingContext,
 } from './types.js';
 
 loadEnv();
@@ -250,8 +251,25 @@ export async function run() {
       eventsByEnvironment.set(event.environmentId, existing);
     }
     for (const [, envEvents] of eventsByEnvironment) {
-      const webhookUrl = resolveWebhookUrl(envEvents[0].cityGroupId);
-      await sendSlackNotification(webhookUrl, envEvents);
+      const firstEvent = envEvents[0];
+      const webhookUrl = resolveWebhookUrl(firstEvent.cityGroupId);
+      const isProduction = firstEvent.environmentId.includes('prod');
+
+      let stagingContext: StagingContext | undefined;
+      if (!isProduction) {
+        const cityGroup = cityGroupsData.find((cg) => cg.id === firstEvent.cityGroupId);
+        if (cityGroup) {
+          const hasProduction = cityGroup.environments.some((e) => e.type === 'production');
+          const coreInStaging = cityGroup.prTracks.core.inStaging.filter((pr) => !pr.isHidden);
+          const wrapperInStaging = cityGroup.prTracks.wrapper?.inStaging.filter((pr) => !pr.isHidden) ?? [];
+          stagingContext = {
+            inStagingCount: coreInStaging.length + wrapperInStaging.length,
+            productionAvailable: hasProduction,
+          };
+        }
+      }
+
+      await sendSlackNotification(webhookUrl, envEvents, undefined, stagingContext);
     }
   } else {
     console.log('\nNo deployment changes detected.');

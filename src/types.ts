@@ -104,6 +104,13 @@ export interface DeploymentEvent {
   repoType: 'core' | 'wrapper';
 }
 
+// --- Slack Notification Context ---
+
+export interface StagingContext {
+  inStagingCount: number;
+  productionAvailable: boolean;
+}
+
 // --- Data File Schemas (contracts/data-files.md) ---
 
 export interface PRTrack {

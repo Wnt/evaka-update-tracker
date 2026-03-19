@@ -1,7 +1,7 @@
 import nock from 'nock';
 import { sendSlackNotification } from '../../src/api/slack';
 import { resolveWebhookUrl } from '../../src/config/slack-routing';
-import { DeploymentEvent } from '../../src/types';
+import { DeploymentEvent, StagingContext } from '../../src/types';
 
 // Override DRY_RUN for tests
 const originalEnv = process.env.DRY_RUN;
@@ -38,6 +38,43 @@ afterEach(() => {
 const mockCoreEvent: DeploymentEvent = {
   id: '2026-03-06T07:28:00Z_espoo-prod_core',
   environmentId: 'espoo-prod',
+  cityGroupId: 'espoo',
+  detectedAt: '2026-03-06T07:28:00Z',
+  previousCommit: {
+    sha: 'oldsha1234567890',
+    shortSha: 'oldsha1',
+    message: 'Previous commit',
+    date: '2026-02-28T10:00:00Z',
+    author: 'dev1',
+  },
+  newCommit: {
+    sha: 'newsha1234567890',
+    shortSha: 'newsha1',
+    message: 'New commit',
+    date: '2026-03-06T06:00:00Z',
+    author: 'dev2',
+  },
+  includedPRs: [
+    {
+      number: 123,
+      title: 'Add feature X',
+      author: 'dev2',
+      authorName: 'Developer Two',
+      mergedAt: '2026-03-01T14:00:00Z',
+      repository: 'espoon-voltti/evaka',
+      repoType: 'core',
+      isBot: false,
+      isHidden: false,
+      url: 'https://github.com/espoon-voltti/evaka/pull/123',
+      labels: [],
+    },
+  ],
+  repoType: 'core',
+};
+
+const mockStagingEvent: DeploymentEvent = {
+  id: '2026-03-06T07:28:00Z_espoo-staging_core',
+  environmentId: 'espoo-staging',
   cityGroupId: 'espoo',
   detectedAt: '2026-03-06T07:28:00Z',
   previousCommit: {
@@ -584,5 +621,175 @@ describe('per-city Slack channel routing', () => {
     await sendSlackNotification(stagingUrl, [ouluStagingEvent]);
 
     expect(ouluScope.isDone()).toBe(true);
+  });
+});
+
+describe('staging notification context', () => {
+  // T004: plural form (N > 1)
+  it('shows plural comparison count for staging with 5 PRs ahead of production', async () => {
+    const stagingContext: StagingContext = { inStagingCount: 5, productionAvailable: true };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        expect(contextBlock.type).toBe('context');
+        const texts = contextBlock.elements!.map((e) => e.text).join(' ');
+        expect(texts).toContain('+5 muutosta verrattuna tuotantoon');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockStagingEvent],
+      undefined,
+      stagingContext
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  // T005: singular form (N = 1)
+  it('shows singular comparison count for staging with 1 PR ahead of production', async () => {
+    const stagingContext: StagingContext = { inStagingCount: 1, productionAvailable: true };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        const texts = contextBlock.elements!.map((e) => e.text).join(' ');
+        expect(texts).toContain('+1 muutos verrattuna tuotantoon');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockStagingEvent],
+      undefined,
+      stagingContext
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  // T006: zero case (in sync)
+  it('shows in-sync message when staging has 0 additional PRs', async () => {
+    const stagingContext: StagingContext = { inStagingCount: 0, productionAvailable: true };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        const texts = contextBlock.elements!.map((e) => e.text).join(' ');
+        expect(texts).toContain('Sama versio kuin tuotannossa');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockStagingEvent],
+      undefined,
+      stagingContext
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  // T007: production unavailable — omit comparison
+  it('omits comparison text when production data is unavailable', async () => {
+    const stagingContext: StagingContext = { inStagingCount: 0, productionAvailable: false };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        expect(contextBlock.elements!.length).toBe(1); // only the dashboard link
+        const texts = contextBlock.elements!.map((e) => e.text).join(' ');
+        expect(texts).not.toContain('muutos');
+        expect(texts).not.toContain('Sama versio');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockStagingEvent],
+      undefined,
+      stagingContext
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  // T008: production notification — no comparison (FR-006)
+  it('has no comparison text in production notifications', async () => {
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        expect(contextBlock.elements!.length).toBe(1); // only the dashboard link
+        const texts = contextBlock.elements!.map((e) => e.text).join(' ');
+        expect(texts).not.toContain('muutos');
+        expect(texts).not.toContain('Sama versio');
+        expect(texts).toContain('Ympäristöjen tiedot');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockCoreEvent] // production event, no stagingContext
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  // T010: descriptive link text for staging
+  it('uses descriptive city-name link text for staging notifications', async () => {
+    const stagingContext: StagingContext = { inStagingCount: 3, productionAvailable: true };
+
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        const linkElement = contextBlock.elements![contextBlock.elements!.length - 1];
+        expect(linkElement.text).toContain('Katso Espoo ympäristöjen tilanne');
+        expect(linkElement.text).not.toContain('Ympäristöjen tiedot');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockStagingEvent],
+      undefined,
+      stagingContext
+    );
+
+    expect(scope.isDone()).toBe(true);
+  });
+
+  // T011: production keeps generic link text (FR-006)
+  it('keeps generic link text for production notifications', async () => {
+    const scope = nock('https://hooks.slack.com')
+      .post('/services/T00/B00/XXX', (body: Record<string, unknown>) => {
+        const blocks = body.blocks as Array<{ type: string; elements?: Array<{ text: string }> }>;
+        const contextBlock = blocks[blocks.length - 1];
+        const linkElement = contextBlock.elements![0];
+        expect(linkElement.text).toContain('Ympäristöjen tiedot');
+        expect(linkElement.text).not.toContain('Katso');
+        return true;
+      })
+      .reply(200, 'ok');
+
+    await sendSlackNotification(
+      'https://hooks.slack.com/services/T00/B00/XXX',
+      [mockCoreEvent] // production event
+    );
+
+    expect(scope.isDone()).toBe(true);
   });
 });
