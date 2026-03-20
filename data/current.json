@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T08:27:02.340Z",
+  "generatedAt": "2026-03-20T08:47:52.924Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-20T08:26:29.321Z",
+            "checkedAt": "2026-03-20T08:47:10.004Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-20T08:26:29.946Z",
+            "checkedAt": "2026-03-20T08:47:11.019Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -155,7 +155,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-20T08:26:33.421Z",
+            "checkedAt": "2026-03-20T08:47:15.022Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -180,7 +180,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-20T08:26:40.144Z",
+            "checkedAt": "2026-03-20T08:47:25.260Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -201,7 +201,7 @@
           "mismatchDetails": [
             {
               "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-              "checkedAt": "2026-03-20T08:26:40.144Z",
+              "checkedAt": "2026-03-20T08:47:25.260Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -220,7 +220,7 @@
             },
             {
               "instanceDomain": "test-evaka.hameenkyro.fi",
-              "checkedAt": "2026-03-20T08:26:41.069Z",
+              "checkedAt": "2026-03-20T08:47:26.318Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -239,7 +239,7 @@
             },
             {
               "instanceDomain": "test-evaka.kangasala.fi",
-              "checkedAt": "2026-03-20T08:26:41.774Z",
+              "checkedAt": "2026-03-20T08:47:27.340Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -258,7 +258,7 @@
             },
             {
               "instanceDomain": "test-evaka.lempaala.fi",
-              "checkedAt": "2026-03-20T08:26:42.568Z",
+              "checkedAt": "2026-03-20T08:47:28.332Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -277,7 +277,7 @@
             },
             {
               "instanceDomain": "test-evaka.nokiankaupunki.fi",
-              "checkedAt": "2026-03-20T08:26:43.324Z",
+              "checkedAt": "2026-03-20T08:47:29.350Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -296,7 +296,7 @@
             },
             {
               "instanceDomain": "test-evaka.orivesi.fi",
-              "checkedAt": "2026-03-20T08:26:44.342Z",
+              "checkedAt": "2026-03-20T08:47:30.386Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -315,7 +315,7 @@
             },
             {
               "instanceDomain": "test-evaka.pirkkala.fi",
-              "checkedAt": "2026-03-20T08:26:45.156Z",
+              "checkedAt": "2026-03-20T08:47:31.387Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -334,7 +334,7 @@
             },
             {
               "instanceDomain": "test-evaka.vesilahti.fi",
-              "checkedAt": "2026-03-20T08:26:45.821Z",
+              "checkedAt": "2026-03-20T08:47:32.414Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "33bc81f0096029f090327eb37699a23e562def21",
@@ -353,7 +353,7 @@
             },
             {
               "instanceDomain": "test-evaka.ylojarvi.fi",
-              "checkedAt": "2026-03-20T08:26:46.569Z",
+              "checkedAt": "2026-03-20T08:47:33.450Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -516,7 +516,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-20T08:26:52.787Z",
+            "checkedAt": "2026-03-20T08:47:40.441Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7e1cfb58e81b73bdd1c0c8442f239ac808f47c88",
@@ -541,7 +541,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-20T08:26:53.804Z",
+            "checkedAt": "2026-03-20T08:47:41.542Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -567,7 +567,21 @@
           "repository": "Oulunkaupunki/evakaoulu",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 311,
+              "title": "Päivitetään postgres-volumen polku",
+              "author": "tomuli",
+              "authorName": "Samuli Toivonen",
+              "mergedAt": "2026-03-20T08:41:41Z",
+              "repository": "Oulunkaupunki/evakaoulu",
+              "repoType": "wrapper",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/311",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
@@ -678,7 +692,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-20T08:26:57.585Z",
+            "checkedAt": "2026-03-20T08:47:46.672Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8ce66458a3f380c5303760751892a13a23a6859c",
@@ -703,7 +717,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-20T08:26:58.407Z",
+            "checkedAt": "2026-03-20T08:47:47.851Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -729,7 +743,21 @@
           "repository": "City-of-Turku/evakaturku",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 269,
+              "title": "Päivitetään postgres-volumen polku",
+              "author": "tomuli",
+              "authorName": "Samuli Toivonen",
+              "mergedAt": "2026-03-20T08:42:24Z",
+              "repository": "City-of-Turku/evakaturku",
+              "repoType": "wrapper",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/City-of-Turku/evakaturku/pull/269",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
