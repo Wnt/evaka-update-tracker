@@ -25404,38 +25404,6 @@
         }
       ],
       "repoType": "core"
-    },
-    {
-      "id": "2026-02-18T11:49:47.220Z_tampere-prod_wrapper",
-      "environmentId": "tampere-prod",
-      "cityGroupId": "tampere-region",
-      "detectedAt": "2026-02-18T11:49:47.220Z",
-      "previousCommit": null,
-      "newCommit": {
-        "sha": "0ff692abf9f9b979ea58a18b19db1e982cab544c",
-        "shortSha": "0ff692a",
-        "message": "Merge pull request #2012 from Tampere/manual/submodules/evaka-3e3a78a",
-        "date": "2026-02-18T10:21:57Z",
-        "author": "Joosakur"
-      },
-      "includedPRs": [],
-      "repoType": "wrapper"
-    },
-    {
-      "id": "2026-02-18T11:49:47.220Z_tampere-prod_core",
-      "environmentId": "tampere-prod",
-      "cityGroupId": "tampere-region",
-      "detectedAt": "2026-02-18T11:49:47.220Z",
-      "previousCommit": null,
-      "newCommit": {
-        "sha": "3e3a78a9a1c32c7b3d4783e779478380c20218a5",
-        "shortSha": "3e3a78a",
-        "message": "Merge pull request #8552 from espoon-voltti/fix-income-statement-notification-emails",
-        "date": "2026-02-18T09:39:09Z",
-        "author": "ohinkinen"
-      },
-      "includedPRs": [],
-      "repoType": "core"
     }
   ]
 }
