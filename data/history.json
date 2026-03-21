@@ -25110,42 +25110,6 @@
         }
       ],
       "repoType": "core"
-    },
-    {
-      "id": "2026-02-19T13:46:55.492Z_espoo-prod_core",
-      "environmentId": "espoo-prod",
-      "cityGroupId": "espoo",
-      "detectedAt": "2026-02-19T13:46:55.492Z",
-      "previousCommit": {
-        "sha": "c7213f6ea132bc0a55a9a7ac4a0d8bfd2bd0bf29",
-        "shortSha": "c7213f6",
-        "message": "Update dependency fast-xml-parser to v5.3.6 [SECURITY] (#8551)",
-        "date": "2026-02-18T05:11:53Z",
-        "author": "renovate[bot]"
-      },
-      "newCommit": {
-        "sha": "3e3a78a9a1c32c7b3d4783e779478380c20218a5",
-        "shortSha": "3e3a78a",
-        "message": "Merge pull request #8552 from espoon-voltti/fix-income-statement-notification-emails",
-        "date": "2026-02-18T09:39:09Z",
-        "author": "ohinkinen"
-      },
-      "includedPRs": [
-        {
-          "number": 8552,
-          "title": "Korjataan tuloselvityksen muistutussähköpostit",
-          "author": "ohinkinen",
-          "mergedAt": "2026-02-18T09:39:09Z",
-          "repository": "espoon-voltti/evaka",
-          "repoType": "core",
-          "isBot": false,
-          "url": "https://github.com/espoon-voltti/evaka/pull/8552",
-          "labels": [
-            "bug"
-          ]
-        }
-      ],
-      "repoType": "core"
     }
   ]
 }
