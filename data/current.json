@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-22T11:07:51.991Z",
+  "generatedAt": "2026-03-22T11:19:58.539Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-22T11:07:08.137Z",
+            "checkedAt": "2026-03-22T11:19:18.237Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-22T11:07:08.814Z",
+            "checkedAt": "2026-03-22T11:19:18.923Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -94,7 +94,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-22T11:07:12.938Z",
+            "checkedAt": "2026-03-22T11:19:22.954Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -119,7 +119,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-22T11:07:20.684Z",
+            "checkedAt": "2026-03-22T11:19:30.551Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -140,7 +140,7 @@
           "mismatchDetails": [
             {
               "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-              "checkedAt": "2026-03-22T11:07:20.684Z",
+              "checkedAt": "2026-03-22T11:19:30.551Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -159,7 +159,7 @@
             },
             {
               "instanceDomain": "test-evaka.hameenkyro.fi",
-              "checkedAt": "2026-03-22T11:07:23.409Z",
+              "checkedAt": "2026-03-22T11:19:31.417Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -178,7 +178,7 @@
             },
             {
               "instanceDomain": "test-evaka.kangasala.fi",
-              "checkedAt": "2026-03-22T11:07:24.228Z",
+              "checkedAt": "2026-03-22T11:19:32.168Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -197,7 +197,7 @@
             },
             {
               "instanceDomain": "test-evaka.lempaala.fi",
-              "checkedAt": "2026-03-22T11:07:25.034Z",
+              "checkedAt": "2026-03-22T11:19:32.976Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -216,7 +216,7 @@
             },
             {
               "instanceDomain": "test-evaka.nokiankaupunki.fi",
-              "checkedAt": "2026-03-22T11:07:25.888Z",
+              "checkedAt": "2026-03-22T11:19:33.765Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -235,7 +235,7 @@
             },
             {
               "instanceDomain": "test-evaka.orivesi.fi",
-              "checkedAt": "2026-03-22T11:07:26.642Z",
+              "checkedAt": "2026-03-22T11:19:34.500Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -254,7 +254,7 @@
             },
             {
               "instanceDomain": "test-evaka.pirkkala.fi",
-              "checkedAt": "2026-03-22T11:07:27.425Z",
+              "checkedAt": "2026-03-22T11:19:35.327Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -273,7 +273,7 @@
             },
             {
               "instanceDomain": "test-evaka.vesilahti.fi",
-              "checkedAt": "2026-03-22T11:07:28.273Z",
+              "checkedAt": "2026-03-22T11:19:36.160Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "ffe8b818c051846c1cd99afb8c57517f0fa0942a",
@@ -292,7 +292,7 @@
             },
             {
               "instanceDomain": "test-evaka.ylojarvi.fi",
-              "checkedAt": "2026-03-22T11:07:29.093Z",
+              "checkedAt": "2026-03-22T11:19:36.942Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -484,7 +484,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-22T11:07:38.603Z",
+            "checkedAt": "2026-03-22T11:19:45.710Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -509,7 +509,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-22T11:07:39.572Z",
+            "checkedAt": "2026-03-22T11:19:46.634Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -599,7 +599,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-22T11:07:44.601Z",
+            "checkedAt": "2026-03-22T11:19:51.510Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -624,7 +624,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-22T11:07:45.580Z",
+            "checkedAt": "2026-03-22T11:19:52.376Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "56928f817f58df42b76978f5c3fc727aad2a4954",
