@@ -24720,55 +24720,6 @@
         }
       ],
       "repoType": "core"
-    },
-    {
-      "id": "2026-02-20T11:43:09.168Z_espoo-prod_core",
-      "environmentId": "espoo-prod",
-      "cityGroupId": "espoo",
-      "detectedAt": "2026-02-20T11:43:09.168Z",
-      "previousCommit": {
-        "sha": "3e3a78a9a1c32c7b3d4783e779478380c20218a5",
-        "shortSha": "3e3a78a",
-        "message": "Merge pull request #8552 from espoon-voltti/fix-income-statement-notification-emails",
-        "date": "2026-02-18T09:39:09Z",
-        "author": "ohinkinen"
-      },
-      "newCommit": {
-        "sha": "7ef23d82835f526b520d503b943c0de59d25d12c",
-        "shortSha": "7ef23d8",
-        "message": "Merge pull request #8554 from espoon-voltti/add-owasp-suppression",
-        "date": "2026-02-19T07:21:25Z",
-        "author": "ohinkinen"
-      },
-      "includedPRs": [
-        {
-          "number": 8554,
-          "title": "Tekninen: Lisätään CVE-2026-24734 owasp suppressions listaan",
-          "author": "ohinkinen",
-          "mergedAt": "2026-02-19T07:21:25Z",
-          "repository": "espoon-voltti/evaka",
-          "repoType": "core",
-          "isBot": false,
-          "url": "https://github.com/espoon-voltti/evaka/pull/8554",
-          "labels": [
-            "tech"
-          ]
-        },
-        {
-          "number": 8548,
-          "title": "Espoo: Korjataan rikkinäiset palveluseteli-linkit \"hakemus vastaanotettu\"-sähköposteissa",
-          "author": "ohinkinen",
-          "mergedAt": "2026-02-19T06:26:39Z",
-          "repository": "espoon-voltti/evaka",
-          "repoType": "core",
-          "isBot": false,
-          "url": "https://github.com/espoon-voltti/evaka/pull/8548",
-          "labels": [
-            "bug"
-          ]
-        }
-      ],
-      "repoType": "core"
     }
   ]
 }
