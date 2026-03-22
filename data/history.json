@@ -24769,40 +24769,6 @@
         }
       ],
       "repoType": "core"
-    },
-    {
-      "id": "2026-02-20T08:36:21.440Z_tampere-test_wrapper",
-      "environmentId": "tampere-test",
-      "cityGroupId": "tampere-region",
-      "detectedAt": "2026-02-20T08:36:21.440Z",
-      "previousCommit": {
-        "sha": "29c3239cc55b86ca7c8414c9afc781358ae484eb",
-        "shortSha": "29c3239",
-        "message": "Merge pull request #2014 from Tampere/dependabot/submodules/evaka-7ef23d8",
-        "date": "2026-02-20T06:21:24Z",
-        "author": "Joosakur"
-      },
-      "newCommit": {
-        "sha": "a741d6a6693d408140dbca17d31d8f06ffdf3ae4",
-        "shortSha": "a741d6a",
-        "message": "Merge pull request #2013 from Tampere/export-preschool-child-documents-job-env-vars",
-        "date": "2026-02-20T08:23:37Z",
-        "author": "patari"
-      },
-      "includedPRs": [
-        {
-          "number": 2013,
-          "title": "Export preschool child documents job env vars",
-          "author": "patari",
-          "mergedAt": "2026-02-20T08:23:37Z",
-          "repository": "Tampere/trevaka",
-          "repoType": "wrapper",
-          "isBot": false,
-          "url": "https://github.com/Tampere/trevaka/pull/2013",
-          "labels": []
-        }
-      ],
-      "repoType": "wrapper"
     }
   ]
 }
