@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T07:19:17.378Z",
+  "generatedAt": "2026-03-23T07:47:30.647Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T07:17:46.606Z",
+            "checkedAt": "2026-03-23T07:46:13.053Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T07:17:47.554Z",
+            "checkedAt": "2026-03-23T07:46:13.929Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -97,7 +97,24 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8750,
+              "title": "Vite 8",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T07:25:46Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8750",
+              "labels": [
+                "dependencies",
+                "frontend"
+              ]
+            }
+          ]
         }
       }
     },
@@ -110,7 +127,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T07:18:08.858Z",
+            "checkedAt": "2026-03-23T07:46:25.102Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -135,7 +152,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T07:18:19.560Z",
+            "checkedAt": "2026-03-23T07:46:35.691Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
@@ -285,6 +302,22 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8750,
+              "title": "Vite 8",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T07:25:46Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8750",
+              "labels": [
+                "dependencies",
+                "frontend"
+              ]
+            },
+            {
               "number": 8749,
               "title": "Update Spring Boot to v4.0.4",
               "author": "akheron",
@@ -313,7 +346,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T07:18:48.042Z",
+            "checkedAt": "2026-03-23T07:47:01.643Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -338,7 +371,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T07:18:49.405Z",
+            "checkedAt": "2026-03-23T07:47:02.982Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "88171dd2eba5f8c2383132c96d43b6c12b7f54b8",
@@ -430,6 +463,22 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8750,
+              "title": "Vite 8",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T07:25:46Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8750",
+              "labels": [
+                "dependencies",
+                "frontend"
+              ]
+            },
+            {
               "number": 8749,
               "title": "Update Spring Boot to v4.0.4",
               "author": "akheron",
@@ -458,7 +507,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-23T07:19:02.403Z",
+            "checkedAt": "2026-03-23T07:47:15.834Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -483,7 +532,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-23T07:19:03.760Z",
+            "checkedAt": "2026-03-23T07:47:17.192Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a7cd7ea655b6200719f9489de8b4aa84a47d44ce",
@@ -574,6 +623,22 @@
             }
           ],
           "pendingDeployment": [
+            {
+              "number": 8750,
+              "title": "Vite 8",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T07:25:46Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8750",
+              "labels": [
+                "dependencies",
+                "frontend"
+              ]
+            },
             {
               "number": 8749,
               "title": "Update Spring Boot to v4.0.4",
