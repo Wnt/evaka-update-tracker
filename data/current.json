@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T04:29:10.227Z",
+  "generatedAt": "2026-03-23T05:14:42.157Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T04:28:25.409Z",
+            "checkedAt": "2026-03-23T05:13:52.276Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T04:28:26.106Z",
+            "checkedAt": "2026-03-23T05:13:52.955Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -94,7 +94,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T04:28:30.736Z",
+            "checkedAt": "2026-03-23T05:13:57.600Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -119,47 +119,47 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T04:28:38.277Z",
+            "checkedAt": "2026-03-23T05:14:05.837Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
-              "shortSha": "f6932b6",
-              "message": "Merge pull request #2058 from Tampere/compose-postgres-path",
-              "date": "2026-03-20T05:13:18Z",
-              "author": "akheron"
+              "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
+              "shortSha": "f44bf40",
+              "message": "Merge pull request #2063 from Tampere/dependabot/submodules/evaka-7d4e575",
+              "date": "2026-03-23T04:53:11Z",
+              "author": "ohinkinen"
             },
             "coreCommit": {
-              "sha": "27d00d7c2d0a75aaaee8d2351e650c76b6f27df2",
-              "shortSha": "27d00d7",
-              "message": "Merge pull request #8702 from espoon-voltti/show-shift-care-group-mobile",
-              "date": "2026-03-19T14:09:49Z",
-              "author": "ohinkinen"
+              "sha": "7d4e575f1da27c6b1e96a3006d5ad40d632d6584",
+              "shortSha": "7d4e575",
+              "message": "Update flyway to v12.1.1 (#8746)",
+              "date": "2026-03-22T13:00:17Z",
+              "author": "renovate[bot]"
             }
           },
           "versionMismatch": true,
           "mismatchDetails": [
             {
               "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-              "checkedAt": "2026-03-23T04:28:38.277Z",
+              "checkedAt": "2026-03-23T05:14:05.837Z",
               "status": "ok",
               "wrapperCommit": {
-                "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
-                "shortSha": "f6932b6",
-                "message": "Merge pull request #2058 from Tampere/compose-postgres-path",
-                "date": "2026-03-20T05:13:18Z",
-                "author": "akheron"
+                "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
+                "shortSha": "f44bf40",
+                "message": "Merge pull request #2063 from Tampere/dependabot/submodules/evaka-7d4e575",
+                "date": "2026-03-23T04:53:11Z",
+                "author": "ohinkinen"
               },
               "coreCommit": {
-                "sha": "27d00d7c2d0a75aaaee8d2351e650c76b6f27df2",
-                "shortSha": "27d00d7",
-                "message": "Merge pull request #8702 from espoon-voltti/show-shift-care-group-mobile",
-                "date": "2026-03-19T14:09:49Z",
-                "author": "ohinkinen"
+                "sha": "7d4e575f1da27c6b1e96a3006d5ad40d632d6584",
+                "shortSha": "7d4e575",
+                "message": "Update flyway to v12.1.1 (#8746)",
+                "date": "2026-03-22T13:00:17Z",
+                "author": "renovate[bot]"
               }
             },
             {
               "instanceDomain": "test-evaka.hameenkyro.fi",
-              "checkedAt": "2026-03-23T04:28:39.114Z",
+              "checkedAt": "2026-03-23T05:14:06.798Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -178,7 +178,7 @@
             },
             {
               "instanceDomain": "test-evaka.kangasala.fi",
-              "checkedAt": "2026-03-23T04:28:39.954Z",
+              "checkedAt": "2026-03-23T05:14:07.796Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -197,7 +197,7 @@
             },
             {
               "instanceDomain": "test-evaka.lempaala.fi",
-              "checkedAt": "2026-03-23T04:28:40.903Z",
+              "checkedAt": "2026-03-23T05:14:08.683Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -216,7 +216,7 @@
             },
             {
               "instanceDomain": "test-evaka.nokiankaupunki.fi",
-              "checkedAt": "2026-03-23T04:28:41.800Z",
+              "checkedAt": "2026-03-23T05:14:09.454Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -235,7 +235,7 @@
             },
             {
               "instanceDomain": "test-evaka.orivesi.fi",
-              "checkedAt": "2026-03-23T04:28:42.587Z",
+              "checkedAt": "2026-03-23T05:14:10.351Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -254,7 +254,7 @@
             },
             {
               "instanceDomain": "test-evaka.pirkkala.fi",
-              "checkedAt": "2026-03-23T04:28:43.453Z",
+              "checkedAt": "2026-03-23T05:14:11.372Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -273,7 +273,7 @@
             },
             {
               "instanceDomain": "test-evaka.vesilahti.fi",
-              "checkedAt": "2026-03-23T04:28:44.381Z",
+              "checkedAt": "2026-03-23T05:14:12.291Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "ffe8b818c051846c1cd99afb8c57517f0fa0942a",
@@ -292,7 +292,7 @@
             },
             {
               "instanceDomain": "test-evaka.ylojarvi.fi",
-              "checkedAt": "2026-03-23T04:28:45.296Z",
+              "checkedAt": "2026-03-23T05:14:13.131Z",
               "status": "ok",
               "wrapperCommit": {
                 "sha": "f6932b6342af212a0d03c2894fac2e0d96bc0866",
@@ -317,6 +317,19 @@
           "repository": "Tampere/trevaka",
           "deployed": [],
           "inStaging": [
+            {
+              "number": 2056,
+              "title": "Read-only filesystems for containers",
+              "author": "ilja-git",
+              "authorName": "Ilja Pyykkönen",
+              "mergedAt": "2026-03-20T10:52:45Z",
+              "repository": "Tampere/trevaka",
+              "repoType": "wrapper",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/Tampere/trevaka/pull/2056",
+              "labels": []
+            },
             {
               "number": 2058,
               "title": "Päivitetään postgres-volumen polku",
@@ -344,26 +357,42 @@
               "labels": []
             }
           ],
-          "pendingDeployment": [
-            {
-              "number": 2056,
-              "title": "Read-only filesystems for containers",
-              "author": "ilja-git",
-              "authorName": "Ilja Pyykkönen",
-              "mergedAt": "2026-03-20T10:52:45Z",
-              "repository": "Tampere/trevaka",
-              "repoType": "wrapper",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/Tampere/trevaka/pull/2056",
-              "labels": []
-            }
-          ]
+          "pendingDeployment": []
         },
         "core": {
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [
+            {
+              "number": 8712,
+              "title": "Siirretään Turku-koodi ytimeen",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-20T10:00:49Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8712",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8715,
+              "title": "Lisätään kuntalaiselle ohjeteksti vastaamisesta talouden viestiketjuihin",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-20T08:09:58Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8715",
+              "labels": [
+                "enhancement"
+              ]
+            },
             {
               "number": 8702,
               "title": "Näytetään vuorohoitoryhmä henkilökunnan mobiilissa",
@@ -408,70 +437,9 @@
               "labels": [
                 "tech"
               ]
-            },
-            {
-              "number": 8714,
-              "title": "Espoon sv-tekstikorjaus",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-19T08:54:25Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8714",
-              "labels": [
-                "enhancement"
-              ]
-            },
-            {
-              "number": 8713,
-              "title": "Sandbox-siivous",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-19T07:38:30Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8713",
-              "labels": [
-                "tech"
-              ]
             }
           ],
-          "pendingDeployment": [
-            {
-              "number": 8712,
-              "title": "Siirretään Turku-koodi ytimeen",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-20T10:00:49Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8712",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8715,
-              "title": "Lisätään kuntalaiselle ohjeteksti vastaamisesta talouden viestiketjuihin",
-              "author": "ohinkinen",
-              "authorName": "Olli-Heikki Inkinen",
-              "mergedAt": "2026-03-20T08:09:58Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8715",
-              "labels": [
-                "enhancement"
-              ]
-            }
-          ]
+          "pendingDeployment": []
         }
       }
     },
@@ -484,7 +452,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T04:28:55.201Z",
+            "checkedAt": "2026-03-23T05:14:27.960Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -509,7 +477,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T04:28:56.216Z",
+            "checkedAt": "2026-03-23T05:14:28.956Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -599,7 +567,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-23T04:29:02.139Z",
+            "checkedAt": "2026-03-23T05:14:34.471Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -624,7 +592,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-23T04:29:03.127Z",
+            "checkedAt": "2026-03-23T05:14:35.410Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "56928f817f58df42b76978f5c3fc727aad2a4954",
