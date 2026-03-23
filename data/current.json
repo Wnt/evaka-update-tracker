@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T10:25:45.821Z",
+  "generatedAt": "2026-03-23T10:38:10.048Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,15 +10,15 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T10:24:18.048Z",
+            "checkedAt": "2026-03-23T10:36:46.843Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
-              "sha": "56a8cb2bb1edf44160158e06a3627bf579fea952",
-              "shortSha": "56a8cb2",
-              "message": "Update dependency fast-xml-parser to v5.5.7 [SECURITY] (#8719)",
-              "date": "2026-03-20T01:23:49Z",
-              "author": "renovate[bot]"
+              "sha": "235688f7c7db513e27344c61df5f2373dbfe2e99",
+              "shortSha": "235688f",
+              "message": "Merge pull request #8747 from espoon-voltti/renovate/valkey-valkey-9.x",
+              "date": "2026-03-23T06:55:17Z",
+              "author": "akheron"
             }
           },
           "versionMismatch": false,
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T10:24:18.892Z",
+            "checkedAt": "2026-03-23T10:36:57.246Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -48,8 +48,7 @@
         "wrapper": null,
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [],
-          "inStaging": [
+          "deployed": [
             {
               "number": 8749,
               "title": "Update Spring Boot to v4.0.4",
@@ -97,6 +96,7 @@
               ]
             }
           ],
+          "inStaging": [],
           "pendingDeployment": [
             {
               "number": 8751,
@@ -172,7 +172,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T10:24:30.604Z",
+            "checkedAt": "2026-03-23T10:37:09.839Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -197,7 +197,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T10:24:39.014Z",
+            "checkedAt": "2026-03-23T10:37:20.195Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
@@ -436,7 +436,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T10:25:03.843Z",
+            "checkedAt": "2026-03-23T10:37:48.315Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6dcef3a06e0691f94918cf702745e7086dc7bcfc",
@@ -461,7 +461,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T10:25:17.489Z",
+            "checkedAt": "2026-03-23T10:37:49.548Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6dcef3a06e0691f94918cf702745e7086dc7bcfc",
@@ -485,87 +485,13 @@
       "prTracks": {
         "wrapper": {
           "repository": "Oulunkaupunki/evakaoulu",
-          "deployed": [
-            {
-              "number": 315,
-              "title": "Fix build",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-23T05:41:57Z",
-              "repository": "Oulunkaupunki/evakaoulu",
-              "repoType": "wrapper",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/315",
-              "labels": []
-            },
-            {
-              "number": 311,
-              "title": "Päivitetään postgres-volumen polku",
-              "author": "tomuli",
-              "authorName": "Samuli Toivonen",
-              "mergedAt": "2026-03-20T08:41:41Z",
-              "repository": "Oulunkaupunki/evakaoulu",
-              "repoType": "wrapper",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/311",
-              "labels": []
-            }
-          ],
+          "deployed": [],
           "inStaging": [],
           "pendingDeployment": []
         },
         "core": {
           "repository": "espoon-voltti/evaka",
-          "deployed": [
-            {
-              "number": 8749,
-              "title": "Update Spring Boot to v4.0.4",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-23T06:05:40Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
-              "labels": [
-                "dependencies",
-                "service"
-              ]
-            },
-            {
-              "number": 8712,
-              "title": "Siirretään Turku-koodi ytimeen",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-20T10:00:49Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8712",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8715,
-              "title": "Lisätään kuntalaiselle ohjeteksti vastaamisesta talouden viestiketjuihin",
-              "author": "ohinkinen",
-              "authorName": "Olli-Heikki Inkinen",
-              "mergedAt": "2026-03-20T08:09:58Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8715",
-              "labels": [
-                "enhancement"
-              ]
-            }
-          ],
+          "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
             {
@@ -642,7 +568,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-23T10:25:31.315Z",
+            "checkedAt": "2026-03-23T10:37:52.811Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -667,7 +593,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-23T10:25:32.296Z",
+            "checkedAt": "2026-03-23T10:37:54.123Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "93c4374cc6cabcd3582f405ce6c9dadfd41cd1f6",
