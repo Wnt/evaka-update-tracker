@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T08:57:22.761Z",
+  "generatedAt": "2026-03-23T09:26:53.998Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T08:56:22.420Z",
+            "checkedAt": "2026-03-23T09:25:38.802Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T08:56:23.177Z",
+            "checkedAt": "2026-03-23T09:25:39.496Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -99,6 +99,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8751,
+              "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T09:24:33Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8751",
+              "labels": [
+                "bug"
+              ]
+            },
+            {
               "number": 8720,
               "title": "Jätetään ajamatta tilaus, kun ryhmälle ei löydy yhtään Nekku asiakasta",
               "author": "ohinkinen",
@@ -157,7 +172,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T08:56:32.216Z",
+            "checkedAt": "2026-03-23T09:25:51.424Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -182,7 +197,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T08:56:38.941Z",
+            "checkedAt": "2026-03-23T09:25:59.542Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
@@ -332,6 +347,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8751,
+              "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T09:24:33Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8751",
+              "labels": [
+                "bug"
+              ]
+            },
+            {
               "number": 8720,
               "title": "Jätetään ajamatta tilaus, kun ryhmälle ei löydy yhtään Nekku asiakasta",
               "author": "ohinkinen",
@@ -406,7 +436,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T08:56:58.968Z",
+            "checkedAt": "2026-03-23T09:26:24.460Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -431,7 +461,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T08:56:59.942Z",
+            "checkedAt": "2026-03-23T09:26:25.528Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6dcef3a06e0691f94918cf702745e7086dc7bcfc",
@@ -539,6 +569,21 @@
           ],
           "pendingDeployment": [
             {
+              "number": 8751,
+              "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T09:24:33Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8751",
+              "labels": [
+                "bug"
+              ]
+            },
+            {
               "number": 8720,
               "title": "Jätetään ajamatta tilaus, kun ryhmälle ei löydy yhtään Nekku asiakasta",
               "author": "ohinkinen",
@@ -597,7 +642,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-23T08:57:10.437Z",
+            "checkedAt": "2026-03-23T09:26:39.295Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -622,7 +667,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-23T08:57:11.484Z",
+            "checkedAt": "2026-03-23T09:26:40.288Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "93c4374cc6cabcd3582f405ce6c9dadfd41cd1f6",
@@ -745,6 +790,21 @@
             }
           ],
           "pendingDeployment": [
+            {
+              "number": 8751,
+              "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T09:24:33Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8751",
+              "labels": [
+                "bug"
+              ]
+            },
             {
               "number": 8720,
               "title": "Jätetään ajamatta tilaus, kun ryhmälle ei löydy yhtään Nekku asiakasta",
