@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T07:47:30.647Z",
+  "generatedAt": "2026-03-23T08:01:14.804Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T07:46:13.053Z",
+            "checkedAt": "2026-03-23T07:59:57.552Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T07:46:13.929Z",
+            "checkedAt": "2026-03-23T07:59:58.342Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -127,7 +127,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T07:46:25.102Z",
+            "checkedAt": "2026-03-23T08:00:15.362Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -152,7 +152,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T07:46:35.691Z",
+            "checkedAt": "2026-03-23T08:00:23.196Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
@@ -346,7 +346,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T07:47:01.643Z",
+            "checkedAt": "2026-03-23T08:00:44.750Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -371,21 +371,21 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T07:47:02.982Z",
+            "checkedAt": "2026-03-23T08:00:45.823Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "88171dd2eba5f8c2383132c96d43b6c12b7f54b8",
-              "shortSha": "88171dd",
-              "message": "Merge pull request #315 from Oulunkaupunki/fix-build",
-              "date": "2026-03-23T05:41:57Z",
-              "author": "akheron"
+              "sha": "6dcef3a06e0691f94918cf702745e7086dc7bcfc",
+              "shortSha": "6dcef3a",
+              "message": "Merge pull request #316 from Oulunkaupunki/dependabot/submodules/evaka-82c5468",
+              "date": "2026-03-23T07:35:52Z",
+              "author": "github-actions[bot]"
             },
             "coreCommit": {
-              "sha": "7d4e575f1da27c6b1e96a3006d5ad40d632d6584",
-              "shortSha": "7d4e575",
-              "message": "Update flyway to v12.1.1 (#8746)",
-              "date": "2026-03-22T13:00:17Z",
-              "author": "renovate[bot]"
+              "sha": "82c5468b1a089f0fb0f0a932c1c2fc0ee3e9308e",
+              "shortSha": "82c5468",
+              "message": "Merge pull request #8716 from espoon-voltti/dependabot/npm_and_yarn/frontend/flatted-3.4.2",
+              "date": "2026-03-23T07:17:09Z",
+              "author": "akheron"
             }
           },
           "versionMismatch": false,
@@ -430,6 +430,22 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [
+            {
+              "number": 8749,
+              "title": "Update Spring Boot to v4.0.4",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T06:05:40Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
+              "labels": [
+                "dependencies",
+                "service"
+              ]
+            },
             {
               "number": 8712,
               "title": "Siirretään Turku-koodi ytimeen",
@@ -477,22 +493,6 @@
                 "dependencies",
                 "frontend"
               ]
-            },
-            {
-              "number": 8749,
-              "title": "Update Spring Boot to v4.0.4",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-23T06:05:40Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
-              "labels": [
-                "dependencies",
-                "service"
-              ]
             }
           ]
         }
@@ -507,7 +507,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-23T07:47:15.834Z",
+            "checkedAt": "2026-03-23T08:01:02.009Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -532,7 +532,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-23T07:47:17.192Z",
+            "checkedAt": "2026-03-23T08:01:02.988Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a7cd7ea655b6200719f9489de8b4aa84a47d44ce",
