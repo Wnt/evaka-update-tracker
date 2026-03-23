@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-23T05:49:51.416Z",
+  "generatedAt": "2026-03-23T06:07:13.479Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T05:49:04.407Z",
+            "checkedAt": "2026-03-23T06:05:51.101Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-23T05:49:05.079Z",
+            "checkedAt": "2026-03-23T06:05:52.001Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -51,6 +51,22 @@
           "deployed": [],
           "inStaging": [],
           "pendingDeployment": [
+            {
+              "number": 8749,
+              "title": "Update Spring Boot to v4.0.4",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T06:05:40Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
+              "labels": [
+                "dependencies",
+                "service"
+              ]
+            },
             {
               "number": 8712,
               "title": "Siirretään Turku-koodi ytimeen",
@@ -94,7 +110,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T05:49:11.320Z",
+            "checkedAt": "2026-03-23T06:06:00.934Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -119,7 +135,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-23T05:49:18.283Z",
+            "checkedAt": "2026-03-23T06:06:12.091Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "f44bf40e23453abd1c1a66f73d0f958d00e1dcdd",
@@ -267,7 +283,24 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8749,
+              "title": "Update Spring Boot to v4.0.4",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T06:05:40Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
+              "labels": [
+                "dependencies",
+                "service"
+              ]
+            }
+          ]
         }
       }
     },
@@ -280,7 +313,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T05:49:35.472Z",
+            "checkedAt": "2026-03-23T06:06:38.888Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
@@ -305,20 +338,20 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-23T05:49:36.532Z",
+            "checkedAt": "2026-03-23T06:06:40.391Z",
             "status": "ok",
             "wrapperCommit": {
-              "sha": "b990ad63a9c29d112f377ce1101eeb9bdbc9ac72",
-              "shortSha": "b990ad6",
-              "message": "Merge pull request #313 from Oulunkaupunki/dependabot/submodules/evaka-56a8cb2",
-              "date": "2026-03-20T02:14:01Z",
-              "author": "github-actions[bot]"
+              "sha": "88171dd2eba5f8c2383132c96d43b6c12b7f54b8",
+              "shortSha": "88171dd",
+              "message": "Merge pull request #315 from Oulunkaupunki/fix-build",
+              "date": "2026-03-23T05:41:57Z",
+              "author": "akheron"
             },
             "coreCommit": {
-              "sha": "56a8cb2bb1edf44160158e06a3627bf579fea952",
-              "shortSha": "56a8cb2",
-              "message": "Update dependency fast-xml-parser to v5.5.7 [SECURITY] (#8719)",
-              "date": "2026-03-20T01:23:49Z",
+              "sha": "7d4e575f1da27c6b1e96a3006d5ad40d632d6584",
+              "shortSha": "7d4e575",
+              "message": "Update flyway to v12.1.1 (#8746)",
+              "date": "2026-03-22T13:00:17Z",
               "author": "renovate[bot]"
             }
           },
@@ -330,8 +363,7 @@
         "wrapper": {
           "repository": "Oulunkaupunki/evakaoulu",
           "deployed": [],
-          "inStaging": [],
-          "pendingDeployment": [
+          "inStaging": [
             {
               "number": 315,
               "title": "Fix build",
@@ -358,13 +390,13 @@
               "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/311",
               "labels": []
             }
-          ]
+          ],
+          "pendingDeployment": []
         },
         "core": {
           "repository": "espoon-voltti/evaka",
           "deployed": [],
-          "inStaging": [],
-          "pendingDeployment": [
+          "inStaging": [
             {
               "number": 8712,
               "title": "Siirretään Turku-koodi ytimeen",
@@ -395,6 +427,24 @@
                 "enhancement"
               ]
             }
+          ],
+          "pendingDeployment": [
+            {
+              "number": 8749,
+              "title": "Update Spring Boot to v4.0.4",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T06:05:40Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
+              "labels": [
+                "dependencies",
+                "service"
+              ]
+            }
           ]
         }
       }
@@ -408,7 +458,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-23T05:49:43.308Z",
+            "checkedAt": "2026-03-23T06:06:58.518Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -433,7 +483,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-23T05:49:44.143Z",
+            "checkedAt": "2026-03-23T06:06:59.929Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "a7cd7ea655b6200719f9489de8b4aa84a47d44ce",
@@ -523,7 +573,24 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8749,
+              "title": "Update Spring Boot to v4.0.4",
+              "author": "akheron",
+              "authorName": "Petri Lehtinen",
+              "mergedAt": "2026-03-23T06:05:40Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8749",
+              "labels": [
+                "dependencies",
+                "service"
+              ]
+            }
+          ]
         }
       }
     }
