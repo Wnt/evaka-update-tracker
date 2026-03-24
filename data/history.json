@@ -1,6 +1,122 @@
 {
   "events": [
     {
+      "id": "2026-03-24T06:26:26.349Z_espoo-staging_core",
+      "environmentId": "espoo-staging",
+      "cityGroupId": "espoo",
+      "detectedAt": "2026-03-24T06:26:26.349Z",
+      "previousCommit": {
+        "sha": "235688f7c7db513e27344c61df5f2373dbfe2e99",
+        "shortSha": "235688f",
+        "message": "",
+        "date": "",
+        "author": ""
+      },
+      "newCommit": {
+        "sha": "df40f7a45450f71641bd65a8f3ca578cd40d87f8",
+        "shortSha": "df40f7a",
+        "message": "Merge pull request #8751 from espoon-voltti/application-foster-parent-check",
+        "date": "2026-03-23T09:24:33Z",
+        "author": "akheron"
+      },
+      "includedPRs": [
+        {
+          "number": 8751,
+          "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
+          "author": "akheron",
+          "authorName": "Petri Lehtinen",
+          "mergedAt": "2026-03-23T09:24:33Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8751",
+          "labels": [
+            "bug"
+          ]
+        },
+        {
+          "number": 8720,
+          "title": "Jätetään ajamatta tilaus, kun ryhmälle ei löydy yhtään Nekku asiakasta",
+          "author": "ohinkinen",
+          "authorName": "Olli-Heikki Inkinen",
+          "mergedAt": "2026-03-23T08:38:32Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8720",
+          "labels": [
+            "tech"
+          ]
+        },
+        {
+          "number": 8723,
+          "title": "Muutetaan DVV muutosrajapinta käyttämään Basic Authia",
+          "author": "ohinkinen",
+          "authorName": "Olli-Heikki Inkinen",
+          "mergedAt": "2026-03-23T08:37:43Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8723",
+          "labels": [
+            "tech"
+          ]
+        },
+        {
+          "number": 8750,
+          "title": "Vite 8",
+          "author": "akheron",
+          "authorName": "Petri Lehtinen",
+          "mergedAt": "2026-03-23T07:25:46Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8750",
+          "labels": [
+            "dependencies",
+            "frontend"
+          ]
+        },
+        {
+          "number": 8716,
+          "title": "Bump flatted from 3.3.1 to 3.4.2 in /frontend",
+          "author": "dependabot[bot]",
+          "authorName": null,
+          "mergedAt": "2026-03-23T07:17:09Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": true,
+          "isHidden": true,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8716",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ]
+        },
+        {
+          "number": 8717,
+          "title": "Bump flatted from 3.3.1 to 3.4.2 in /apigw",
+          "author": "dependabot[bot]",
+          "authorName": null,
+          "mergedAt": "2026-03-23T07:14:30Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": true,
+          "isHidden": true,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8717",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ]
+        }
+      ],
+      "repoType": "core"
+    },
+    {
       "id": "2026-03-24T06:14:08.373Z_oulu-staging_wrapper",
       "environmentId": "oulu-staging",
       "cityGroupId": "oulu",
