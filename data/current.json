@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-24T12:08:23.220Z",
+  "generatedAt": "2026-03-24T12:32:57.685Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-24T12:07:13.359Z",
+            "checkedAt": "2026-03-24T12:31:56.703Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,16 +29,10 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-24T12:07:14.353Z",
-            "status": "ok",
+            "checkedAt": "2026-03-24T12:31:57.419Z",
+            "status": "unavailable",
             "wrapperCommit": null,
-            "coreCommit": {
-              "sha": "df40f7a45450f71641bd65a8f3ca578cd40d87f8",
-              "shortSha": "df40f7a",
-              "message": "Merge pull request #8751 from espoon-voltti/application-foster-parent-check",
-              "date": "2026-03-23T09:24:33Z",
-              "author": "akheron"
-            }
+            "coreCommit": null
           },
           "versionMismatch": false,
           "mismatchDetails": []
@@ -49,7 +43,38 @@
         "core": {
           "repository": "espoon-voltti/evaka",
           "deployed": [],
-          "inStaging": [
+          "inStaging": [],
+          "pendingDeployment": [
+            {
+              "number": 8752,
+              "title": "Muutetaan DVV muutosrajapinta käyttämään vanhaa autentikointia",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-24T11:17:53Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8752",
+              "labels": [
+                "tech"
+              ]
+            },
+            {
+              "number": 8711,
+              "title": "Päivitä s3-downloader versioon 1.5.1",
+              "author": "ilja-git",
+              "authorName": "Ilja Pyykkönen",
+              "mergedAt": "2026-03-24T07:31:57Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8711",
+              "labels": [
+                "tech"
+              ]
+            },
             {
               "number": 8751,
               "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
@@ -94,54 +119,6 @@
               "labels": [
                 "tech"
               ]
-            },
-            {
-              "number": 8750,
-              "title": "Vite 8",
-              "author": "akheron",
-              "authorName": "Petri Lehtinen",
-              "mergedAt": "2026-03-23T07:25:46Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8750",
-              "labels": [
-                "dependencies",
-                "frontend"
-              ]
-            }
-          ],
-          "pendingDeployment": [
-            {
-              "number": 8752,
-              "title": "Muutetaan DVV muutosrajapinta käyttämään vanhaa autentikointia",
-              "author": "ohinkinen",
-              "authorName": "Olli-Heikki Inkinen",
-              "mergedAt": "2026-03-24T11:17:53Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8752",
-              "labels": [
-                "tech"
-              ]
-            },
-            {
-              "number": 8711,
-              "title": "Päivitä s3-downloader versioon 1.5.1",
-              "author": "ilja-git",
-              "authorName": "Ilja Pyykkönen",
-              "mergedAt": "2026-03-24T07:31:57Z",
-              "repository": "espoon-voltti/evaka",
-              "repoType": "core",
-              "isBot": false,
-              "isHidden": false,
-              "url": "https://github.com/espoon-voltti/evaka/pull/8711",
-              "labels": [
-                "tech"
-              ]
             }
           ]
         }
@@ -156,7 +133,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-24T12:07:18.873Z",
+            "checkedAt": "2026-03-24T12:32:06.804Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "30d908b9fa803577a8a880eb76dd3b2d7c4f2249",
@@ -181,7 +158,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-24T12:07:29.119Z",
+            "checkedAt": "2026-03-24T12:32:14.867Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6cec5283f8a5c3e0666a5b1043ba67f9095f8fa2",
@@ -375,7 +352,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-24T12:07:58.465Z",
+            "checkedAt": "2026-03-24T12:32:38.919Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "6dcef3a06e0691f94918cf702745e7086dc7bcfc",
@@ -400,7 +377,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-24T12:07:59.800Z",
+            "checkedAt": "2026-03-24T12:32:39.856Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7b733ee4e15efdee5ddabb44691c0ef14518da97",
@@ -538,7 +515,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-24T12:08:04.727Z",
+            "checkedAt": "2026-03-24T12:32:43.741Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "d170c34af323236a6565252ab2ba95a314b7225d",
@@ -563,7 +540,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-24T12:08:05.975Z",
+            "checkedAt": "2026-03-24T12:32:44.637Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "ace0daaedab72a82e339bbca9d654300eaf8bc18",
