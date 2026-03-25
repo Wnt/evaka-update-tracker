@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-03-25T12:12:39.523Z",
+  "checkedAt": "2026-03-25T12:14:32.131Z",
   "versions": {
     "espoo-prod": {
       "wrapperSha": null,
@@ -26,8 +26,8 @@
       "coreSha": "5070b6f50fec277ca33e3d591fc37b7b3d6a041b"
     },
     "turku-prod": {
-      "wrapperSha": "d170c34af323236a6565252ab2ba95a314b7225d",
-      "coreSha": "56a8cb2bb1edf44160158e06a3627bf579fea952"
+      "wrapperSha": "3d8d977cc1d53fb5e8f3e038d9343a5ff328174c",
+      "coreSha": "5070b6f50fec277ca33e3d591fc37b7b3d6a041b"
     },
     "turku-staging": {
       "wrapperSha": "3d8d977cc1d53fb5e8f3e038d9343a5ff328174c",
