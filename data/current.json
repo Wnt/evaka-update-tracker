@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-25T12:29:41.258Z",
+  "generatedAt": "2026-03-25T12:53:34.790Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-25T12:29:19.304Z",
+            "checkedAt": "2026-03-25T12:53:08.839Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,15 +29,15 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-25T12:29:19.945Z",
+            "checkedAt": "2026-03-25T12:53:09.633Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
-              "sha": "5070b6f50fec277ca33e3d591fc37b7b3d6a041b",
-              "shortSha": "5070b6f",
-              "message": "Merge pull request #8639 from jsarkiniemi/assistance-need-coefficient",
-              "date": "2026-03-24T12:35:28Z",
-              "author": "Wnt"
+              "sha": "3f51f2470aed375a9d323c251f4c034b3546dd89",
+              "shortSha": "3f51f24",
+              "message": "Change DVV modifications service to use basic auth",
+              "date": "2026-03-25T10:52:51Z",
+              "author": "ohinkinen"
             }
           },
           "versionMismatch": false,
@@ -50,7 +50,23 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8722,
+              "title": "Korjaus kansalaisen laitetunnistuksen keksien allekirjoitukseen",
+              "author": "terolaakso-reaktor",
+              "authorName": "Tero Laakso",
+              "mergedAt": "2026-03-25T12:48:22Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8722",
+              "labels": [
+                "bug"
+              ]
+            }
+          ]
         }
       }
     },
@@ -63,7 +79,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-25T12:29:20.797Z",
+            "checkedAt": "2026-03-25T12:53:11.522Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7c80ab8ca9b2260d33bbbf7388c12fd372208114",
@@ -88,7 +104,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-25T12:29:28.531Z",
+            "checkedAt": "2026-03-25T12:53:19.674Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7c80ab8ca9b2260d33bbbf7388c12fd372208114",
@@ -134,7 +150,23 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8722,
+              "title": "Korjaus kansalaisen laitetunnistuksen keksien allekirjoitukseen",
+              "author": "terolaakso-reaktor",
+              "authorName": "Tero Laakso",
+              "mergedAt": "2026-03-25T12:48:22Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8722",
+              "labels": [
+                "bug"
+              ]
+            }
+          ]
         }
       }
     },
@@ -147,7 +179,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-25T12:29:36.473Z",
+            "checkedAt": "2026-03-25T12:53:28.836Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "e4932f79a217588314428ce225557cbe19ce5bbc",
@@ -172,7 +204,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-25T12:29:37.495Z",
+            "checkedAt": "2026-03-25T12:53:29.933Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "e4932f79a217588314428ce225557cbe19ce5bbc",
@@ -218,7 +250,23 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8722,
+              "title": "Korjaus kansalaisen laitetunnistuksen keksien allekirjoitukseen",
+              "author": "terolaakso-reaktor",
+              "authorName": "Tero Laakso",
+              "mergedAt": "2026-03-25T12:48:22Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8722",
+              "labels": [
+                "bug"
+              ]
+            }
+          ]
         }
       }
     },
@@ -231,7 +279,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-25T12:29:39.084Z",
+            "checkedAt": "2026-03-25T12:53:31.884Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3d8d977cc1d53fb5e8f3e038d9343a5ff328174c",
@@ -256,7 +304,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-25T12:29:39.992Z",
+            "checkedAt": "2026-03-25T12:53:32.942Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3d8d977cc1d53fb5e8f3e038d9343a5ff328174c",
@@ -288,7 +336,23 @@
           "repository": "espoon-voltti/evaka",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8722,
+              "title": "Korjaus kansalaisen laitetunnistuksen keksien allekirjoitukseen",
+              "author": "terolaakso-reaktor",
+              "authorName": "Tero Laakso",
+              "mergedAt": "2026-03-25T12:48:22Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8722",
+              "labels": [
+                "bug"
+              ]
+            }
+          ]
         }
       }
     }
