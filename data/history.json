@@ -1,6 +1,167 @@
 {
   "events": [
     {
+      "id": "2026-03-25T12:15:43.116Z_espoo-prod_core",
+      "environmentId": "espoo-prod",
+      "cityGroupId": "espoo",
+      "detectedAt": "2026-03-25T12:15:43.116Z",
+      "previousCommit": {
+        "sha": "235688f7c7db513e27344c61df5f2373dbfe2e99",
+        "shortSha": "235688f",
+        "message": "",
+        "date": "",
+        "author": ""
+      },
+      "newCommit": {
+        "sha": "5070b6f50fec277ca33e3d591fc37b7b3d6a041b",
+        "shortSha": "5070b6f",
+        "message": "Merge pull request #8639 from jsarkiniemi/assistance-need-coefficient",
+        "date": "2026-03-24T12:35:28Z",
+        "author": "Wnt"
+      },
+      "includedPRs": [
+        {
+          "number": 8639,
+          "title": "Muutetaan palvelusetelikertoimen desimaalien määrä neljään",
+          "author": "jsarkiniemi",
+          "authorName": null,
+          "mergedAt": "2026-03-24T12:35:28Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8639",
+          "labels": [
+            "enhancement"
+          ]
+        },
+        {
+          "number": 8752,
+          "title": "Muutetaan DVV muutosrajapinta käyttämään vanhaa autentikointia",
+          "author": "ohinkinen",
+          "authorName": "Olli-Heikki Inkinen",
+          "mergedAt": "2026-03-24T11:17:53Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8752",
+          "labels": [
+            "tech"
+          ]
+        },
+        {
+          "number": 8711,
+          "title": "Päivitä s3-downloader versioon 1.5.1",
+          "author": "ilja-git",
+          "authorName": "Ilja Pyykkönen",
+          "mergedAt": "2026-03-24T07:31:57Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8711",
+          "labels": [
+            "tech"
+          ]
+        },
+        {
+          "number": 8751,
+          "title": "Ei lisätä päämiestä lapselle hakemukselta, jos lapsella on sijaishuoltaja",
+          "author": "akheron",
+          "authorName": "Petri Lehtinen",
+          "mergedAt": "2026-03-23T09:24:33Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8751",
+          "labels": [
+            "bug"
+          ]
+        },
+        {
+          "number": 8720,
+          "title": "Jätetään ajamatta tilaus, kun ryhmälle ei löydy yhtään Nekku asiakasta",
+          "author": "ohinkinen",
+          "authorName": "Olli-Heikki Inkinen",
+          "mergedAt": "2026-03-23T08:38:32Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8720",
+          "labels": [
+            "tech"
+          ]
+        },
+        {
+          "number": 8723,
+          "title": "Muutetaan DVV muutosrajapinta käyttämään Basic Authia",
+          "author": "ohinkinen",
+          "authorName": "Olli-Heikki Inkinen",
+          "mergedAt": "2026-03-23T08:37:43Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8723",
+          "labels": [
+            "tech"
+          ]
+        },
+        {
+          "number": 8750,
+          "title": "Vite 8",
+          "author": "akheron",
+          "authorName": "Petri Lehtinen",
+          "mergedAt": "2026-03-23T07:25:46Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": false,
+          "isHidden": false,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8750",
+          "labels": [
+            "dependencies",
+            "frontend"
+          ]
+        },
+        {
+          "number": 8716,
+          "title": "Bump flatted from 3.3.1 to 3.4.2 in /frontend",
+          "author": "dependabot[bot]",
+          "authorName": null,
+          "mergedAt": "2026-03-23T07:17:09Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": true,
+          "isHidden": true,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8716",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ]
+        },
+        {
+          "number": 8717,
+          "title": "Bump flatted from 3.3.1 to 3.4.2 in /apigw",
+          "author": "dependabot[bot]",
+          "authorName": null,
+          "mergedAt": "2026-03-23T07:14:30Z",
+          "repository": "espoon-voltti/evaka",
+          "repoType": "core",
+          "isBot": true,
+          "isHidden": true,
+          "url": "https://github.com/espoon-voltti/evaka/pull/8717",
+          "labels": [
+            "dependencies",
+            "javascript"
+          ]
+        }
+      ],
+      "repoType": "core"
+    },
+    {
       "id": "2026-03-25T12:14:31.018Z_turku-prod_wrapper",
       "environmentId": "turku-prod",
       "cityGroupId": "turku",

@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-03-25T12:14:32.131Z",
+  "checkedAt": "2026-03-25T12:16:06.150Z",
   "versions": {
     "espoo-prod": {
       "wrapperSha": null,
-      "coreSha": "235688f7c7db513e27344c61df5f2373dbfe2e99"
+      "coreSha": "5070b6f50fec277ca33e3d591fc37b7b3d6a041b"
     },
     "espoo-staging": {
       "wrapperSha": null,
