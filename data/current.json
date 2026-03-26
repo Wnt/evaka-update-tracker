@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-26T10:09:55.145Z",
+  "generatedAt": "2026-03-26T10:33:12.981Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-26T10:09:27.022Z",
+            "checkedAt": "2026-03-26T10:32:43.395Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-26T10:09:27.688Z",
+            "checkedAt": "2026-03-26T10:32:43.985Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -110,7 +110,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-26T10:09:29.659Z",
+            "checkedAt": "2026-03-26T10:32:46.065Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7c80ab8ca9b2260d33bbbf7388c12fd372208114",
@@ -135,7 +135,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-26T10:09:36.901Z",
+            "checkedAt": "2026-03-26T10:32:53.580Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "960212ef7c2ad766826f1a053c5376369d47cb22",
@@ -241,7 +241,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-26T10:09:46.603Z",
+            "checkedAt": "2026-03-26T10:33:03.576Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "e4932f79a217588314428ce225557cbe19ce5bbc",
@@ -266,7 +266,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-26T10:09:47.459Z",
+            "checkedAt": "2026-03-26T10:33:04.462Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8d0933b8b1b5da4cfd5b00780a1aed01a5c6489c",
@@ -386,7 +386,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-26T10:09:50.946Z",
+            "checkedAt": "2026-03-26T10:33:08.416Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3d8d977cc1d53fb5e8f3e038d9343a5ff328174c",
@@ -411,7 +411,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-26T10:09:51.805Z",
+            "checkedAt": "2026-03-26T10:33:09.537Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "399213b34e16a6d3e69831d7c444269e5c97490d",
