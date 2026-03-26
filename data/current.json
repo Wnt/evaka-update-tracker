@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-26T09:43:33.829Z",
+  "generatedAt": "2026-03-26T10:09:55.145Z",
   "cityGroups": [
     {
       "id": "espoo",
@@ -10,7 +10,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-26T09:42:54.095Z",
+            "checkedAt": "2026-03-26T10:09:27.022Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -29,7 +29,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging.espoonvarhaiskasvatus.fi",
-            "checkedAt": "2026-03-26T09:42:54.952Z",
+            "checkedAt": "2026-03-26T10:09:27.688Z",
             "status": "ok",
             "wrapperCommit": null,
             "coreCommit": {
@@ -81,7 +81,23 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8754,
+              "title": "Korjataan Varda-virheraportin liian suurien päivälukumäärien näyttäminen",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-26T10:05:35Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8754",
+              "labels": [
+                "enhancement"
+              ]
+            }
+          ]
         }
       }
     },
@@ -94,7 +110,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-26T09:42:57.222Z",
+            "checkedAt": "2026-03-26T10:09:29.659Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "7c80ab8ca9b2260d33bbbf7388c12fd372208114",
@@ -119,7 +135,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "test-varhaiskasvatus.tampere.fi",
-            "checkedAt": "2026-03-26T09:43:08.695Z",
+            "checkedAt": "2026-03-26T10:09:36.901Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "960212ef7c2ad766826f1a053c5376369d47cb22",
@@ -196,7 +212,23 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8754,
+              "title": "Korjataan Varda-virheraportin liian suurien päivälukumäärien näyttäminen",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-26T10:05:35Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8754",
+              "labels": [
+                "enhancement"
+              ]
+            }
+          ]
         }
       }
     },
@@ -209,7 +241,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-26T09:43:23.048Z",
+            "checkedAt": "2026-03-26T10:09:46.603Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "e4932f79a217588314428ce225557cbe19ce5bbc",
@@ -234,7 +266,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-varhaiskasvatus.ouka.fi",
-            "checkedAt": "2026-03-26T09:43:24.467Z",
+            "checkedAt": "2026-03-26T10:09:47.459Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "8d0933b8b1b5da4cfd5b00780a1aed01a5c6489c",
@@ -274,7 +306,21 @@
               "labels": []
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 317,
+              "title": "Tuki konttien tiedostojärjestelmän kirjoitussuojaukselle",
+              "author": "ilja-git",
+              "authorName": "Ilja Pyykkönen",
+              "mergedAt": "2026-03-26T09:54:40Z",
+              "repository": "Oulunkaupunki/evakaoulu",
+              "repoType": "wrapper",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/Oulunkaupunki/evakaoulu/pull/317",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
@@ -311,7 +357,23 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8754,
+              "title": "Korjataan Varda-virheraportin liian suurien päivälukumäärien näyttäminen",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-26T10:05:35Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8754",
+              "labels": [
+                "enhancement"
+              ]
+            }
+          ]
         }
       }
     },
@@ -324,7 +386,7 @@
           "type": "production",
           "version": {
             "instanceDomain": "evaka.turku.fi",
-            "checkedAt": "2026-03-26T09:43:28.729Z",
+            "checkedAt": "2026-03-26T10:09:50.946Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "3d8d977cc1d53fb5e8f3e038d9343a5ff328174c",
@@ -349,7 +411,7 @@
           "type": "staging",
           "version": {
             "instanceDomain": "staging-evaka.turku.fi",
-            "checkedAt": "2026-03-26T09:43:30.065Z",
+            "checkedAt": "2026-03-26T10:09:51.805Z",
             "status": "ok",
             "wrapperCommit": {
               "sha": "399213b34e16a6d3e69831d7c444269e5c97490d",
@@ -375,7 +437,21 @@
           "repository": "City-of-Turku/evakaturku",
           "deployed": [],
           "inStaging": [],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 274,
+              "title": "Tiedostojärjestelmän kirjoitussuojaus docker-composessa",
+              "author": "ilja-git",
+              "authorName": "Ilja Pyykkönen",
+              "mergedAt": "2026-03-26T09:54:55Z",
+              "repository": "City-of-Turku/evakaturku",
+              "repoType": "wrapper",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/City-of-Turku/evakaturku/pull/274",
+              "labels": []
+            }
+          ]
         },
         "core": {
           "repository": "espoon-voltti/evaka",
@@ -412,7 +488,23 @@
               ]
             }
           ],
-          "pendingDeployment": []
+          "pendingDeployment": [
+            {
+              "number": 8754,
+              "title": "Korjataan Varda-virheraportin liian suurien päivälukumäärien näyttäminen",
+              "author": "ohinkinen",
+              "authorName": "Olli-Heikki Inkinen",
+              "mergedAt": "2026-03-26T10:05:35Z",
+              "repository": "espoon-voltti/evaka",
+              "repoType": "core",
+              "isBot": false,
+              "isHidden": false,
+              "url": "https://github.com/espoon-voltti/evaka/pull/8754",
+              "labels": [
+                "enhancement"
+              ]
+            }
+          ]
         }
       }
     }
