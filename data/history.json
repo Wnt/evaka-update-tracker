@@ -29275,40 +29275,6 @@
         }
       ],
       "repoType": "wrapper"
-    },
-    {
-      "id": "2026-02-24T20:51:37.317Z_tampere-test_wrapper",
-      "environmentId": "tampere-test",
-      "cityGroupId": "tampere-region",
-      "detectedAt": "2026-02-24T20:51:37.317Z",
-      "previousCommit": {
-        "sha": "a741d6a6693d408140dbca17d31d8f06ffdf3ae4",
-        "shortSha": "a741d6a",
-        "message": "Merge pull request #2013 from Tampere/export-preschool-child-documents-job-env-vars",
-        "date": "2026-02-20T08:23:37Z",
-        "author": "patari"
-      },
-      "newCommit": {
-        "sha": "8e693ac21bf39a95f358b361f07efcb217944c89",
-        "shortSha": "8e693ac",
-        "message": "Merge pull request #2008 from Tampere/enable-kangasala-prod-scheduled-archival",
-        "date": "2026-02-20T14:08:19Z",
-        "author": "tmkrepo"
-      },
-      "includedPRs": [
-        {
-          "number": 2008,
-          "title": "Enable scheduled archival in Kangasala prod",
-          "author": "tmkrepo",
-          "mergedAt": "2026-02-20T14:08:20Z",
-          "repository": "Tampere/trevaka",
-          "repoType": "wrapper",
-          "isBot": false,
-          "url": "https://github.com/Tampere/trevaka/pull/2008",
-          "labels": []
-        }
-      ],
-      "repoType": "wrapper"
     }
   ]
 }
