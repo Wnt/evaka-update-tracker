@@ -78,6 +78,7 @@ If you see "Invalid URL" errors with mangled proxy+API URLs, set the following b
 export CLEAR_PROXY_FOR_TESTS=1
 ```
 This tells the test data generator to clear proxy vars and set `NO_PROXY=*` before running.
+This tells the test data generator to clear proxy vars and set `NO_PROXY=*` before running.
 
 ## Code Style
 
