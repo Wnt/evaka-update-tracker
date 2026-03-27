@@ -70,11 +70,11 @@
 
 ### Implementation for User Story 2
 
-- [ ] T017 [P] [US2] Add a `getCommitUrl(event)` helper function in `site/js/components/history-view.js` — derive GitHub commit URL from `event.newCommit.sha`, `event.repoType`, and `event.includedPRs[0]?.repository`. For core events use `espoon-voltti/evaka`, for wrapper events derive from PR repository or city group. Consistent with `getCommitUrl()` logic in `src/api/slack.ts`.
-- [ ] T018 [P] [US2] Add CSS styles for commit links in history entries to `site/css/style.css` — style `.history-commit-link` as a small monospace link (similar to existing `.commit-link` in status badges), positioned in the release header area next to the timestamp
-- [ ] T019 [US2] Modify `renderRelease()` in `site/js/components/history-view.js` to display short commit IDs as links in the release header — for each event in the release, show `<a href="{commitUrl}" class="history-commit-link">{shortSha}</a>` with repo type label if multiple repos (e.g. "ydin: 438b2c8, Kuntaimplementaatio: fb8cd9a"). Use `event.newCommit.shortSha` and `getCommitUrl(event)`.
-- [ ] T020 [US2] Update E2E tests in `tests/e2e/history-view.spec.ts` — add test that history entries display commit links with correct URLs and short SHAs. Test both single-repo and multi-repo (core + wrapper) entries. Verify links open to correct GitHub commit pages.
-- [ ] T021 [US2] Verify existing history view E2E tests still pass — ensure commit link additions don't break existing PR list rendering or release grouping
+- [x] T017 [P] [US2] Add a `getCommitUrl(event)` helper function in `site/js/components/history-view.js` — derive GitHub commit URL from `event.newCommit.sha`, `event.repoType`, and `event.includedPRs[0]?.repository`. For core events use `espoon-voltti/evaka`, for wrapper events derive from PR repository or city group. Consistent with `getCommitUrl()` logic in `src/api/slack.ts`.
+- [x] T018 [P] [US2] Add CSS styles for commit links in history entries to `site/css/style.css` — style `.history-commit-link` as a small monospace link (similar to existing `.commit-link` in status badges), positioned in the release header area next to the timestamp
+- [x] T019 [US2] Modify `renderRelease()` in `site/js/components/history-view.js` to display short commit IDs as links in the release header — for each event in the release, show `<a href="{commitUrl}" class="history-commit-link">{shortSha}</a>` with repo type label if multiple repos (e.g. "ydin: 438b2c8, Kuntaimplementaatio: fb8cd9a"). Use `event.newCommit.shortSha` and `getCommitUrl(event)`.
+- [x] T020 [US2] Update E2E tests in `tests/e2e/history-view.spec.ts` — add test that history entries display commit links with correct URLs and short SHAs. Test both single-repo and multi-repo (core + wrapper) entries. Verify links open to correct GitHub commit pages.
+- [x] T021 [US2] Verify existing history view E2E tests still pass — ensure commit link additions don't break existing PR list rendering or release grouping
 
 **Checkpoint**: History view shows commit links on all entries. Run `npm run test:e2e` to verify.
 
@@ -88,10 +88,10 @@
 
 ### Implementation for User Story 3
 
-- [ ] T022 [P] [US3] Add CSS styles for branch badge to `site/css/style.css` — style `.branch-badge` as a visually distinct indicator (e.g. orange/amber background with branch icon or text, similar to existing label badges). Should be noticeable but not overpowering.
-- [ ] T023 [US3] Modify `renderRelease()` in `site/js/components/history-view.js` to show a branch badge when any event in the release has `isDefaultBranch === false` — display the branch name from `event.branch` if available, otherwise show "ei pääkehityshaarassa". Only show for staging releases. Skip badge entirely when `isDefaultBranch` is `undefined` (legacy entries) or `true`.
-- [ ] T024 [US3] Update E2E tests in `tests/e2e/history-view.spec.ts` — add test data with `isDefaultBranch: false` and `branch: "feature/test"` fields. Verify branch badge renders with correct text. Verify no badge appears for normal deployments or legacy entries without the field.
-- [ ] T025 [US3] Update E2E test data generator in `tests/e2e/helpers/generate-test-data.ts` to include sample events with branch deployment fields (`branch`, `isDefaultBranch`) for both branch and non-branch staging scenarios
+- [x] T022 [P] [US3] Add CSS styles for branch badge to `site/css/style.css` — style `.branch-badge` as a visually distinct indicator (e.g. orange/amber background with branch icon or text, similar to existing label badges). Should be noticeable but not overpowering.
+- [x] T023 [US3] Modify `renderRelease()` in `site/js/components/history-view.js` to show a branch badge when any event in the release has `isDefaultBranch === false` — display the branch name from `event.branch` if available, otherwise show "ei pääkehityshaarassa". Only show for staging releases. Skip badge entirely when `isDefaultBranch` is `undefined` (legacy entries) or `true`.
+- [x] T024 [US3] Update E2E tests in `tests/e2e/history-view.spec.ts` — add test data with `isDefaultBranch: false` and `branch: "feature/test"` fields. Verify branch badge renders with correct text. Verify no badge appears for normal deployments or legacy entries without the field.
+- [x] T025 [US3] Update E2E test data generator in `tests/e2e/helpers/generate-test-data.ts` to include sample events with branch deployment fields (`branch`, `isDefaultBranch`) for both branch and non-branch staging scenarios
 
 **Checkpoint**: Branch badges appear correctly in history view. Run `npm run test:e2e` to verify.
 
@@ -105,10 +105,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T026 [US4] Add `backfillBranchInfo(history, isCommitOnDefaultBranchFn, repositories)` function to `src/services/history-manager.ts` — iterate over history events that have `isDefaultBranch === undefined`, call branch detection for each, and update the events in-place with `branch` and `isDefaultBranch` fields. Return count of updated entries for logging. Accept the branch detection function as a parameter for testability.
-- [ ] T027 [US4] Wire backfill into the main pipeline in `src/index.ts` — call `backfillBranchInfo()` AFTER Slack notifications are sent and AFTER `appendEvents()`, but BEFORE writing history to disk. Pass the repository configuration needed to map events to their GitHub repos. Log the count of backfilled entries.
-- [ ] T028 [US4] Add unit tests for `backfillBranchInfo()` in `tests/unit/history-manager.test.ts` — test that: events with `undefined` isDefaultBranch get enriched, events already having the field are skipped, API errors leave events unchanged, the function returns correct update count
-- [ ] T029 [US4] Add integration test verifying backfill doesn't trigger Slack — in `tests/integration/slack-api.test.ts` or a dedicated test, simulate a pipeline run where only backfill occurs (no new events), verify zero Slack webhook calls are made
+- [x] T026 [US4] Add `backfillBranchInfo(history, isCommitOnDefaultBranchFn, repositories)` function to `src/services/history-manager.ts` — iterate over history events that have `isDefaultBranch === undefined`, call branch detection for each, and update the events in-place with `branch` and `isDefaultBranch` fields. Return count of updated entries for logging. Accept the branch detection function as a parameter for testability.
+- [x] T027 [US4] Wire backfill into the main pipeline in `src/index.ts` — call `backfillBranchInfo()` AFTER Slack notifications are sent and AFTER `appendEvents()`, but BEFORE writing history to disk. Pass the repository configuration needed to map events to their GitHub repos. Log the count of backfilled entries.
+- [x] T028 [US4] Add unit tests for `backfillBranchInfo()` in `tests/unit/history-manager.test.ts` — test that: events with `undefined` isDefaultBranch get enriched, events already having the field are skipped, API errors leave events unchanged, the function returns correct update count
+- [x] T029 [US4] Add integration test verifying backfill doesn't trigger Slack — in `tests/integration/slack-api.test.ts` or a dedicated test, simulate a pipeline run where only backfill occurs (no new events), verify zero Slack webhook calls are made
 
 **Checkpoint**: Backfill enriches existing entries correctly with no side effects. Run `npm test` to verify.
 
@@ -118,10 +118,10 @@
 
 **Purpose**: Final validation, cleanup, and mockup assembly
 
-- [ ] T030 Run full test suite (`npm test && npm run lint && npm run typecheck`) and fix any issues
-- [ ] T031 Run E2E tests (`npm run test:e2e`) and fix any issues
-- [ ] T032 Verify backward compatibility — load existing `data/history.json` with the updated frontend and confirm all entries render correctly (no errors for entries missing `branch`/`isDefaultBranch` fields)
-- [ ] T033 Capture "after" mockups and assemble before/after comparison in `specs/024-highlight-staging-branch-changes/mockups.md` for inclusion in the PR description (see Constitution §Development Workflow)
+- [x] T030 Run full test suite (`npm test && npm run lint && npm run typecheck`) and fix any issues
+- [x] T031 Run E2E tests (`npm run test:e2e`) and fix any issues
+- [x] T032 Verify backward compatibility — load existing `data/history.json` with the updated frontend and confirm all entries render correctly (no errors for entries missing `branch`/`isDefaultBranch` fields)
+- [x] T033 Capture "after" mockups and assemble before/after comparison in `specs/024-highlight-staging-branch-changes/mockups.md` for inclusion in the PR description (see Constitution §Development Workflow)
 
 ---
 

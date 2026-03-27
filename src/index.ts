@@ -12,7 +12,7 @@ import { resolveWebhookUrl } from './config/slack-routing.js';
 import { announceChanges } from './services/change-announcer.js';
 import { loadNameCache, saveNameCache, resolveNames } from './services/name-resolver.js';
 import { getUser } from './api/github.js';
-import { readHistory, appendEvents, pruneOldEvents, writeHistory } from './services/history-manager.js';
+import { readHistory, appendEvents, pruneOldEvents, writeHistory, backfillBranchInfo } from './services/history-manager.js';
 import { collectFeatureFlags } from './services/feature-flag-collector.js';
 import { FEATURE_FLAG_CITIES } from './config/feature-flag-cities.js';
 import {
@@ -309,6 +309,13 @@ export async function run() {
     history = appendEvents(history, allEvents);
   }
   history = pruneOldEvents(history);
+
+  // Backfill branch info for existing events (AFTER Slack notifications — no extra messages)
+  const allRepos = cityGroups.flatMap((cg) => cg.repositories);
+  const backfillCount = await backfillBranchInfo(history, isCommitOnDefaultBranch, allRepos);
+  if (backfillCount > 0) {
+    console.log(`[BACKFILL] Enriched ${backfillCount} history event(s) with branch info.`);
+  }
 
   // Announce changes to repo default branches (independent from deployment notifications)
   try {

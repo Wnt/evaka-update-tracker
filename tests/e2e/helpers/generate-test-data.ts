@@ -193,6 +193,29 @@ function setupGitHubMocks() {
   gh.get(`/repos/City-of-Turku/evakaturku/compare/${TURKU_WRAPPER_STAGING_SHA}...main`)
     .reply(200, emptyCompareResponse);
 
+  // --- Branch detection responses (for staging environments) ---
+  // Espoo staging: commit is on default branch (0 ahead commits)
+  gh.get(`/repos/espoon-voltti/evaka/compare/master...${ESPOO_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+
+  // Tampere staging: wrapper and core on default branch
+  gh.get(`/repos/Tampere/trevaka/compare/main...${TAMPERE_WRAPPER_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+  gh.get(`/repos/espoon-voltti/evaka/compare/master...${TAMPERE_CORE_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+
+  // Oulu staging: wrapper and core on default branch
+  gh.get(`/repos/Oulunkaupunki/evakaoulu/compare/main...${OULU_WRAPPER_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+  gh.get(`/repos/espoon-voltti/evaka/compare/master...${OULU_CORE_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+
+  // Turku staging: wrapper and core on default branch
+  gh.get(`/repos/City-of-Turku/evakaturku/compare/main...${TURKU_WRAPPER_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+  gh.get(`/repos/espoon-voltti/evaka/compare/master...${TURKU_CORE_STAGING_SHA}`)
+    .reply(200, emptyCompareResponse);
+
   // --- User profile responses (for name resolution) ---
   gh.get('/users/terolaakso-reaktor').reply(200, { login: 'terolaakso-reaktor', name: 'Tero Laakso' });
   gh.get('/users/Joosakur').reply(200, { login: 'Joosakur', name: 'Joosa Kurvinen' });
@@ -343,6 +366,23 @@ export async function generateTestData(): Promise<string> {
     const espooDeployed = current.cityGroups?.find(
       (cg: { id: string }) => cg.id === 'espoo'
     )?.prTracks?.core?.deployed;
+
+    // Inject a branch deployment event into history for E2E testing of branch badges
+    const historyPath = path.join(TEST_DATA_DIR, 'history.json');
+    const history = JSON.parse(fs.readFileSync(historyPath, 'utf-8'));
+    history.events.unshift({
+      id: '2026-03-27T08:00:00Z_espoo-staging_core_branch',
+      environmentId: 'espoo-staging',
+      cityGroupId: 'espoo',
+      detectedAt: '2026-03-27T08:00:00Z',
+      previousCommit: { sha: 'aaa0000000000000000000000000000000000000', shortSha: 'aaa0000', message: '', date: '', author: '' },
+      newCommit: { sha: 'bbb1111111111111111111111111111111111111', shortSha: 'bbb1111', message: 'Test branch commit', date: '2026-03-27T07:00:00Z', author: 'developer1' },
+      includedPRs: [],
+      repoType: 'core',
+      isDefaultBranch: false,
+      branch: 'feature/test-branch',
+    });
+    fs.writeFileSync(historyPath, JSON.stringify(history, null, 2));
 
     // Write feature-flags.json AFTER pipeline (overwrite the empty one from failed collection)
     fs.writeFileSync(
