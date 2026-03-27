@@ -29254,55 +29254,6 @@
         }
       ],
       "repoType": "core"
-    },
-    {
-      "id": "2026-02-25T10:35:16.103Z_espoo-prod_core",
-      "environmentId": "espoo-prod",
-      "cityGroupId": "espoo",
-      "detectedAt": "2026-02-25T10:35:16.103Z",
-      "previousCommit": {
-        "sha": "670c123921fa1ab9d7c279898b6ebb3219bc1da0",
-        "shortSha": "670c123",
-        "message": "Merge pull request #8572 from espoon-voltti/renovate/redis-5.x",
-        "date": "2026-02-23T05:35:38Z",
-        "author": "akheron"
-      },
-      "newCommit": {
-        "sha": "93bc642d5bea1784ba288b3bfd01a848e891acd5",
-        "shortSha": "93bc642",
-        "message": "Merge pull request #8556 from espoon-voltti/employee-lang-select",
-        "date": "2026-02-23T08:40:08Z",
-        "author": "Joosakur"
-      },
-      "includedPRs": [
-        {
-          "number": 8556,
-          "title": "Työntekijän kielivalinta",
-          "author": "Joosakur",
-          "mergedAt": "2026-02-23T08:40:09Z",
-          "repository": "espoon-voltti/evaka",
-          "repoType": "core",
-          "isBot": false,
-          "url": "https://github.com/espoon-voltti/evaka/pull/8556",
-          "labels": [
-            "enhancement"
-          ]
-        },
-        {
-          "number": 8508,
-          "title": "Poistetaan `downshift` ja `compute-scroll-into-view`",
-          "author": "akheron",
-          "mergedAt": "2026-02-23T06:44:37Z",
-          "repository": "espoon-voltti/evaka",
-          "repoType": "core",
-          "isBot": false,
-          "url": "https://github.com/espoon-voltti/evaka/pull/8508",
-          "labels": [
-            "tech"
-          ]
-        }
-      ],
-      "repoType": "core"
     }
   ]
 }
