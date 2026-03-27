@@ -57,6 +57,16 @@ tests/
 
 npm test && npm run lint
 
+## Playwright / E2E Test Setup
+
+Playwright version must match the cached Chromium browser revision in `~/.cache/ms-playwright/`.
+If you see "browser not found" errors, check the available revisions:
+```
+ls ~/.cache/ms-playwright/
+```
+Then install the matching Playwright version. For example, `chromium-1194` requires `@playwright/test@1.56.0`.
+Do **not** upgrade `@playwright/test` without also running `npx playwright install` to download the matching browser binary.
+
 ## Code Style
 
 TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend): Follow standard conventions
