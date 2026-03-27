@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-03-27T05:53:03.506Z",
+  "checkedAt": "2026-03-27T06:20:19.281Z",
   "versions": {
     "espoo-prod": {
       "wrapperSha": null,
@@ -7,7 +7,7 @@
     },
     "espoo-staging": {
       "wrapperSha": null,
-      "coreSha": "c20d1175594ba8dcf8baf87fe8ef0302ad048ca5"
+      "coreSha": "438b2c8c6af6470c624d3f3564defe1e36ef5c61"
     },
     "tampere-prod": {
       "wrapperSha": "7c80ab8ca9b2260d33bbbf7388c12fd372208114",
