@@ -73,7 +73,11 @@ The E2E test data generator and `capture-views` script use nock to mock HTTP req
 If `HTTP_PROXY`/`HTTPS_PROXY` environment variables are set (e.g. in Claude Code web sessions),
 nock interception breaks because axios routes through the proxy before nock can intercept.
 The test data generator clears proxy vars and sets `NO_PROXY=*` before running.
-If you see "Invalid URL" errors with mangled proxy+API URLs, check that proxy vars are cleared.
+If you see "Invalid URL" errors with mangled proxy+API URLs, set the following before running:
+```
+export CLEAR_PROXY_FOR_TESTS=1
+```
+This tells the test data generator to clear proxy vars and set `NO_PROXY=*` before running.
 
 ## Code Style
 

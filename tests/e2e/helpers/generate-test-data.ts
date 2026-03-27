@@ -345,16 +345,20 @@ export async function generateTestData(): Promise<string> {
   process.env.DIST_DIR = path.join(TEST_DATA_DIR, '..', 'test-dist');
   process.env.STAGING_INSTANCES = STAGING_INSTANCES_ENV;
 
-  // Clear proxy env vars so nock can intercept HTTP requests cleanly.
-  // Must also set no_proxy to bypass any cached proxy configuration.
+  // When running in a proxied environment (e.g. Claude Code web sessions),
+  // proxy env vars break nock HTTP interception. Set CLEAR_PROXY_FOR_TESTS=1
+  // to clear them before running the test data generator.
+  const clearProxy = process.env.CLEAR_PROXY_FOR_TESTS === '1';
   const proxyVars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 'ALL_PROXY', 'all_proxy', 'GLOBAL_AGENT_HTTP_PROXY', 'GLOBAL_AGENT_HTTPS_PROXY', 'NO_PROXY', 'no_proxy'];
   const savedProxy: Record<string, string | undefined> = {};
-  for (const key of proxyVars) {
-    savedProxy[key] = process.env[key];
-    delete process.env[key];
+  if (clearProxy) {
+    for (const key of proxyVars) {
+      savedProxy[key] = process.env[key];
+      delete process.env[key];
+    }
+    process.env.NO_PROXY = '*';
+    process.env.no_proxy = '*';
   }
-  process.env.NO_PROXY = '*';
-  process.env.no_proxy = '*';
 
   // Disable all real HTTP and set up mocks
   nock.disableNetConnect();
@@ -413,9 +417,11 @@ export async function generateTestData(): Promise<string> {
     delete process.env.DIST_DIR;
     delete process.env.STAGING_INSTANCES;
     // Restore proxy env vars
-    for (const key of proxyVars) {
-      if (savedProxy[key] !== undefined) {
-        process.env[key] = savedProxy[key];
+    if (clearProxy) {
+      for (const key of proxyVars) {
+        if (savedProxy[key] !== undefined) {
+          process.env[key] = savedProxy[key];
+        }
       }
     }
   }
