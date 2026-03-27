@@ -29,6 +29,27 @@ function findDetectedAt(events, environmentId, commitSha) {
 }
 
 /**
+ * Find branch deployment info for the current staging commit.
+ * Returns { isBranch: true, branchName } if the latest staging event is a branch deployment, null otherwise.
+ */
+function findStagingBranchInfo(historyEvents, city) {
+  const stagingEnvIds = city.environments
+    .filter((e) => e.type === 'staging')
+    .map((e) => e.id);
+  if (stagingEnvIds.length === 0) return null;
+
+  // Find the latest staging event for this city
+  const latestEvent = historyEvents
+    .filter((e) => e.cityGroupId === city.id && stagingEnvIds.includes(e.environmentId))
+    .sort((a, b) => new Date(b.detectedAt) - new Date(a.detectedAt))[0];
+
+  if (latestEvent && latestEvent.isDefaultBranch === false) {
+    return { isBranch: true, branchName: latestEvent.branch || null };
+  }
+  return null;
+}
+
+/**
  * Collect recent production PRs from history events for a given city.
  * Returns { core: PR[], wrapper: PR[] } from the most recent production deployment events.
  */
@@ -97,13 +118,31 @@ function findLatestPRTitle(city, envType, historyEvents) {
 }
 
 export function renderCityDetail(city, { showBots = false } = {}, historyEvents = [], featureData = null) {
+  const branchInfo = findStagingBranchInfo(historyEvents, city);
+
   // Environment status badges
   const envSections = city.environments.map((env) => {
     const label = env.type === 'production' ? 'Tuotanto' : 'Staging / Testi';
     const commitSha = env.version?.coreCommit?.sha || env.version?.wrapperCommit?.sha;
     const detectedAt = findDetectedAt(historyEvents, env.id, commitSha);
-    const latestPRTitle = findLatestPRTitle(city, env.type, historyEvents);
+
+    // For branch deployments, show branch name instead of PR title in staging badge
+    let latestPRTitle;
+    if (env.type === 'staging' && branchInfo) {
+      latestPRTitle = null; // Don't show misleading PR title
+    } else {
+      latestPRTitle = findLatestPRTitle(city, env.type, historyEvents);
+    }
     const badge = renderStatusBadge(env.version, { detectedAt, latestPRTitle });
+
+    // Branch indicator for staging
+    let branchIndicator = '';
+    if (env.type === 'staging' && branchInfo) {
+      const branchText = branchInfo.branchName
+        ? escapeHtml(branchInfo.branchName)
+        : 'ei pääkehityshaarassa';
+      branchIndicator = `<span class="branch-badge">${branchText}</span>`;
+    }
 
     // Instance list for multi-instance environments (Tampereen seutu)
     let instanceList = '';
@@ -124,6 +163,7 @@ export function renderCityDetail(city, { showBots = false } = {}, historyEvents 
         <div class="env-header">
           <span class="env-label">${label}</span>
           ${badge}
+          ${branchIndicator}
         </div>
         ${instanceList}
       </div>
@@ -155,12 +195,20 @@ export function renderCityDetail(city, { showBots = false } = {}, historyEvents 
   `;
 
   // Staging section: unified chronological list with repo labels
-  const coreStaging = city.prTracks?.core?.inStaging || [];
-  const wrapperStaging = city.prTracks?.wrapper?.inStaging || [];
-  const mergedStaging = mergeAndSortPRs(coreStaging, wrapperStaging, { showBots });
-  const stagingContent = mergedStaging.length > 0
-    ? renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })
-    : '<div class="empty-state">Ei muutoksia testauksessa</div>';
+  let stagingContent;
+  if (branchInfo) {
+    const branchText = branchInfo.branchName
+      ? escapeHtml(branchInfo.branchName)
+      : 'tuntematon haara';
+    stagingContent = `<div class="empty-state">Haaraa <strong>${branchText}</strong> testataan staging-ympäristössä — PR-vertailu ei ole käytettävissä</div>`;
+  } else {
+    const coreStaging = city.prTracks?.core?.inStaging || [];
+    const wrapperStaging = city.prTracks?.wrapper?.inStaging || [];
+    const mergedStaging = mergeAndSortPRs(coreStaging, wrapperStaging, { showBots });
+    stagingContent = mergedStaging.length > 0
+      ? renderPRList(mergedStaging, { showBots: true, showRepoLabel: true })
+      : '<div class="empty-state">Ei muutoksia testauksessa</div>';
+  }
   const stagingSection = `
     <div class="staging-section">
       <details open>
