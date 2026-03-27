@@ -67,6 +67,14 @@ ls ~/.cache/ms-playwright/
 Then install the matching Playwright version. For example, `chromium-1194` requires `@playwright/test@1.56.0`.
 Do **not** upgrade `@playwright/test` without also running `npx playwright install` to download the matching browser binary.
 
+## Proxy / Nock Compatibility
+
+The E2E test data generator and `capture-views` script use nock to mock HTTP requests.
+If `HTTP_PROXY`/`HTTPS_PROXY` environment variables are set (e.g. in Claude Code web sessions),
+nock interception breaks because axios routes through the proxy before nock can intercept.
+The test data generator clears proxy vars and sets `NO_PROXY=*` before running.
+If you see "Invalid URL" errors with mangled proxy+API URLs, check that proxy vars are cleared.
+
 ## Code Style
 
 TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend): Follow standard conventions
