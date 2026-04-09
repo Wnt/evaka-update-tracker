@@ -42,6 +42,8 @@ Auto-generated from all feature plans. Last updated: 2026-03-02
 - TypeScript 5.x on Node.js 20+ + axios (HTTP), nock (test HTTP mocking) — no new dependencies (023-slack-staging-details)
 - N/A (no data changes) (023-slack-pr-limit)
 - TypeScript 5.x on Node.js 20+ (backend/data pipeline); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test mocking), Playwright (E2E tests) — no new dependencies (024-highlight-staging-branch-changes)
+- Vanilla JavaScript ES modules (frontend, no build step); TypeScript 5.x on Node.js 20+ (tests). + None added. Existing: Playwright (E2E), Jest (unit tests). (025-version-mismatch-info)
+- JSON files (`data/current.json`) — **read-only, no schema change**. (025-version-mismatch-info)
 
 - TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend) + axios (HTTP client), @octokit/rest or direct fetch (GitHub API) — minimal dependency se (001-deployment-tracker)
 
@@ -85,9 +87,9 @@ This tells the test data generator to clear proxy vars and set `NO_PROXY=*` befo
 TypeScript 5.x on Node.js 20+ (data fetcher); vanilla JavaScript ES modules (frontend): Follow standard conventions
 
 ## Recent Changes
+- 025-version-mismatch-info: Added Vanilla JavaScript ES modules (frontend, no build step); TypeScript 5.x on Node.js 20+ (tests). + None added. Existing: Playwright (E2E), Jest (unit tests).
 - 024-highlight-staging-branch-changes: Added TypeScript 5.x on Node.js 20+ (backend/data pipeline); vanilla JavaScript ES modules (frontend) + axios (HTTP), nock (test mocking), Playwright (E2E tests) — no new dependencies
 - 023-slack-pr-limit: Added TypeScript 5.x on Node.js 20+ + axios (HTTP), nock (test mocking)
-- 023-slack-staging-details: Added TypeScript 5.x on Node.js 20+ + axios (HTTP), nock (test HTTP mocking) — no new dependencies
 
 
 <!-- MANUAL ADDITIONS START -->
